@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLUEIN BLACK | Express Logistics & Custom Printing Studio | Pathanamthitta</title>
+    <meta name="description" content="BLUEIN BLACK - Pathanamthitta's premier hub for 11+ international & domestic courier services and wholesale/retail custom printing, DTF t-shirts, jerseys, mugs, and corporate gifts.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#06080F',
+                        cardBg: '#0C101D',
+                        cyanGlow: '#00E5FF',
+                        blueGlow: '#2563EB',
+                        electricBlue: '#3B82F6',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        marquee: 'marquee 30s linear infinite',
+                        float: 'float 6s ease-in-out infinite',
+                        floatSlow: 'float 9s ease-in-out infinite',
+                        pulseGlow: 'pulseGlow 4s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-12px) rotate(1deg)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+                            '50%': { opacity: '0.8', transform: 'scale(1.08)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #06080F;
+            color: #F3F4F6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: rgba(12, 16, 29, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 229, 255, 0.12);
+        }
+
+        .glass-panel-hover:hover {
+            border-color: rgba(0, 229, 255, 0.35);
+            box-shadow: 0 10px 30px -10px rgba(0, 229, 255, 0.25);
+        }
+
+        .glow-text-cyan {
+            text-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+        }
+
+        .glow-button {
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .glow-button:hover {
+            box-shadow: 0 0 35px rgba(0, 229, 255, 0.7);
+            transform: translateY(-2px);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #06080F;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00E5FF;
+        }
+
+        /* Ambient Grid Lines Background */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="relative min-h-screen selection:bg-cyan-500 selection:text-black">
+
+    <!-- Ambient Glowing Orbs Background Canvas -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-pulseGlow"></div>
+        <div class="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-cyan-500/15 rounded-full blur-[120px] animate-pulseGlow" style="animation-delay: 2s;"></div>
+        <div class="absolute -bottom-40 left-1/3 w-[600px] h-[600px] bg-indigo-600/15 rounded-full blur-[140px] animate-pulseGlow" style="animation-delay: 4s;"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/5 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-blue-600 via-cyan-400 to-blue-400 p-[1.5px] shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+                    <div class="w-full h-full bg-darkBg rounded-[10px] flex items-center justify-center">
+                        <svg class="w-6 h-6 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-xl tracking-wider text-white flex items-center gap-1">
+                        BLUEIN <span class="text-cyan-400">BLACK</span>
+                    </span>
+                    <span class="text-[10px] font-semibold text-gray-400 tracking-widest uppercase">Logistics & Printing</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#hero" class="hover:text-cyan-400 transition-colors">Home</a>
+                <a href="#logistics" class="hover:text-cyan-400 transition-colors">Logistics Hub</a>
+                <a href="#printing" class="hover:text-cyan-400 transition-colors">Printing Studio</a>
+                <a href="#partners" class="hover:text-cyan-400 transition-colors">Courier Partners</a>
+                <a href="#quote-calculator" class="hover:text-cyan-400 transition-colors">Instant Quote</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+            </nav>
+
+            <!-- Action Button -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="https://wa.me/917592888789?text=Hello%20BLUEIN%20BLACK%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" 
+                   class="glow-button px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold text-sm flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>WhatsApp Now</span>
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-gray-300 hover:text-white focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden md:hidden glass-panel border-t border-white/10 px-6 py-6 flex-col gap-4 text-base font-medium text-gray-300">
+            <a href="#hero" class="mobile-link hover:text-cyan-400 py-1">Home</a>
+            <a href="#logistics" class="mobile-link hover:text-cyan-400 py-1">Logistics Hub</a>
+            <a href="#printing" class="mobile-link hover:text-cyan-400 py-1">Printing Studio</a>
+            <a href="#partners" class="mobile-link hover:text-cyan-400 py-1">Courier Partners</a>
+            <a href="#quote-calculator" class="mobile-link hover:text-cyan-400 py-1">Instant Quote</a>
+            <a href="#contact" class="mobile-link hover:text-cyan-400 py-1">Contact Us</a>
+            <a href="https://wa.me/917592888789?text=Hello%20BLUEIN%20BLACK%2C%20I%20inquire%20about%20services." target="_blank" rel="noopener noreferrer"
+               class="mt-2 w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold text-center flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Chat on WhatsApp</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Canvas -->
+    <main class="relative z-10 pt-20">
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="relative min-h-[90vh] pt-12 pb-20 flex items-center bg-grid-pattern overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left Text Content -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        
+                        <!-- Top Badge -->
+                        <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-panel border border-cyan-500/30 text-cyan-300 text-xs sm:text-sm font-semibold tracking-wide shadow-lg shadow-cyan-500/10">
+                            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                            <span>Pathanamthitta's #1 Express Logistics & Custom Print Hub</span>
+                        </div>
+
+                        <!-- Main Headline -->
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-white">
+                            ONE STOP. <br class="hidden sm:inline"/>
+                            <span class="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent glow-text-cyan">
+                                EVERY COURIER.
+                            </span> <br/>
+                            CUSTOM PRINTING STUDIO.
+                        </h1>
+
+                        <!-- Subtitle -->
+                        <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                            Fast domestic & worldwide parcel shipping via <span class="text-white font-semibold">11+ courier partners</span> under one roof. Plus ultra-quality wholesale & retail DTF garment printing, custom apparel, and photo gifts.
+                        </p>
+
+                        <!-- Key Highlights Pills -->
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2 text-xs font-semibold text-gray-300">
+                            <div class="px-3.5 py-1.5 rounded-lg bg-white/5 border border-white/10 flex items-center gap-2">
+                                <i class="fa-solid fa-bolt text-yellow-400"></i> 24-Hr Kerala Fastrack
+                            </div>
+                            <div class="px-3.5 py-1.5 rounded-lg bg-white/5 border border-white/10 flex items-center gap-2">
+                                <i class="fa-solid fa-plane text-cyan-400"></i> International Express
+                            </div>
+                            <div class="px-3.5 py-1.5 rounded-lg bg-white/5 border border-white/10 flex items-center gap-2">
+                                <i class="fa-solid fa-shirt text-blue-400"></i> Wholesale DTF Printing
+                            </div>
+                            <div class="px-3.5 py-1.5 rounded-lg bg-white/5 border border-white/10 flex items-center gap-2">
+                                <i class="fa-solid fa-truck-ramp-box text-emerald-400"></i> Free Doorstep Pickup*
+                            </div>
+                        </div>
+
+                        <!-- CTA Buttons -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                            <a href="#quote-calculator" class="w-full sm:w-auto glow-button px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 text-white font-bold text-base flex items-center justify-center gap-3">
+                                <i class="fa-solid fa-calculator text-lg"></i>
+                                <span>Get Instant Quote</span>
+                            </a>
+                            <a href="#printing" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel text-white font-semibold text-base hover:bg-white/10 transition-all flex items-center justify-center gap-2 border border-white/10">
+                                <i class="fa-solid fa-shirt text-cyan-400"></i>
+                                <span>Explore Printing Catalog</span>
+                            </a>
+                        </div>
+
+                        <!-- Quick Contact Bar -->
+                        <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-gray-400 border-t border-white/5">
+                            <a href="tel:+917592888789" class="hover:text-cyan-400 flex items-center gap-2">
+                                <i class="fa-solid fa-phone text-cyan-400"></i> +91 7592 888 789
+                            </a>
+                            <a href="tel:+918891888040" class="hover:text-cyan-400 flex items-center gap-2">
+                                <i class="fa-solid fa-phone text-blue-400"></i> +91 8891 888 040
+                            </a>
+                            <span class="flex items-center gap-1.5 text-gray-400">
+                                <i class="fa-solid fa-location-dot text-red-400"></i> Kairali Building, Ring Road, Pathanamthitta
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Right Interactive 3D Card Stack Preview -->
+                    <div class="lg:col-span-5 relative flex justify-center items-center">
+                        <div id="heroCardContainer" class="relative w-full max-w-md cursor-pointer perspective-1000 py-6">
+                            
+                            <!-- Card 1: Logistics Card (Top Floating) -->
+                            <div class="hero-tilt-card glass-panel rounded-2xl p-6 border border-cyan-500/30 shadow-2xl shadow-cyan-500/10 transform transition-transform duration-200 ease-out animate-float">
+                                <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 rounded-lg bg-blue-600/30 border border-blue-400/40 flex items-center justify-center text-cyan-400">
+                                            <i class="fa-solid fa-box-archive text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-white font-bold text-sm">Express Logistics Engine</h4>
+                                            <p class="text-xs text-gray-400">Domestic & International Hub</p>
+                                        </div>
+                                    </div>
+                                    <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-[11px] font-bold border border-emerald-500/30">Live Dispatch</span>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between text-xs">
+                                        <span class="text-gray-400">Supported Partners</span>
+                                        <span class="text-cyan-300 font-bold">11+ Top Couriers</span>
+                                    </div>
+                                    <div class="w-full bg-darkBg rounded-full h-2 overflow-hidden border border-white/5">
+                                        <div class="bg-gradient-to-r from-blue-500 to-cyan-400 h-full w-[94%] rounded-full animate-pulse"></div>
+                                    </div>
+                                    <div class="grid grid-cols-3 gap-2 pt-2 text-center text-[10px] font-semibold text-gray-300">
+                                        <div class="p-2 rounded-lg bg-white/5 border border-white/5">
+                                            <p class="text-cyan-400 font-bold text-xs">24-Hr</p>
+                                            <p class="text-gray-400">Kerala Fast</p>
+                                        </div>
+                                        <div class="p-2 rounded-lg bg-white/5 border border-white/5">
+                                            <p class="text-blue-400 font-bold text-xs">Global</p>
+                                            <p class="text-gray-400">220+ Countries</p>
+                                        </div>
+                                        <div class="p-2 rounded-lg bg-white/5 border border-white/5">
+                                            <p class="text-emerald-400 font-bold text-xs">Pickup</p>
+                                            <p class="text-gray-400">Doorstep</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 2: Custom Printing Studio (Sub Floating Card) -->
+                            <div class="glass-panel rounded-2xl p-5 border border-blue-500/30 shadow-xl mt-4 translate-x-3 -translate-y-2 animate-floatSlow">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-9 h-9 rounded-lg bg-cyan-500/20 border border-cyan-400/40 flex items-center justify-center text-cyan-300">
+                                            <i class="fa-solid fa-shirt text-lg"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="text-white font-bold text-sm">DTF & Sublimation Studio</h5>
+                                            <p class="text-[11px] text-gray-400">Wholesale & Retail Custom Apparel</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-xs font-extrabold text-cyan-400">Premium Print</span>
+                                    </div>
+                                </div>
+                                <div class="mt-3 flex items-center gap-2 overflow-x-auto pb-1 text-[11px]">
+                                    <span class="px-2.5 py-1 rounded-md bg-white/5 text-gray-300 border border-white/10 whitespace-nowrap">👕 T-Shirts</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-white/5 text-gray-300 border border-white/10 whitespace-nowrap">⚽ Sports Jerseys</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-white/5 text-gray-300 border border-white/10 whitespace-nowrap">☕ Custom Mugs</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-white/5 text-gray-300 border border-white/10 whitespace-nowrap">🖼️ Metal Prints</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- INFINITE COURIER PARTNERS MARQUEE -->
+        <section id="partners" class="py-8 bg-darkBg border-y border-white/10 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 mb-4 text-center">
+                <p class="text-xs font-bold uppercase tracking-widest text-cyan-400">Official Express Network Partners</p>
+            </div>
+            
+            <div class="relative w-full overflow-hidden flex items-center">
+                <!-- Fade Edges -->
+                <div class="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-darkBg to-transparent pointer-events-none"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-darkBg to-transparent pointer-events-none"></div>
+                
+                <!-- Animated Marquee Track -->
+                <div class="flex gap-8 animate-marquee whitespace-nowrap items-center py-2">
+                    
+                    <!-- Partner Item -->
+                    <div class="flex items-center gap-3 px-6 py-3 rounded-xl glass-panel border border-white/10 hover:border-cyan-500/40 transition-all">
+                        <i class="fa-solid fa-plane-departure text-orange-500 text-lg"></i>
+                        <span class="font-bold text-sm text-white">FedEx Express</span>
+                    </div>
+
+                    <div class="flex items-center gap-3 px-6 py-3 rounded-xl glass-panel border border-white/10 hover:border-cyan-500/40 transition-all">
+                        <i class="fa-solid fa-truck-fast text-red-500 text-lg"></i>
+                        <span class="font-bold text-sm text-white">Aramex Global</span>
+                    </div>
+
+                    <div class="flex items-center gap-3 px-6 py-3 rounded-xl glass-panel border border-white/10 hover:border-cyan-500/40 transition-all">
+                        <i class="fa-solid fa-box text-yellow-500 text-lg"></i>
+                        <span class="font-bold text-sm text-white">DHL Express</span>
+                    </div>
+
+                    <div class="flex items-center gap-3 px-6 py-3 rounded-xl glass-panel border border-white/10 hover:border-cyan-500/40 transition-all">
+                        <i class="fa-solid fa-shield-halved text-amber-600 text-lg"></i>
+                        <span class="font-bold text-sm text-white">UPS</span>
+                    </div>
+
+                    <div class="flex items-center gap-3 px-6 py-3 rounded-xl glass-panel border border-white/10 hover:border-cyan-500/40 transition-all">
+                        <i class="fa-solid fa-location-arrow text-cyan-400 text-lg"></i>
+                        <span class="font-bold text-sm text-white">Delhivery</span>
+                    </div>
+
+                    <div class="flex items-center gap-3 px-6 py-3 rounded-xl glass-panel border border-white/10 hover:border-cyan-500/40 transition-all">
+                        <i class="fa-solid fa-envelope-open-text text-red-600 text-lg"></i>
+                        <span class="font-bold text-sm text-white">India Post</span>
+                    </div>
+
+                    <div class="flex items-center gap-3 px-6 py-3 rounded-xl glass-panel border border-white/10 hover:border-cyan-500/40 transition-all">
+                        <i class="fa-solid fa-motorcycle text-indigo-400 text-lg"></i>
+                        <span class="font-bold text-sm text-white">Shadowfax</span>
+                    </div>
+
+                    <div class="flex items-center gap-3 px-6 py-3 rounded-xl glass-panel border border-white/10 hover:border-cyan-500/40 transition-all">
+                        <i class="fa-brands fa-amazon text-amber-400 text-lg"></i>
+                        <span class="font-bold text-sm text-white">Amazon Shipping</span>
+                    </div>
+
+                    <div class="flex items-center gap-3 px-6 py-3 rounded-xl glass-panel border border-white/10 hover:border-cyan-500/40 transition-all">
+                        <i class="fa-solid fa-paper-plane text-blue-400 text-lg"></i>
+                        <span class="font-bold text-sm text-white">Xpressbees</span>
+                    </div>
+
+                    <div class="flex items-center gap-3 px-6 py-3 rounded-xl glass-panel border border-white/10 hover:border-cyan-500/40 transition-all">
+                        <i class="fa-solid fa-cube text-emerald-400 text-lg"></i>
+                        <span class="font-bold text-sm text-white">Shree Maruti Courier</span>
+                    </div>
+
+                    <div class="flex items-center gap-3 px-6 py-3 rounded-xl glass-panel border border-white/10 hover:border-cyan-500/40 transition-all">
+                        <i class="fa-solid fa-van-shuttle text-cyan-300 text-lg"></i>
+                        <span class="font-bold text-sm text-white">Sree Gokulam Speed & Safe</span>
+                    </div>
+
+                    <!-- Duplicated Set for Smooth Continuous Loop -->
+                    <div class="flex items-center gap-3 px-6 py-3 rounded-xl glass-panel border border-white/10 hover:border-cyan-500/40 transition-all">
+                        <i class="fa-solid fa-plane-departure text-orange-500 text-lg"></i>
+                        <span class="font-bold text-sm text-white">FedEx Express</span>
+                    </div>
+                    <div class="flex items-center gap-3 px-6 py-3 rounded-xl glass-panel border border-white/10 hover:border-cyan-500/40 transition-all">
+                        <i class="fa-solid fa-truck-fast text-red-500 text-lg"></i>
+                        <span class="font-bold text-sm text-white">Aramex Global</span>
+                    </div>
+                    <div class="flex items-center gap-3 px-6 py-3 rounded-xl glass-panel border border-white/10 hover:border-cyan-500/40 transition-all">
+                        <i class="fa-solid fa-box text-yellow-500 text-lg"></i>
+                        <span class="font-bold text-sm text-white">DHL Express</span>
+                    </div>
+                    <div class="flex items-center gap-3 px-6 py-3 rounded-xl glass-panel border border-white/10 hover:border-cyan-500/40 transition-all">
+                        <i class="fa-solid fa-shield-halved text-amber-600 text-lg"></i>
+                        <span class="font-bold text-sm text-white">UPS</span>
+                    </div>
+                    <div class="flex items-center gap-3 px-6 py-3 rounded-xl glass-panel border border-white/10 hover:border-cyan-500/40 transition-all">
+                        <i class="fa-solid fa-location-arrow text-cyan-400 text-lg"></i>
+                        <span class="font-bold text-sm text-white">Delhivery</span>
+                    </div>
+                    <div class="flex items-center gap-3 px-6 py-3 rounded-xl glass-panel border border-white/10 hover:border-cyan-500/40 transition-all">
+                        <i class="fa-solid fa-envelope-open-text text-red-600 text-lg"></i>
+                        <span class="font-bold text-sm text-white">India Post</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LOGISTICS & EXPRESS HUB DIVISION SECTION -->
+        <section id="logistics" class="py-24 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-400 text-xs font-extrabold uppercase tracking-widest">
+                        Express Logistics Division
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
+                        Global & Domestic <span class="text-cyan-400">Parcel Logistics</span>
+                    </h2>
+                    <p class="text-gray-400 text-base sm:text-lg">
+                        We compare rates across 11+ leading logistics partners to give you the fastest delivery at the most competitive rates.
+                    </p>
+                </div>
+
+                <!-- Logistics Features Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Feature Card 1 -->
+                    <div class="glass-panel glass-panel-hover rounded-2xl p-8 flex flex-col justify-between transition-all duration-300">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-400/30 flex items-center justify-center text-cyan-400 mb-6 text-2xl">
+                                <i class="fa-solid fa-truck-ramp-box"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">24-Hr Kerala Fastrack</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                Overnight and next-day express courier dispatch anywhere across all 14 districts of Kerala.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-cyan-300 font-semibold">
+                            <span>Lightning Dispatch</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                    <!-- Feature Card 2 -->
+                    <div class="glass-panel glass-panel-hover rounded-2xl p-8 flex flex-col justify-between transition-all duration-300">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-400/30 flex items-center justify-center text-blue-400 mb-6 text-2xl">
+                                <i class="fa-solid fa-earth-americas"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Worldwide Express</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                Global shipping to GCC, UK, USA, Canada, Europe & Australia with complete customs documentation support.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-blue-300 font-semibold">
+                            <span>220+ Countries</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                    <!-- Feature Card 3 -->
+                    <div class="glass-panel glass-panel-hover rounded-2xl p-8 flex flex-col justify-between transition-all duration-300">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-400/30 flex items-center justify-center text-indigo-400 mb-6 text-2xl">
+                                <i class="fa-solid fa-house-chimney-crack"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Free Doorstep Pickup*</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                Schedule parcel collection directly from your home, office, or shop in and around Pathanamthitta town.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-indigo-300 font-semibold">
+                            <span>*Conditions Apply</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                    <!-- Feature Card 4 -->
+                    <div class="glass-panel glass-panel-hover rounded-2xl p-8 flex flex-col justify-between transition-all duration-300">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-400/30 flex items-center justify-center text-emerald-400 mb-6 text-2xl">
+                                <i class="fa-solid fa-box-open"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Secure Custom Packing</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                Heavy-duty bubble wrap, corrugated box packing, fragile item protection, and live tracking updates.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-emerald-300 font-semibold">
+                            <span>100% Safe Handling</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CUSTOM PRINTING & BRANDING STUDIO DIVISION SECTION -->
+        <section id="printing" class="py-24 bg-darkBg/60 relative border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+                    <span class="px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-400 text-xs font-extrabold uppercase tracking-widest">
+                        Custom Printing & Apparel Studio
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
+                        Wholesale & Retail <span class="text-cyan-400">Custom Printing</span>
+                    </h2>
+                    <p class="text-gray-400 text-base sm:text-lg">
+                        High-definition DTF Garment Printing, custom sports jerseys, metal photo prints, school ID cards, personalized gifts & corporate uniform branding.
+                    </p>
+                </div>
+
+                <!-- Category Tabs Filter -->
+                <div class="flex flex-wrap items-center justify-center gap-3 mb-12" id="printingTabs">
+                    <button data-category="all" class="tab-btn active px-6 py-2.5 rounded-xl text-sm font-semibold glass-panel bg-cyan-500/20 text-cyan-300 border-cyan-400/40 transition-all">
+                        All Products
+                    </button>
+                    <button data-category="apparel" class="tab-btn px-6 py-2.5 rounded-xl text-sm font-semibold glass-panel text-gray-400 border-white/10 hover:text-white transition-all">
+                        👕 Apparel & Wearables
+                    </button>
+                    <button data-category="gifts" class="tab-btn px-6 py-2.5 rounded-xl text-sm font-semibold glass-panel text-gray-400 border-white/10 hover:text-white transition-all">
+                        ☕ Mugs & Personalized Gifts
+                    </button>
+                    <button data-category="corporate" class="tab-btn px-6 py-2.5 rounded-xl text-sm font-semibold glass-panel text-gray-400 border-white/10 hover:text-white transition-all">
+                        📇 Corporate & ID Cards
+                    </button>
+                </div>
+
+                <!-- Printing Catalog Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="printingCatalog">
+                    
+                    <!-- Item 1: DTF T-Shirt -->
+                    <div class="print-item apparel glass-panel rounded-2xl p-6 border border-white/10 hover:border-cyan-400/40 transition-all group">
+                        <div class="w-full h-44 rounded-xl bg-gradient-to-br from-blue-900/30 to-cyan-900/20 flex items-center justify-center text-5xl text-cyan-400 mb-5 border border-white/5 group-hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-shirt"></i>
+                        </div>
+                        <span class="text-[10px] font-extrabold text-cyan-400 uppercase tracking-wider bg-cyan-500/10 px-2.5 py-1 rounded-md">Garment Tech</span>
+                        <h3 class="text-lg font-bold text-white mt-2 mb-1">DTF T-Shirt Printing</h3>
+                        <p class="text-xs text-gray-400 mb-4">Vibrant, stretchable, washable direct-to-film prints for custom t-shirts & hoodies.</p>
+                        <a href="#quote-calculator" class="w-full py-2 rounded-lg bg-white/5 hover:bg-cyan-500/20 text-cyan-300 text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+                            <span>Order Custom Print</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </a>
+                    </div>
+
+                    <!-- Item 2: Custom Sports Jerseys -->
+                    <div class="print-item apparel glass-panel rounded-2xl p-6 border border-white/10 hover:border-cyan-400/40 transition-all group">
+                        <div class="w-full h-44 rounded-xl bg-gradient-to-br from-indigo-900/30 to-blue-900/20 flex items-center justify-center text-5xl text-blue-400 mb-5 border border-white/5 group-hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <span class="text-[10px] font-extrabold text-blue-400 uppercase tracking-wider bg-blue-500/10 px-2.5 py-1 rounded-md">Sublimation</span>
+                        <h3 class="text-lg font-bold text-white mt-2 mb-1">Custom Sports Jerseys</h3>
+                        <p class="text-xs text-gray-400 mb-4">Full sublimation football, cricket, and marathon jerseys with custom names & numbers.</p>
+                        <a href="#quote-calculator" class="w-full py-2 rounded-lg bg-white/5 hover:bg-cyan-500/20 text-cyan-300 text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+                            <span>Order Jersey</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </a>
+                    </div>
+
+                    <!-- Item 3: Sublimation Mugs -->
+                    <div class="print-item gifts glass-panel rounded-2xl p-6 border border-white/10 hover:border-cyan-400/40 transition-all group">
+                        <div class="w-full h-44 rounded-xl bg-gradient-to-br from-amber-900/30 to-orange-900/20 flex items-center justify-center text-5xl text-amber-400 mb-5 border border-white/5 group-hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-mug-hot"></i>
+                        </div>
+                        <span class="text-[10px] font-extrabold text-amber-400 uppercase tracking-wider bg-amber-500/10 px-2.5 py-1 rounded-md">Giftware</span>
+                        <h3 class="text-lg font-bold text-white mt-2 mb-1">Personalized Mugs</h3>
+                        <p class="text-xs text-gray-400 mb-4">Magic heat-reveal mugs, ceramic photo mugs, and stainless steel travel tumblers.</p>
+                        <a href="#quote-calculator" class="w-full py-2 rounded-lg bg-white/5 hover:bg-cyan-500/20 text-cyan-300 text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+                            <span>Personalize Mug</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </a>
+                    </div>
+
+                    <!-- Item 4: Metal Photo Prints -->
+                    <div class="print-item gifts glass-panel rounded-2xl p-6 border border-white/10 hover:border-cyan-400/40 transition-all group">
+                        <div class="w-full h-44 rounded-xl bg-gradient-to-br from-cyan-900/30 to-emerald-900/20 flex items-center justify-center text-5xl text-emerald-400 mb-5 border border-white/5 group-hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-image"></i>
+                        </div>
+                        <span class="text-[10px] font-extrabold text-emerald-400 uppercase tracking-wider bg-emerald-500/10 px-2.5 py-1 rounded-md">Luxury Decor</span>
+                        <h3 class="text-lg font-bold text-white mt-2 mb-1">HD Metal Photo Prints</h3>
+                        <p class="text-xs text-gray-400 mb-4">Ultra-gloss scratch-resistant aluminum sheet photo prints with wooden table stand.</p>
+                        <a href="#quote-calculator" class="w-full py-2 rounded-lg bg-white/5 hover:bg-cyan-500/20 text-cyan-300 text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+                            <span>Order Metal Print</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </a>
+                    </div>
+
+                    <!-- Item 5: Corporate Uniforms -->
+                    <div class="print-item apparel corporate glass-panel rounded-2xl p-6 border border-white/10 hover:border-cyan-400/40 transition-all group">
+                        <div class="w-full h-44 rounded-xl bg-gradient-to-br from-purple-900/30 to-indigo-900/20 flex items-center justify-center text-5xl text-purple-400 mb-5 border border-white/5 group-hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <span class="text-[10px] font-extrabold text-purple-400 uppercase tracking-wider bg-purple-500/10 px-2.5 py-1 rounded-md">Branding</span>
+                        <h3 class="text-lg font-bold text-white mt-2 mb-1">Corporate Uniforms</h3>
+                        <p class="text-xs text-gray-400 mb-4">Embroidered & DTF printed polo tees, staff aprons, workwear, and caps.</p>
+                        <a href="#quote-calculator" class="w-full py-2 rounded-lg bg-white/5 hover:bg-cyan-500/20 text-cyan-300 text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+                            <span>Get Bulk Quote</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </a>
+                    </div>
+
+                    <!-- Item 6: School ID Cards & Lanyards -->
+                    <div class="print-item corporate glass-panel rounded-2xl p-6 border border-white/10 hover:border-cyan-400/40 transition-all group">
+                        <div class="w-full h-44 rounded-xl bg-gradient-to-br from-rose-900/30 to-red-900/20 flex items-center justify-center text-5xl text-rose-400 mb-5 border border-white/5 group-hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-id-card"></i>
+                        </div>
+                        <span class="text-[10px] font-extrabold text-rose-400 uppercase tracking-wider bg-rose-500/10 px-2.5 py-1 rounded-md">Institutions</span>
+                        <h3 class="text-lg font-bold text-white mt-2 mb-1">ID Cards & Lanyards</h3>
+                        <p class="text-xs text-gray-400 mb-4">PVC School & College ID cards with custom logo printed satin lanyard tags.</p>
+                        <a href="#quote-calculator" class="w-full py-2 rounded-lg bg-white/5 hover:bg-cyan-500/20 text-cyan-300 text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+                            <span>Order ID Cards</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </a>
+                    </div>
+
+                    <!-- Item 7: Stickers & Labels -->
+                    <div class="print-item corporate gifts glass-panel rounded-2xl p-6 border border-white/10 hover:border-cyan-400/40 transition-all group">
+                        <div class="w-full h-44 rounded-xl bg-gradient-to-br from-teal-900/30 to-cyan-900/20 flex items-center justify-center text-5xl text-teal-400 mb-5 border border-white/5 group-hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-note-sticky"></i>
+                        </div>
+                        <span class="text-[10px] font-extrabold text-teal-400 uppercase tracking-wider bg-teal-500/10 px-2.5 py-1 rounded-md">Vinyl Labels</span>
+                        <h3 class="text-lg font-bold text-white mt-2 mb-1">Custom Stickers & Vinyl</h3>
+                        <p class="text-xs text-gray-400 mb-4">Waterproof vinyl die-cut stickers, product packaging labels, and logo decals.</p>
+                        <a href="#quote-calculator" class="w-full py-2 rounded-lg bg-white/5 hover:bg-cyan-500/20 text-cyan-300 text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+                            <span>Order Stickers</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </a>
+                    </div>
+
+                    <!-- Item 8: Corporate Gifts -->
+                    <div class="print-item gifts corporate glass-panel rounded-2xl p-6 border border-white/10 hover:border-cyan-400/40 transition-all group">
+                        <div class="w-full h-44 rounded-xl bg-gradient-to-br from-yellow-900/30 to-amber-900/20 flex items-center justify-center text-5xl text-yellow-400 mb-5 border border-white/5 group-hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-gift"></i>
+                        </div>
+                        <span class="text-[10px] font-extrabold text-yellow-400 uppercase tracking-wider bg-yellow-500/10 px-2.5 py-1 rounded-md">Merchandise</span>
+                        <h3 class="text-lg font-bold text-white mt-2 mb-1">Corporate Gift Combos</h3>
+                        <p class="text-xs text-gray-400 mb-4">Engraved metal pens, custom keychains, diaries, and personalized gift boxes.</p>
+                        <a href="#quote-calculator" class="w-full py-2 rounded-lg bg-white/5 hover:bg-cyan-500/20 text-cyan-300 text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+                            <span>Inquire Gifts</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- IMPACT STATS COUNTER -->
+        <section class="py-16 bg-gradient-to-b from-darkBg via-cardBg to-darkBg border-y border-white/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    
+                    <div class="space-y-2">
+                        <h4 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+                            <span class="counter-num text-cyan-400" data-target="11">0</span>+
+                        </h4>
+                        <p class="text-xs sm:text-sm text-gray-400 font-semibold uppercase tracking-wider">Courier Partners</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h4 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+                            <span class="counter-num text-blue-400" data-target="24">0</span>h
+                        </h4>
+                        <p class="text-xs sm:text-sm text-gray-400 font-semibold uppercase tracking-wider">Kerala Delivery</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h4 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+                            <span class="counter-num text-emerald-400" data-target="15000">0</span>+
+                        </h4>
+                        <p class="text-xs sm:text-sm text-gray-400 font-semibold uppercase tracking-wider">Parcels Dispatched</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h4 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+                            <span class="counter-num text-amber-400" data-target="100">0</span>%
+                        </h4>
+                        <p class="text-xs sm:text-sm text-gray-400 font-semibold uppercase tracking-wider">Print Quality Guarantee</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE INSTANT QUOTE & BOOKING CALCULATOR -->
+        <section id="quote-calculator" class="py-24 relative">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="glass-panel rounded-3xl p-6 sm:p-10 border border-cyan-500/30 shadow-2xl shadow-cyan-500/10">
+                    
+                    <!-- Form Title Header -->
+                    <div class="text-center mb-8 space-y-2">
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-400">Instant Estimate Engine</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Get Your Quote on WhatsApp</h2>
+                        <p class="text-xs sm:text-sm text-gray-400">Select your service type below, fill details, and send directly to our team.</p>
+                    </div>
+
+                    <!-- Calculator Mode Selector (Logistics vs Printing) -->
+                    <div class="flex p-1.5 rounded-xl bg-white/5 border border-white/10 mb-8 max-w-md mx-auto" id="calcModeSelector">
+                        <button id="modeLogisticsBtn" class="flex-1 py-3 rounded-lg text-xs sm:text-sm font-bold transition-all bg-gradient-to-r from-blue-600 to-cyan-500 text-white flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-truck-fast"></i>
+                            <span>Courier & Logistics</span>
+                        </button>
+                        <button id="modePrintingBtn" class="flex-1 py-3 rounded-lg text-xs sm:text-sm font-bold transition-all text-gray-400 hover:text-white flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-print"></i>
+                            <span>Custom Printing</span>
+                        </button>
+                    </div>
+
+                    <!-- Form 1: Logistics Form -->
+                    <form id="logisticsForm" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            
+                            <div>
+                                <label class="block text-xs font-bold text-gray-300 mb-2">Service Type</label>
+                                <select id="logServiceType" class="w-full px-4 py-3 rounded-xl bg-cardBg border border-white/10 text-white text-sm focus:border-cyan-400 focus:outline-none">
+                                    <option value="Domestic Express (India)">Domestic Express (India Wide)</option>
+                                    <option value="24-Hr Kerala Fastrack">24-Hr Kerala Fastrack</option>
+                                    <option value="International Courier (GCC / USA / UK)">International Courier (GCC / USA / UK)</option>
+                                    <option value="Bulk Commercial Cargo">Bulk Commercial Cargo</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-gray-300 mb-2">Approx Parcel Weight (KG)</label>
+                                <input type="number" id="logWeight" placeholder="e.g. 2.5" min="0.1" step="0.1" required
+                                       class="w-full px-4 py-3 rounded-xl bg-cardBg border border-white/10 text-white text-sm focus:border-cyan-400 focus:outline-none">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-gray-300 mb-2">Pickup Location</label>
+                                <input type="text" id="logPickup" placeholder="e.g. Pathanamthitta / Ranni / Kozhencherry" required
+                                       class="w-full px-4 py-3 rounded-xl bg-cardBg border border-white/10 text-white text-sm focus:border-cyan-400 focus:outline-none">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-gray-300 mb-2">Destination City / Country</label>
+                                <input type="text" id="logDestination" placeholder="e.g. Dubai / London / Bengaluru" required
+                                       class="w-full px-4 py-3 rounded-xl bg-cardBg border border-white/10 text-white text-sm focus:border-cyan-400 focus:outline-none">
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 mb-2">Parcel Contents / Remarks (Optional)</label>
+                            <input type="text" id="logNotes" placeholder="e.g. Clothes, Documents, Spices, Gift Box"
+                                   class="w-full px-4 py-3 rounded-xl bg-cardBg border border-white/10 text-white text-sm focus:border-cyan-400 focus:outline-none">
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl glow-button bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Get Instant Logistics Quote on WhatsApp</span>
+                        </button>
+                    </form>
+
+                    <!-- Form 2: Printing Form (Hidden by default) -->
+                    <form id="printingForm" class="space-y-6 hidden">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            
+                            <div>
+                                <label class="block text-xs font-bold text-gray-300 mb-2">Product Category</label>
+                                <select id="printCategory" class="w-full px-4 py-3 rounded-xl bg-cardBg border border-white/10 text-white text-sm focus:border-cyan-400 focus:outline-none">
+                                    <option value="DTF Custom T-Shirt">DTF Custom T-Shirt</option>
+                                    <option value="Sublimation Sports Jersey">Sublimation Sports Jersey</option>
+                                    <option value="Personalized Photo Mug">Personalized Photo Mug</option>
+                                    <option value="HD Metal Photo Print">HD Metal Photo Print</option>
+                                    <option value="School / Corporate ID Cards">School / Corporate ID Cards</option>
+                                    <option value="Custom Stickers & Labels">Custom Stickers & Labels</option>
+                                    <option value="Corporate Uniform / Caps">Corporate Uniform / Caps</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-gray-300 mb-2">Quantity Needed</label>
+                                <input type="number" id="printQty" placeholder="e.g. 10 or 100" min="1" required
+                                       class="w-full px-4 py-3 rounded-xl bg-cardBg border border-white/10 text-white text-sm focus:border-cyan-400 focus:outline-none">
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 mb-2">Design Requirements & Details</label>
+                            <textarea id="printDetails" rows="3" placeholder="Describe size, colors, or logo details..." required
+                                      class="w-full px-4 py-3 rounded-xl bg-cardBg border border-white/10 text-white text-sm focus:border-cyan-400 focus:outline-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl glow-button bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Get Instant Printing Quote on WhatsApp</span>
+                        </button>
+                    </form>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- LOCATION & CONTACT FOOTER SECTION -->
+        <section id="contact" class="py-20 bg-darkBg border-t border-white/10 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Contact Info Column -->
+                    <div class="lg:col-span-6 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-500/10 border border-cyan-400/30 text-cyan-400 text-xs font-bold uppercase tracking-wider">
+                            Direct Contact & Hub Location
+                        </div>
+                        
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Visit or Call Us Today</h2>
+                        
+                        <div class="space-y-4 pt-2">
+                            
+                            <!-- Address Card -->
+                            <div class="flex items-start gap-4 p-4 rounded-xl glass-panel border border-white/5">
+                                <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-400/30 flex items-center justify-center text-cyan-400 shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold text-sm">Main Office & Store</h4>
+                                    <p class="text-gray-400 text-xs mt-0.5 leading-relaxed">
+                                        Kairali Building, Ring Road, Pathanamthitta, Kerala, India - 689645
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Phone Numbers Card -->
+                            <div class="flex items-start gap-4 p-4 rounded-xl glass-panel border border-white/5">
+                                <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-400/30 flex items-center justify-center text-blue-400 shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold text-sm">Customer Helpline</h4>
+                                    <div class="flex flex-wrap gap-4 mt-1 text-xs">
+                                        <a href="tel:+917592888789" class="text-cyan-400 font-bold hover:underline">+91 7592 888 789</a>
+                                        <a href="tel:+918891888040" class="text-blue-400 font-bold hover:underline">+91 8891 888 040</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Email / Website -->
+                            <div class="flex items-start gap-4 p-4 rounded-xl glass-panel border border-white/5">
+                                <div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-400/30 flex items-center justify-center text-indigo-400 shrink-0">
+                                    <i class="fa-solid fa-globe"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold text-sm">Official Web Domain</h4>
+                                    <p class="text-gray-400 text-xs mt-0.5">
+                                        <a href="https://blueinblack.in" target="_blank" class="text-cyan-400 hover:underline font-semibold">blueinblack.in</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Action Link to Maps -->
+                        <div class="pt-2">
+                            <a href="https://maps.google.com/?q=Kairali+Building+Ring+Road+Pathanamthitta" target="_blank" rel="noopener noreferrer"
+                               class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-400/40 text-white font-semibold text-xs sm:text-sm transition-colors">
+                                <i class="fa-solid fa-map-location-dot text-cyan-400"></i>
+                                <span>Get Directions on Google Maps</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Visual Location Map Card -->
+                    <div class="lg:col-span-6">
+                        <div class="glass-panel rounded-3xl p-4 border border-white/10 relative overflow-hidden">
+                            <div class="w-full h-80 rounded-2xl bg-cardBg overflow-hidden relative flex items-center justify-center">
+                                <div class="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-darkBg to-cyan-950/40 flex flex-col items-center justify-center text-center p-6 space-y-4">
+                                    <div class="w-16 h-16 rounded-full bg-cyan-500/20 border-2 border-cyan-400 flex items-center justify-center text-cyan-300 text-2xl animate-bounce">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-white font-extrabold text-xl">BLUEIN BLACK HUB</h3>
+                                        <p class="text-xs text-gray-400 mt-1">Kairali Building, Ring Road, Pathanamthitta</p>
+                                    </div>
+                                    <a href="https://maps.google.com/?q=Kairali+Building+Ring+Road+Pathanamthitta" target="_blank" rel="noopener noreferrer"
+                                       class="px-5 py-2.5 rounded-xl bg-cyan-500 text-black font-extrabold text-xs tracking-wider uppercase hover:bg-cyan-400 transition-colors">
+                                        Open Live Map Navigation
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Footer Copyright Bottom Bar -->
+                <div class="mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                    <p>© 2026 BLUEIN BLACK. All rights reserved. B&B Holding.</p>
+                    <div class="flex gap-6 text-gray-400">
+                        <a href="#hero" class="hover:text-cyan-400">Home</a>
+                        <a href="#logistics" class="hover:text-cyan-400">Logistics</a>
+                        <a href="#printing" class="hover:text-cyan-400">Printing</a>
+                        <a href="#quote-calculator" class="hover:text-cyan-400">WhatsApp Quote</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Mobile Menu Drawer Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        // Close mobile drawer when clicking links
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+
+        // 3D Card Interactive Tilt Effect on Hero Card
+        const heroCardContainer = document.getElementById('heroCardContainer');
+        const tiltCard = document.querySelector('.her

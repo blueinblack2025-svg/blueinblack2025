@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BB HOLDING | bluein black printing &amp; logistics — Pathanamthitta</title>
-  <meta name="description" content="BB HOLDING in Pathanamthitta — bluein black printing &amp; logistics. DTF & Sublimation Print, ID Card Printing, Mug Printing, Corporate Uniforms @ 450/- INR, and 11 Courier Partners." />
+  <meta name="description" content="BB HOLDING in Pathanamthitta — bluein black printing &amp; logistics. Today's Special Offer: 25-50 Corporate Uniforms @ 450/- INR & XMAS Offer: Free Courier Pickup within 10 km of Pathanamthitta Town." />
   <style>
     :root {
       --navy: #0b1f44;
@@ -158,24 +158,31 @@
       background: #eab308;
     }
 
-    /* Hero Section + Projected Special Offer Card */
+    /* Hero Section + Right Side Visual Banners & Offers */
     .hero-section {
       background: linear-gradient(135deg, #0b1f44 0%, #153775 100%);
       color: #ffffff;
-      padding: 32px 5% 36px;
+      padding: 28px 5% 32px;
     }
 
     .hero-grid {
       max-width: 1180px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 26px;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 24px;
       align-items: center;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .hero-badge {
       display: inline-block;
+      width: fit-content;
       background: rgba(245, 158, 11, 0.18);
       border: 1px solid rgba(245, 158, 11, 0.5);
       color: #fcd34d;
@@ -188,7 +195,7 @@
     }
 
     .hero-left h1 {
-      font-size: clamp(25px, 3.1vw, 35px);
+      font-size: clamp(25px, 3vw, 35px);
       font-weight: 800;
       line-height: 1.22;
       margin-bottom: 11px;
@@ -260,101 +267,197 @@
       100% { left: 100%; }
     }
 
+    /* Hero Right Column: 2 Visual Banners + 2 Offer Cards */
+    .hero-right-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .banners-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .banner-tile {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1.5px solid rgba(255, 255, 255, 0.22);
+      background: #081633;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.32);
+      height: 140px;
+    }
+
+    .banner-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .banner-tile:hover img {
+      transform: scale(1.04);
+    }
+
+    .banner-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(6, 15, 36, 0.94), rgba(6, 15, 36, 0.55), transparent);
+      padding: 18px 10px 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .banner-caption strong {
+      font-size: 11px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.4px;
+    }
+
+    .banner-caption span {
+      font-size: 10px;
+      font-weight: 800;
+      background: var(--gold-bright);
+      color: #0b1f44;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+
+    /* Offers Pair Grid */
+    .offers-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
     /* Projected Today's Special Offer Card */
     .offer-spotlight {
       position: relative;
       background: linear-gradient(145deg, #ffffff 0%, #fffbeb 100%);
       color: var(--navy);
-      border-radius: 12px;
-      padding: 22px 24px;
-      border: 2.5px solid var(--gold-bright);
-      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.38), 0 0 0 4px rgba(245, 158, 11, 0.22);
+      border-radius: 10px;
+      padding: 14px 15px;
+      border: 2px solid var(--gold-bright);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.32);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* XMAS Logistics Offer Card */
+    .offer-spotlight.xmas-card {
+      background: linear-gradient(145deg, #ffffff 0%, #f0fdf4 100%);
+      border-color: #22c55e;
+    }
+
+    .offer-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
     }
 
     .offer-ribbon {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
       background: #dc2626;
       color: #ffffff;
-      font-size: 11.5px;
+      font-size: 10px;
       font-weight: 800;
-      letter-spacing: 0.7px;
-      padding: 4px 11px;
+      letter-spacing: 0.5px;
+      padding: 3px 8px;
       border-radius: 4px;
       text-transform: uppercase;
-      margin-bottom: 10px;
+    }
+
+    .offer-ribbon.xmas-badge {
+      background: #15803d;
     }
 
     .offer-spotlight h2 {
-      font-size: 18px;
+      font-size: 14px;
       font-weight: 900;
       color: var(--navy);
-      line-height: 1.32;
-      margin-bottom: 10px;
+      line-height: 1.3;
+      margin-bottom: 8px;
     }
 
-    .offer-price-row {
+    .offer-highlight-box {
+      background: #fef3c7;
+      border: 1px dashed #d97706;
+      border-radius: 6px;
+      padding: 6px 10px;
+      margin-bottom: 9px;
       display: flex;
       align-items: baseline;
-      gap: 8px;
-      background: #fef3c7;
-      border: 1.5px dashed #d97706;
-      border-radius: 8px;
-      padding: 10px 13px;
-      margin-bottom: 11px;
+      gap: 6px;
     }
 
-    .offer-price-row .only-txt {
-      font-size: 12px;
+    .offer-highlight-box.xmas-box {
+      background: #dcfce7;
+      border-color: #16a34a;
+    }
+
+    .offer-highlight-box .only-txt {
+      font-size: 10.5px;
       font-weight: 800;
       color: #92400e;
       text-transform: uppercase;
     }
 
-    .offer-price-row .amount {
-      font-size: 27px;
+    .offer-highlight-box.xmas-box .only-txt {
+      color: #166534;
+    }
+
+    .offer-highlight-box .amount {
+      font-size: 20px;
       font-weight: 900;
       color: #b45309;
       line-height: 1;
     }
 
-    .offer-price-row .per-pc {
-      font-size: 12.5px;
+    .offer-highlight-box.xmas-box .amount {
+      font-size: 18px;
+      color: #15803d;
+    }
+
+    .offer-highlight-box .per-pc {
+      font-size: 11px;
       font-weight: 700;
       color: #78350f;
     }
 
-    .offer-points {
-      list-style: none;
-      margin-bottom: 14px;
-      font-size: 13px;
-      color: #1e293b;
+    .offer-highlight-box.xmas-box .per-pc {
+      color: #14532d;
     }
 
-    .offer-points li {
-      padding: 3px 0;
-      font-weight: 600;
-    }
-
-    .offer-cta-row {
+    .offer-bottom-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 10px;
+      gap: 6px;
       flex-wrap: wrap;
     }
 
     .btn-offer-wa {
       background: var(--wa-green);
       color: #ffffff;
-      font-size: 13px;
+      font-size: 11.5px;
       font-weight: 800;
-      padding: 9px 15px;
-      border-radius: 6px;
+      padding: 6px 11px;
+      border-radius: 5px;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
       transition: 0.15s;
     }
 
@@ -363,7 +466,7 @@
     }
 
     .tc-small {
-      font-size: 11px;
+      font-size: 10px;
       color: #64748b;
       font-style: italic;
     }
@@ -547,6 +650,41 @@
       display: none;
     }
 
+    /* Printing Services Showcase */
+    .print-services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .print-item-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--navy);
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .print-item-card h4 {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 5px;
+    }
+
+    .print-item-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .print-item-card span {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
     /* 2-Column Division Cards */
     .div-grid {
       display: grid;
@@ -627,41 +765,6 @@
       font-weight: 700;
       background: var(--wa-green);
       color: #ffffff;
-    }
-
-    /* Printing Services Highlight Strip */
-    .print-services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-      margin-bottom: 32px;
-    }
-
-    .print-item-card {
-      background: var(--bg-white);
-      border: 1px solid var(--border);
-      border-top: 3px solid var(--navy);
-      border-radius: 8px;
-      padding: 16px;
-    }
-
-    .print-item-card h4 {
-      font-size: 15px;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 5px;
-    }
-
-    .print-item-card p {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-
-    .print-item-card span {
-      font-size: 11.5px;
-      font-weight: 700;
-      color: var(--gold);
     }
 
     /* Courier Partners Grid */
@@ -797,7 +900,7 @@
       border-top: 3px solid var(--gold-bright);
     }
 
-    @media (max-width: 920px) {
+    @media (max-width: 980px) {
       .hero-grid,
       .office-map-card {
         grid-template-columns: 1fr;
@@ -810,7 +913,9 @@
       }
     }
 
-    @media (max-width: 540px) {
+    @media (max-width: 600px) {
+      .banners-pair,
+      .offers-pair,
       .q-grid-compact {
         grid-template-columns: 1fr;
       }
@@ -842,7 +947,7 @@
     </a>
 
     <nav class="nav-links">
-      <a href="#special-offer">Special Offer</a>
+      <a href="#special-offers">Special Offers</a>
       <a href="#quick-quote">Quick Quote</a>
       <a href="#divisions">Our Divisions</a>
       <a href="#courier-network">Courier Partners</a>
@@ -855,8 +960,8 @@
     </div>
   </header>
 
-  <!-- Hero Section with Highlighted Today's Special Offer -->
-  <section class="hero-section" id="special-offer">
+  <!-- Hero Section: Left Info + Right Side 2 Banners & 2 Special Offers -->
+  <section class="hero-section" id="special-offers">
     <div class="hero-grid">
       <div class="hero-left">
         <div class="hero-badge">BB HOLDING &bull; PATHANAMTHITTA HUB</div>
@@ -881,25 +986,74 @@
         </div>
       </div>
 
-      <!-- TODAY'S SPECIAL OFFER CARD -->
-      <div class="offer-spotlight">
-        <div class="offer-ribbon">&#9733; TODAY'S SPECIAL OFFER</div>
-        <h2>25 to 50 Pieces Corporate Uniform with High Quality DTF Printed Logo</h2>
-        <div class="offer-price-row">
-          <span class="only-txt">Only</span>
-          <span class="amount">450/- INR</span>
-          <span class="per-pc">per piece</span>
-        </div>
-        <ul class="offer-points">
-          <li>&#10003; Premium Corporate Uniform with High-Definition DTF Printed Logo</li>
-          <li>&#10003; Bulk Package: 25 to 50 Pieces</li>
-          <li>&#10003; Mockup Approval &amp; Fast Dispatch from Pathanamthitta</li>
-        </ul>
-        <div class="offer-cta-row">
-          <a href="https://wa.me/918891888040?text=Hello%20BLUEIN%20BLACK%20PRINTING%20(BB%20HOLDING),%20I%20want%20to%20book%20Today's%20Special%20Offer:%2025%20to%2050%20Pieces%20Corporate%20Uniform%20with%20High%20Quality%20DTF%20Printed%20Logo%20Only%20450/-%20INR." target="_blank" rel="noopener" class="btn-offer-wa">
-            Claim Special Offer on WhatsApp &rarr;
+      <!-- RIGHT SIDE: 1st DTF Banner + 2nd Logistics Banner + 2 Offer Cards -->
+      <div class="hero-right-stack">
+        <div class="banners-pair">
+          <!-- 1st Banner: DTF Studio Banner -->
+          <a href="#quick-quote" onclick="setDeskTab('printing')" class="banner-tile">
+            <img src="dtf-banner.jpg" alt="BLUEIN BLACK Custom Apparel & DTF Studio" />
+            <div class="banner-caption">
+              <strong>DTF &amp; APPAREL STUDIO</strong>
+              <span>PRINTING</span>
+            </div>
           </a>
-          <span class="tc-small">*Conditions apply</span>
+
+          <!-- 2nd Banner: Logistics Hub Banner -->
+          <a href="#quick-quote" onclick="setDeskTab('logistics')" class="banner-tile">
+            <img src="logistics-banner.jpg" alt="BB HOLDING Logistics Hub" />
+            <div class="banner-caption">
+              <strong>MULTI-BRAND COURIER HUB</strong>
+              <span>LOGISTICS</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- 2 PROJECTED OFFERS: Today's Special Offer (Printing) + XMAS Offer (Logistics) -->
+        <div class="offers-pair">
+          <!-- Offer 1: Printing Special Offer -->
+          <div class="offer-spotlight">
+            <div>
+              <div class="offer-top-row">
+                <div class="offer-ribbon">&#9733; TODAY'S SPECIAL OFFER</div>
+              </div>
+              <h2>25 to 50 Pieces Corporate Uniform with High Quality DTF Printed Logo</h2>
+            </div>
+            <div>
+              <div class="offer-highlight-box">
+                <span class="only-txt">Only</span>
+                <span class="amount">450/- INR</span>
+                <span class="per-pc">/ pc</span>
+              </div>
+              <div class="offer-bottom-row">
+                <a href="https://wa.me/918891888040?text=Hello%20BLUEIN%20BLACK%20PRINTING%20(BB%20HOLDING),%20I%20want%20to%20book%20Today's%20Special%20Offer:%2025%20to%2050%20Pieces%20Corporate%20Uniform%20with%20High%20Quality%20DTF%20Printed%20Logo%20Only%20450/-%20INR." target="_blank" rel="noopener" class="btn-offer-wa">
+                  Claim Offer &rarr;
+                </a>
+                <span class="tc-small">*Conditions apply</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Offer 2: XMAS Offer (BLUEIN BLACK LOGISTICS) -->
+          <div class="offer-spotlight xmas-card">
+            <div>
+              <div class="offer-top-row">
+                <div class="offer-ribbon xmas-badge">&#10052; XMAS OFFER</div>
+              </div>
+              <h2>BLUEIN BLACK LOGISTICS &mdash; Free Pickup Within 10 km of Pathanamthitta Town</h2>
+            </div>
+            <div>
+              <div class="offer-highlight-box xmas-box">
+                <span class="amount">FREE PICKUP</span>
+                <span class="per-pc">Up to 10 km radius</span>
+              </div>
+              <div class="offer-bottom-row">
+                <a href="https://wa.me/917592888789?text=Hello%20BLUEIN%20BLACK%20LOGISTICS%20(BB%20HOLDING),%20I%20want%20to%20book%20the%20XMAS%20OFFER%20Free%20Pickup%20within%2010%20km%20of%20Pathanamthitta%20Town." target="_blank" rel="noopener" class="btn-offer-wa">
+                  Book Free Pickup &rarr;
+                </a>
+                <span class="tc-small">*Conditions apply</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1021,8 +1175,9 @@
             <input type="text" id="logSender" placeholder="Your Name" />
           </div>
           <div class="q-field">
-            <label for="logService">Shipment Type</label>
+            <label for="logService">Shipment / Offer Type</label>
             <select id="logService">
+              <option value="XMAS Offer: Free Pickup (Within 10 km Pathanamthitta Town)">XMAS Offer: Free Pickup (Within 10 km Pathanamthitta Town)</option>
               <option value="Domestic Courier">Domestic Courier</option>
               <option value="International Air Express">International Air Express</option>
               <option value="Kerala & South Express">Kerala &amp; South Express</option>
@@ -1031,7 +1186,7 @@
           </div>
           <div class="q-field">
             <label for="logPickup">Pickup Pin / Place</label>
-            <input type="text" id="logPickup" placeholder="e.g., Pathanamthitta 689645" />
+            <input type="text" id="logPickup" placeholder="e.g., Pathanamthitta Town (Within 10 km)" />
           </div>
           <div class="q-field">
             <label for="logDest">Destination City / Country</label>
@@ -1128,14 +1283,14 @@
             <h3>BLUEIN BLACK LOGISTICS</h3>
             <p>Authorized multi-brand domestic and international courier booking and pickup center.</p>
             <ul class="corp-list">
+              <li>&bull; <strong>XMAS Free Pickup Offer:</strong> Free doorstep pickup within 10 km of Pathanamthitta town (*Conditions apply)</li>
               <li>&bull; <strong>Kerala &amp; South India:</strong> Sree Gokulam Speed &amp; Safe priority service</li>
               <li>&bull; <strong>Pan-India Couriers:</strong> Shree Maruti, Delhivery, India Post, Xpressbees, Shadowfax &amp; Amazon</li>
               <li>&bull; <strong>International Air Express:</strong> DHL, FedEx, Aramex &amp; UPS to 220+ countries</li>
-              <li>&bull; <strong>Safe Handling:</strong> Doorstep pickup &amp; transparent weight billing</li>
             </ul>
           </div>
           <div class="card-btns">
-            <button type="button" class="btn-sm-outline" onclick="openQuote('logistics')">Check Courier Rate</button>
+            <button type="button" class="btn-sm-outline" onclick="openQuote('logistics')">Book Free Pickup / Rate</button>
             <a href="https://wa.me/917592888789?text=Hello%20BLUEIN%20BLACK%20LOGISTICS,%20I%20want%20to%20book%20a%20courier." target="_blank" rel="noopener" class="btn-sm-wa">WhatsApp (+91 7592 888 789)</a>
           </div>
         </div>
@@ -1309,7 +1464,7 @@
 
       const msg = `*BLUEIN BLACK LOGISTICS (BB HOLDING)*\n` +
                   `Sender: ${sender}\n` +
-                  `Service: ${service}\n` +
+                  `Service / Offer: ${service}\n` +
                   `Pickup: ${pickup}\n` +
                   `Destination: ${dest}\n` +
                   `Weight: ${weight}\n` +

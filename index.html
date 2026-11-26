@@ -10,12 +10,13 @@
       margin: 0;
       padding: 0;
       font-family: "Segoe UI", Arial, sans-serif;
+      scroll-behavior: smooth;
     }
 
     html, body {
       width: 100%;
       min-height: 100vh;
-      background-color: #061d4c;
+      background-color: #051942;
       color: #ffffff;
       overflow-x: hidden;
     }
@@ -26,6 +27,7 @@
       background: #f59e0b;
     }
 
+    /* HEADER */
     header {
       width: 100%;
       background: #ffffff;
@@ -36,15 +38,16 @@
       justify-content: space-between;
       gap: 18px;
       flex-wrap: wrap;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
-      position: relative;
-      z-index: 10;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     .brand-left {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
     }
 
     .header-logo-wrap {
@@ -52,7 +55,7 @@
       border: 2px solid #cbd5e1;
       border-radius: 8px;
       padding: 3px;
-      width: 145px;
+      width: 155px;
       height: 62px;
       display: flex;
       align-items: center;
@@ -72,7 +75,7 @@
       font-size: 22px;
       font-weight: 800;
       color: #072257;
-      line-height: 1.2;
+      line-height: 1.15;
     }
 
     .division-pills {
@@ -114,10 +117,15 @@
       font-size: 14px;
     }
 
+    nav a:hover {
+      color: #d97706;
+    }
+
     .wa-actions {
       display: flex;
       gap: 10px;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .btn-wa-printing {
@@ -140,11 +148,12 @@
       font-weight: 700;
     }
 
+    /* HERO SECTION */
     .hero-section {
       width: 100%;
-      background: linear-gradient(135deg, #04163a 0%, #072257 65%, #0c337d 100%);
-      padding: 40px 32px 60px;
-      display: block;
+      background: linear-gradient(135deg, #041436 0%, #072257 62%, #0d3685 100%);
+      padding: 44px 32px 58px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }
 
     .hero-inner {
@@ -158,26 +167,27 @@
     }
 
     .hero-left {
-      flex: 1 1 520px;
+      flex: 1 1 530px;
       min-width: 300px;
     }
 
-    .hero-logo-wrap {
+    /* Position 1: bnb-logo1.png */
+    .pos1-logo-box {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       background: #ffffff;
       border: 2px solid #e2e8f0;
       border-radius: 10px;
-      padding: 4px;
-      width: 230px;
-      height: 82px;
+      padding: 5px 10px;
+      width: 240px;
+      height: 86px;
       margin-bottom: 16px;
       overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.32);
     }
 
-    .hero-logo {
+    .pos1-logo-box img {
       width: 100%;
       height: 100%;
       object-fit: contain;
@@ -185,21 +195,22 @@
     }
 
     .hub-badge {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      color: #ffffff;
+      display: block;
+      width: fit-content;
+      background: rgba(245, 158, 11, 0.18);
+      border: 1px solid rgba(245, 158, 11, 0.5);
+      color: #fde68a;
       font-size: 12px;
       font-weight: 700;
-      letter-spacing: 0.6px;
-      padding: 6px 12px;
-      border-radius: 4px;
+      letter-spacing: 0.5px;
+      padding: 7px 13px;
+      border-radius: 6px;
       margin-bottom: 16px;
     }
 
     h1 {
-      font-size: 40px;
-      line-height: 1.18;
+      font-size: 42px;
+      line-height: 1.16;
       font-weight: 800;
       color: #ffffff;
       margin-bottom: 14px;
@@ -211,9 +222,10 @@
 
     .hero-sub {
       color: #e2e8f0;
-      font-size: 16px;
-      line-height: 1.6;
-      margin-bottom: 24px;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.55;
+      margin-bottom: 22px;
     }
 
     .hero-cards {
@@ -223,67 +235,194 @@
     }
 
     .mini-card {
-      flex: 1 1 220px;
+      flex: 1 1 230px;
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 8px;
-      padding: 14px 16px;
+      border-radius: 10px;
+      padding: 15px 16px;
     }
 
     .mini-card h3 {
-      font-size: 13px;
+      font-size: 14px;
       color: #ffffff;
       margin-bottom: 6px;
     }
 
     .mini-card p {
-      font-size: 12px;
+      font-size: 12.5px;
       color: #cbd5e1;
+      line-height: 1.5;
     }
 
     .hero-right {
-      flex: 1 1 420px;
+      flex: 1 1 430px;
       min-width: 290px;
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
     }
 
-    .showcase-box {
-      flex: 1 1 200px;
+    /* Position 2: Old DTF Banner Card */
+    .pos2-banner-card {
+      flex: 1 1 205px;
       background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 250px;
+    }
+
+    .pos2-media {
+      position: relative;
+      width: 100%;
+      height: 195px;
+      background: linear-gradient(145deg, #0b2d6e 0%, #154296 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      text-align: center;
       overflow: hidden;
     }
 
-    .showcase-box img {
+    .pos2-media img {
+      position: absolute;
+      inset: 0;
       width: 100%;
-      height: 190px;
+      height: 100%;
       object-fit: cover;
-      display: block;
+      z-index: 2;
     }
 
-    .showcase-label {
-      background: rgba(4, 22, 58, 0.9);
+    .dtf-fallback-badge {
+      background: #f59e0b;
+      color: #04163a;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .dtf-fallback-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .dtf-fallback-sub {
+      font-size: 12px;
+      color: #e2e8f0;
+      line-height: 1.45;
+    }
+
+    .card-footer-label {
+      background: rgba(4, 20, 54, 0.94);
       text-align: center;
-      padding: 10px;
+      padding: 11px;
       font-size: 12px;
       font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #ffffff;
+      z-index: 3;
+    }
+
+    /* LOWER SECTIONS */
+    .section-block {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 46px 32px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .section-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .section-title span {
+      color: #f59e0b;
+    }
+
+    .section-sub {
+      color: #cbd5e1;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .info-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      padding: 18px;
+    }
+
+    .info-card h3 {
+      font-size: 16px;
+      color: #f59e0b;
+      margin-bottom: 8px;
+    }
+
+    .info-card p {
+      font-size: 13.5px;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    .partner-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .partner-pill {
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      padding: 9px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    footer {
+      background: #031029;
+      padding: 28px 32px;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    footer strong {
       color: #ffffff;
     }
 
-    @media (max-width: 768px) {
-      header {
-        padding: 12px 16px;
-      }
-
-      .hero-section {
-        padding: 28px 16px 44px;
+    @media (max-width: 900px) {
+      .grid-3 {
+        grid-template-columns: 1fr;
       }
 
       h1 {
-        font-size: 30px;
+        font-size: 32px;
+      }
+
+      header, .hero-section, .section-block {
+        padding-left: 18px;
+        padding-right: 18px;
       }
     }
   </style>
@@ -291,10 +430,16 @@
 <body>
   <div class="top-bar"></div>
 
+  <!-- TOP HEADER -->
   <header>
     <div class="brand-left">
       <div class="header-logo-wrap">
-        <img src="bnb-logo.png" alt="BB HOLDING Logo" class="header-logo" />
+        <img
+          src="bnb-logo.png"
+          alt="BB HOLDING Logo"
+          class="header-logo"
+          onerror="this.parentElement.style.display='none';"
+        />
       </div>
       <div>
         <div class="brand-title">BB HOLDING</div>
@@ -318,16 +463,20 @@
     </div>
   </header>
 
+  <!-- HERO SECTION -->
   <section class="hero-section">
     <div class="hero-inner">
       <div class="hero-left">
-        <div class="hero-logo-wrap">
-          <img src="bnb-logo1.png" alt="BLUEIN BLACK Logo" class="hero-logo" />
+        <!-- Position 1: bnb-logo1.png -->
+        <div class="pos1-logo-box">
+          <img
+            src="bnb-logo1.png"
+            alt="BLUEIN BLACK Logo"
+            onerror="this.style.display='none';"
+          />
         </div>
 
-        <div>
-          <span class="hub-badge">BB HOLDING at pathanamthitta</span>
-        </div>
+        <span class="hub-badge">BB HOLDING at pathanamthitta</span>
 
         <h1>
           Bold <span>Custom Prints</span> &amp; Swift <span>Global Dispatch</span> — Built for Speed.
@@ -340,7 +489,7 @@
         <div class="hero-cards" id="divisions">
           <div class="mini-card">
             <h3>BLUEIN BLACK PRINTING</h3>
-            <p>DTF, Jerseys, Uniforms, Mugs &amp; ID Cards</p>
+            <p>DTF, Sublimation, Jerseys, Uniforms, Mugs &amp; ID Cards</p>
           </div>
           <div class="mini-card">
             <h3>BLUEIN BLACK LOGISTICS</h3>
@@ -350,16 +499,80 @@
       </div>
 
       <div class="hero-right">
-        <div class="showcase-box">
-          <img src="printing-banner.jpg" alt="BLUEIN BLACK PRINTING" />
-          <div class="showcase-label">BLUEIN BLACK PRINTING</div>
+        <!-- Position 2: Old DTF Banner -->
+        <div class="pos2-banner-card">
+          <div class="pos2-media">
+            <img
+              src="dtf-banner.jpg"
+              alt="BLUEIN BLACK DTF Printing Banner"
+              onerror="this.style.display='none';"
+            />
+            <span class="dtf-fallback-badge">DTF PRINTING STUDIO</span>
+            <div class="dtf-fallback-title">Custom DTF &amp; Apparel</div>
+            <div class="dtf-fallback-sub">Jerseys, Corporate Uniforms, Mugs &amp; Custom Prints</div>
+          </div>
+          <div class="card-footer-label">BLUEIN BLACK PRINTING</div>
         </div>
-        <div class="showcase-box">
-          <img src="logistics-banner.jpg" alt="BLUEIN BLACK LOGISTICS" />
-          <div class="showcase-label">BLUEIN BLACK LOGISTICS</div>
+
+        <!-- Right Card: Logistics -->
+        <div class="pos2-banner-card">
+          <div class="pos2-media">
+            <img
+              src="logistics-banner.jpg"
+              alt="BLUEIN BLACK LOGISTICS"
+              onerror="this.style.display='none';"
+            />
+            <span class="dtf-fallback-badge">COURIER &amp; PARCELS</span>
+            <div class="dtf-fallback-title">Domestic &amp; Global</div>
+            <div class="dtf-fallback-sub">Authorized pickup &amp; dispatch across 11 courier partners</div>
+          </div>
+          <div class="card-footer-label">BLUEIN BLACK LOGISTICS</div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- COURIER NETWORK SECTION -->
+  <section class="section-block" id="network">
+    <h2 class="section-title">Courier <span>Network</span></h2>
+    <p class="section-sub">Domestic &amp; international courier pickup and dispatch support under BB HOLDING — BLUEIN BLACK LOGISTICS.</p>
+    <div class="partner-tags">
+      <span class="partner-pill">Shree Maruti Courier Service</span>
+      <span class="partner-pill">Sree Gokulam Speed and Safe</span>
+      <span class="partner-pill">Delhivery</span>
+      <span class="partner-pill">India Post</span>
+      <span class="partner-pill">Xpressbees</span>
+      <span class="partner-pill">Shadowfax</span>
+      <span class="partner-pill">Amazon Shipping</span>
+      <span class="partner-pill">DHL</span>
+      <span class="partner-pill">FedEx</span>
+      <span class="partner-pill">Aramex</span>
+      <span class="partner-pill">UPS</span>
+    </div>
+  </section>
+
+  <!-- OFFICE & QUICK CONTACT SECTION -->
+  <section class="section-block" id="office">
+    <h2 class="section-title">Office &amp; <span>Quick Contact</span></h2>
+    <p class="section-sub">BB HOLDING at pathanamthitta — Kairali Building, Ring Road, Pathanamthitta.</p>
+    <div class="grid-3" id="quote">
+      <div class="info-card">
+        <h3>Printing Orders &amp; Quotes</h3>
+        <p>DTF prints, corporate uniforms, jerseys &amp; custom gifts.<br />WhatsApp: +91 88918 88040</p>
+      </div>
+      <div class="info-card">
+        <h3>Courier &amp; Parcel Desk</h3>
+        <p>Domestic &amp; international parcel booking and tracking support.<br />WhatsApp: +91 75928 88789</p>
+      </div>
+      <div class="info-card">
+        <h3>Location &amp; Email</h3>
+        <p>Kairali Building, Ring Road, Pathanamthitta, Kerala<br />Email: info@blueinblack.in</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <strong>BB HOLDING</strong> — BLUEIN BLACK PRINTING &amp; LOGISTICS • Pathanamthitta, Kerala
+  </footer>
 </body>
 </html>

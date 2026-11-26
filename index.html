@@ -3,9 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BB HOLDING at pathanamthitta — bluein black printing &amp; logistics</title>
-  <meta name="description" content="BB HOLDING at pathanamthitta — bluein black printing &amp; logistics. Bold custom prints and swift global dispatch across 11 courier partners." />
+  <title>BB HOLDING | bluein black printing &amp; logistics - Pathanamthitta</title>
+  <meta name="description" content="BB HOLDING Enterprise Hub in Pathanamthitta — bluein black printing &amp; logistics. Commercial DTF printing &amp; authorized courier network across 11 partners." />
   <style>
+    :root {
+      --bg-body: #090d16;
+      --bg-surface: #111827;
+      --bg-card: #161f33;
+      --bg-input: #0b1120;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --brand-blue: #2563eb;
+      --brand-cyan: #06b6d4;
+      --wa-green: #25D366;
+      --wa-hover: #1ebe5d;
+      --border: rgba(255, 255, 255, 0.09);
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -18,9 +32,9 @@
     }
 
     body {
-      background-color: #0b245c;
-      color: #ffffff;
-      line-height: 1.5;
+      background-color: var(--bg-body);
+      color: var(--text-primary);
+      line-height: 1.6;
       overflow-x: hidden;
     }
 
@@ -29,449 +43,609 @@
       color: inherit;
     }
 
-    /* Top Yellow Accent Line */
-    .top-accent {
-      height: 4px;
-      background: #f59e0b;
-      width: 100%;
+    /* Top Info Strip */
+    .top-bar {
+      background: #05080f;
+      border-bottom: 1px solid var(--border);
+      padding: 8px 5%;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
     }
 
-    /* White Header Bar */
+    .top-bar strong {
+      color: #ffffff;
+    }
+
+    /* Main Header */
     header {
-      background: #ffffff;
-      color: #0f172a;
-      padding: 12px 4%;
+      background: rgba(17, 24, 39, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 5%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 16px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
     }
 
-    .brand-left {
+    .brand-logo {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
     }
 
-    .header-logo-box {
-      background: #0b1120;
-      padding: 6px 10px;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .brand-logo img {
       height: 46px;
-    }
-
-    .header-logo-box img {
-      height: 34px;
       width: auto;
       object-fit: contain;
+      border-radius: 6px;
+      background: #ffffff;
+      padding: 3px 6px;
     }
 
-    .brand-meta {
+    .brand-text {
       display: flex;
       flex-direction: column;
-      gap: 4px;
     }
 
-    .brand-meta .title {
+    .brand-text .title {
       font-size: 1.15rem;
-      font-weight: 900;
-      color: #0f172a;
-      letter-spacing: 0.3px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      color: #ffffff;
       line-height: 1.1;
     }
 
-    .div-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .pill-blue {
-      background: #dbeafe;
-      color: #1d4ed8;
-      font-size: 0.65rem;
-      font-weight: 800;
-      padding: 2px 8px;
-      border-radius: 4px;
+    .brand-text .sub {
+      font-size: 0.75rem;
+      color: var(--brand-cyan);
+      font-weight: 600;
       letter-spacing: 0.3px;
+      margin-top: 2px;
     }
 
-    .pill-gold {
-      background: #fef3c7;
-      color: #b45309;
-      font-size: 0.65rem;
-      font-weight: 800;
-      padding: 2px 8px;
-      border-radius: 4px;
-      letter-spacing: 0.3px;
-    }
-
-    .nav-center {
+    .nav-links {
       display: flex;
       align-items: center;
       gap: 22px;
       font-size: 0.9rem;
       font-weight: 600;
-      color: #334155;
+      color: #cbd5e1;
     }
 
-    .nav-center a:hover {
-      color: #0b245c;
+    .nav-links a:hover {
+      color: #ffffff;
     }
 
-    .header-cta {
+    .nav-wa-group {
       display: flex;
-      align-items: center;
       gap: 8px;
     }
 
-    .btn-navy {
-      background: #0b245c;
-      color: #ffffff;
-      padding: 9px 14px;
-      border-radius: 6px;
+    .btn-wa-sm {
+      background: var(--wa-green);
+      color: #052e16;
+      padding: 8px 13px;
+      border-radius: 8px;
       font-size: 0.82rem;
       font-weight: 700;
       transition: 0.2s;
       white-space: nowrap;
     }
 
-    .btn-navy:hover {
-      background: #173a8a;
-    }
-
-    .btn-amber {
-      background: #f59e0b;
-      color: #ffffff;
-      padding: 9px 14px;
-      border-radius: 6px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      transition: 0.2s;
-      white-space: nowrap;
-    }
-
-    .btn-amber:hover {
-      background: #d97706;
+    .btn-wa-sm:hover {
+      background: var(--wa-hover);
     }
 
     /* Hero Section */
-    .hero-section {
-      background: linear-gradient(135deg, #091d4a 0%, #0d2a6b 55%, #12388a 100%);
-      padding: 46px 4% 54px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .hero-container {
-      max-width: 1240px;
+    .hero {
+      padding: 56px 5% 44px;
+      max-width: 1200px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 36px;
-      align-items: center;
+      text-align: center;
     }
 
-    .lower-emblem-box {
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 8px 14px;
-      width: 185px;
-      height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 18px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-    }
-
-    .lower-emblem-box img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-
-    .hero-tag {
+    .enterprise-pill {
       display: inline-block;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #e2e8f0;
-      font-size: 0.75rem;
+      background: rgba(37, 99, 235, 0.16);
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      color: #60a5fa;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.8rem;
       font-weight: 700;
-      padding: 5px 12px;
-      border-radius: 6px;
-      margin-bottom: 14px;
+      letter-spacing: 0.7px;
+      margin-bottom: 18px;
     }
 
-    .hero-left h1 {
-      font-size: clamp(2rem, 3.8vw, 3.1rem);
-      font-weight: 900;
-      line-height: 1.15;
-      color: #ffffff;
-      margin-bottom: 12px;
-    }
-
-    .hero-left h1 span.gold {
-      color: #fbbf24;
-    }
-
-    .parent-line {
-      font-size: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      color: #cbd5e1;
-      text-transform: uppercase;
-      margin-bottom: 22px;
-    }
-
-    .hero-subcards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      max-width: 620px;
-    }
-
-    .hero-mini-card {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 10px;
-      padding: 14px 16px;
-    }
-
-    .hero-mini-card strong {
-      display: block;
-      font-size: 0.85rem;
+    .hero h1 {
+      font-size: clamp(2rem, 4.4vw, 3.25rem);
       font-weight: 800;
-      color: #ffffff;
-      margin-bottom: 3px;
+      line-height: 1.18;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 35%, #93c5fd 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .hero-mini-card span {
-      font-size: 0.78rem;
-      color: #cbd5e1;
+    .hero > p {
+      max-width: 740px;
+      margin: 0 auto 30px;
+      color: var(--text-secondary);
+      font-size: 1.05rem;
     }
 
-    /* Hero Right Photo Cards */
-    .hero-right {
+    .hero-division-badges {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 16px;
+      max-width: 820px;
+      margin: 0 auto 36px;
     }
 
-    .visual-card {
-      background: #132c66;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 12px;
-      overflow: hidden;
+    .div-badge-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+      text-align: left;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      min-height: 250px;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+      gap: 4px;
     }
 
-    .visual-card img {
-      width: 100%;
-      height: 205px;
-      object-fit: cover;
-      display: block;
-      background: #1a387a;
-    }
-
-    .visual-card .caption {
-      background: #08183d;
-      padding: 10px 12px;
-      font-size: 0.75rem;
-      font-weight: 800;
-      letter-spacing: 0.4px;
+    .div-badge-card strong {
+      font-size: 1rem;
       color: #ffffff;
-      text-align: center;
-      text-transform: uppercase;
     }
 
-    /* Main Content Sections */
-    .main-container {
-      max-width: 1240px;
+    .div-badge-card span {
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+    }
+
+    /* Instant WhatsApp Quote Desk */
+    .quote-desk {
+      background: var(--bg-surface);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 18px;
+      padding: 28px;
+      max-width: 980px;
       margin: 0 auto;
-      padding: 44px 4%;
+      text-align: left;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
     }
 
-    .quote-panel {
-      background: #0f2963;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 14px;
-      padding: 26px;
-      margin-bottom: 40px;
-    }
-
-    .quote-panel-head {
+    .quote-desk-header {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 18px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      gap: 14px;
+      margin-bottom: 22px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
     }
 
-    .quote-panel-head h2 {
-      font-size: 1.25rem;
+    .quote-desk-header h2 {
+      font-size: 1.35rem;
       font-weight: 800;
     }
 
-    .tab-switch {
+    .quote-tabs {
       display: flex;
-      gap: 8px;
+      background: var(--bg-input);
+      padding: 4px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
     }
 
     .tab-btn {
-      padding: 8px 14px;
-      border-radius: 6px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 9px 16px;
+      border: none;
+      border-radius: 8px;
       background: transparent;
-      color: #e2e8f0;
-      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-size: 0.84rem;
       font-weight: 700;
       cursor: pointer;
+      transition: 0.2s;
     }
 
     .tab-btn.active {
-      background: #f59e0b;
-      border-color: #f59e0b;
+      background: var(--brand-blue);
       color: #ffffff;
     }
 
-    .grid-form {
+    .quote-form-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 14px;
-      margin-bottom: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
     }
 
-    .field label {
+    .field-group label {
       display: block;
-      font-size: 0.78rem;
-      color: #cbd5e1;
-      margin-bottom: 5px;
+      font-size: 0.8rem;
       font-weight: 600;
+      color: #cbd5e1;
+      margin-bottom: 6px;
     }
 
-    .field input,
-    .field select {
+    .field-group input,
+    .field-group select {
       width: 100%;
-      padding: 10px 12px;
-      border-radius: 7px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      background: #071638;
+      padding: 11px 13px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+      background: var(--bg-input);
       color: #ffffff;
-      font-size: 0.9rem;
-    }
-
-    .btn-wa-action {
-      background: #25D366;
-      color: #052e16;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 8px;
       font-size: 0.92rem;
-      font-weight: 800;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      outline: none;
     }
 
-    .btn-wa-action:hover {
-      background: #1ebe5d;
+    .field-group input:focus,
+    .field-group select:focus {
+      border-color: var(--brand-blue);
     }
 
     .hidden {
       display: none;
     }
 
-    .info-section {
-      margin-top: 44px;
+    .btn-submit-wa {
+      width: 100%;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 10px;
+      background: var(--wa-green);
+      color: #052e16;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.2s;
     }
 
-    .info-section h2 {
+    .btn-submit-wa:hover {
+      background: var(--wa-hover);
+    }
+
+    /* Stats Bar */
+    .stats-bar {
+      max-width: 1200px;
+      margin: 44px auto 0;
+      padding: 0 5%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+
+    .stat-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .stat-item .num {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--brand-cyan);
+    }
+
+    .stat-item .lbl {
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    /* Divisions Section */
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 64px 5% 20px;
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .section-head .eyebrow {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--brand-cyan);
+      margin-bottom: 6px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+    }
+
+    .divisions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .division-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .div-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #60a5fa;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 8px;
+    }
+
+    .division-card h3 {
       font-size: 1.5rem;
       font-weight: 800;
-      margin-bottom: 18px;
-      color: #ffffff;
+      margin-bottom: 10px;
     }
 
-    .two-col-cards {
+    .division-card p {
+      color: var(--text-secondary);
+      font-size: 0.94rem;
+      margin-bottom: 18px;
+    }
+
+    .check-list {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+
+    .check-list li {
+      padding: 6px 0;
+      font-size: 0.92rem;
+      color: #e2e8f0;
+    }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn-outline {
+      padding: 11px 16px;
+      border-radius: 9px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #ffffff;
+      cursor: pointer;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .btn-solid-wa {
+      padding: 11px 16px;
+      border-radius: 9px;
+      background: var(--wa-green);
+      color: #052e16;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    /* Sliding Courier Logos Ticker */
+    .marquee-wrap {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 0;
+      margin: 44px 0 36px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      align-items: center;
+      animation: scrollTicker 28s linear infinite;
+    }
+
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 22px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.7px;
+      color: #f8fafc;
+    }
+
+    .marquee-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--brand-cyan);
+      display: inline-block;
+    }
+
+    @keyframes scrollTicker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Courier Network Cards */
+    .network-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
     }
 
-    .box-card {
-      background: #0f2963;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 12px;
-      padding: 24px;
+    .net-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 22px;
     }
 
-    .box-card h3 {
-      font-size: 1.2rem;
+    .net-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 8px;
+    }
+
+    .net-top h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    .net-pill {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(6, 182, 212, 0.14);
+      color: var(--brand-cyan);
+      white-space: nowrap;
+    }
+
+    .net-card p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .net-foot {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #93c5fd;
+    }
+
+    /* Headquarters Section */
+    .hq-box {
+      background: linear-gradient(145deg, #161f33, #0f172a);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 28px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .hq-logo-frame {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 12px;
+      width: 210px;
+      height: 210px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .hq-logo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .hq-details {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .hq-details h3 {
+      font-size: 1.55rem;
       font-weight: 800;
       margin-bottom: 8px;
-      color: #fbbf24;
     }
 
-    .box-card p {
-      font-size: 0.9rem;
-      color: #e2e8f0;
-      margin-bottom: 14px;
-    }
-
-    .courier-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-    }
-
-    .courier-tile {
-      background: #0f2963;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 10px;
-      padding: 16px;
-    }
-
-    .courier-tile strong {
-      display: block;
+    .hq-details p {
+      color: #cbd5e1;
       font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .btn-maps {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 20px;
+      background: var(--brand-blue);
       color: #ffffff;
-      margin-bottom: 4px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.9rem;
     }
 
-    .courier-tile span {
-      font-size: 0.8rem;
-      color: #cbd5e1;
-    }
-
+    /* Footer */
     footer {
-      background: #061330;
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
-      padding: 28px 4%;
-      text-align: center;
-      font-size: 0.85rem;
-      color: #cbd5e1;
+      background: #05080f;
+      border-top: 1px solid var(--border);
+      margin-top: 64px;
+      padding: 44px 5% 24px;
     }
 
-    @media (max-width: 900px) {
-      .hero-container {
-        grid-template-columns: 1fr;
-      }
-      .nav-center {
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+    }
+
+    .footer-col h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .footer-col p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+    }
+
+    .copyright {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+    }
+
+    @media (max-width: 820px) {
+      .nav-links {
         display: none;
       }
     }
@@ -479,109 +653,93 @@
 </head>
 <body>
 
-  <div class="top-accent"></div>
+  <!-- Top Info Strip -->
+  <div class="top-bar">
+    <div><strong>BB HOLDING</strong> &bull; Kairali Building, Ring Road, Pathanamthitta</div>
+    <div>Printing: <a href="tel:+918891888040"><strong>+91 8891 888 040</strong></a> &nbsp;|&nbsp; Logistics: <a href="tel:+917592888789"><strong>+91 7592 888 789</strong></a></div>
+  </div>
 
-  <!-- White Header Bar -->
+  <!-- Header -->
   <header>
-    <div class="brand-left">
-      <div class="header-logo-box">
-        <img src="bnb-logo.png" alt="BB HOLDING Logo" onerror="this.style.display='none'" />
-      </div>
-      <div class="brand-meta">
+    <a href="#" class="brand-logo">
+      <img src="bnb-logo.png" alt="BB HOLDING Logo" />
+      <div class="brand-text">
         <span class="title">BB HOLDING</span>
-        <div class="div-pills">
-          <span class="pill-blue">BLUEIN BLACK PRINTING</span>
-          <span class="pill-gold">BLUEIN BLACK LOGISTICS</span>
-        </div>
+        <span class="sub">bluein black printing &amp; logistics</span>
       </div>
-    </div>
+    </a>
 
-    <nav class="nav-center">
-      <a href="#quick-quote">Quick Quote</a>
+    <nav class="nav-links">
+      <a href="#quote-desk">Quick Quote</a>
       <a href="#divisions">Our Divisions</a>
       <a href="#courier-network">Courier Network</a>
       <a href="#office">Office</a>
     </nav>
 
-    <div class="header-cta">
-      <a href="https://wa.me/918891888040?text=Hello%20BB%20HOLDING%20(bluein%20black%20printing%20%26%20logistics),%20I%20need%20a%20printing%20quote." target="_blank" rel="noopener" class="btn-navy">Printing WA</a>
-      <a href="https://wa.me/917592888789?text=Hello%20BB%20HOLDING%20(bluein%20black%20printing%20%26%20logistics),%20I%20need%20logistics%20help." target="_blank" rel="noopener" class="btn-amber">Logistics WA</a>
+    <div class="nav-wa-group">
+      <a href="https://wa.me/918891888040?text=Hello%20bluein%20black%20printing%20(BB%20HOLDING),%20I%20have%20a%20printing%20enquiry." target="_blank" rel="noopener" class="btn-wa-sm">Printing WA</a>
+      <a href="https://wa.me/917592888789?text=Hello%20bluein%20black%20logistics%20(BB%20HOLDING),%20I%20have%20a%20courier%20enquiry." target="_blank" rel="noopener" class="btn-wa-sm">Logistics WA</a>
     </div>
   </header>
 
-  <!-- Hero Section (Matching Your Layout) -->
-  <section class="hero-section">
-    <div class="hero-container">
-      <div class="hero-left">
-        <div class="lower-emblem-box">
-          <img src="bnb-logo1.png" alt="BB HOLDING Emblem" onerror="this.parentElement.style.display='none'" />
-        </div>
+  <!-- Hero & Instant Quote Desk -->
+  <section class="hero">
+    <div class="enterprise-pill">BB HOLDING ENTERPRISE HUB &bull; PATHANAMTHITTA</div>
+    <h1>Trusted Printing Studio &amp; Fast Courier Network Under One Roof.</h1>
+    <p>Delivering commercial DTF &amp; custom apparel production alongside authorized domestic and international courier solutions across 11 leading networks &mdash; powered by <strong>bluein black printing &amp; logistics</strong>.</p>
 
-        <div class="hero-tag">BB HOLDING at pathanamthitta</div>
-
-        <h1>
-          Bold <span class="gold">Custom Prints</span> &amp; Swift<br />
-          Global Dispatch — Built for<br />
-          Speed.
-        </h1>
-
-        <div class="parent-line">BB HOLDING — bluein black printing &amp; logistics</div>
-
-        <div class="hero-subcards">
-          <div class="hero-mini-card">
-            <strong>BLUEIN BLACK PRINTING</strong>
-            <span>DTF, Jerseys, Uniforms, Mugs &amp; ID Cards</span>
-          </div>
-          <div class="hero-mini-card">
-            <strong>BLUEIN BLACK LOGISTICS</strong>
-            <span>11 Domestic &amp; International Courier Partners</span>
-          </div>
-        </div>
+    <div class="hero-division-badges">
+      <div class="div-badge-card">
+        <strong>BLUEIN BLACK PRINTING</strong>
+        <span>DTF, Jerseys, Uniforms, Mugs &amp; ID Cards</span>
       </div>
-
-      <div class="hero-right">
-        <div class="visual-card">
-          <img src="printing.jpg" alt="BLUEIN BLACK PRINTING" onerror="this.style.display='none'" />
-          <div class="caption">BLUEIN BLACK PRINTING</div>
-        </div>
-        <div class="visual-card">
-          <img src="logistics.jpg" alt="BLUEIN BLACK LOGISTICS" onerror="this.style.display='none'" />
-          <div class="caption">BLUEIN BLACK LOGISTICS</div>
-        </div>
+      <div class="div-badge-card">
+        <strong>BLUEIN BLACK LOGISTICS</strong>
+        <span>11 Domestic &amp; International Courier Partners</span>
       </div>
     </div>
-  </section>
 
-  <!-- Main Interactive Sections -->
-  <div class="main-container">
-
-    <!-- Quick Quote Section -->
-    <div class="quote-panel" id="quick-quote">
-      <div class="quote-panel-head">
-        <h2>Instant WhatsApp Quote — BB HOLDING</h2>
-        <div class="tab-switch">
-          <button type="button" class="tab-btn active" id="btnLog" onclick="setQuoteMode('logistics')">BLUEIN BLACK LOGISTICS</button>
-          <button type="button" class="tab-btn" id="btnPrt" onclick="setQuoteMode('printing')">BLUEIN BLACK PRINTING</button>
+    <!-- Instant WhatsApp Quote Desk -->
+    <div class="quote-desk" id="quote-desk">
+      <div class="quote-desk-header">
+        <h2>Instant WhatsApp Quote Desk</h2>
+        <div class="quote-tabs">
+          <button type="button" class="tab-btn active" id="tabLogistics" onclick="switchQuoteTab('logistics')">BLUEIN BLACK LOGISTICS</button>
+          <button type="button" class="tab-btn" id="tabPrinting" onclick="switchQuoteTab('printing')">BLUEIN BLACK PRINTING</button>
         </div>
       </div>
 
-      <div id="formLog">
-        <div class="grid-form">
-          <div class="field">
-            <label for="logName">Sender Name</label>
-            <input type="text" id="logName" placeholder="Your Name" />
+      <!-- Logistics Quote Form -->
+      <div id="logisticsFields">
+        <div class="quote-form-grid">
+          <div class="field-group">
+            <label for="senderName">Sender Name</label>
+            <input type="text" id="senderName" placeholder="Your Name" />
           </div>
-          <div class="field">
-            <label for="logDest">Destination / Pin</label>
-            <input type="text" id="logDest" placeholder="e.g., Kochi / Dubai / 689645" />
+          <div class="field-group">
+            <label for="logServiceType">Service Type</label>
+            <select id="logServiceType">
+              <option value="Domestic Courier">Domestic Courier</option>
+              <option value="International Courier">International Courier</option>
+              <option value="Kerala Express">Kerala Express</option>
+              <option value="Bulk Cargo">Bulk Cargo</option>
+            </select>
           </div>
-          <div class="field">
-            <label for="logWeight">Weight (kg)</label>
-            <input type="text" id="logWeight" placeholder="e.g., 2 kg" />
+          <div class="field-group">
+            <label for="pickupPin">Pickup Pin / Place</label>
+            <input type="text" id="pickupPin" placeholder="e.g., Pathanamthitta 689645" />
           </div>
-          <div class="field">
-            <label for="logCourier">Courier Choice</label>
-            <select id="logCourier">
+          <div class="field-group">
+            <label for="destination">Destination</label>
+            <input type="text" id="destination" placeholder="City / Country / Pin Code" />
+          </div>
+          <div class="field-group">
+            <label for="parcelWeight">Weight (kg)</label>
+            <input type="text" id="parcelWeight" placeholder="e.g., 2.5 kg" />
+          </div>
+          <div class="field-group">
+            <label for="courierChoice">Courier Choice</label>
+            <select id="courierChoice">
               <option value="Best Rate / Fastest">Best Rate / Fastest</option>
               <option value="Speed &amp; Safe">Speed &amp; Safe</option>
               <option value="Shree Maruti">Shree Maruti</option>
@@ -591,135 +749,308 @@
               <option value="India Post / Xpressbees">India Post / Xpressbees</option>
             </select>
           </div>
+          <div class="field-group" style="grid-column: 1 / -1;">
+            <label for="boxContents">Box Size &amp; Contents (Optional)</label>
+            <input type="text" id="boxContents" placeholder="e.g., 30x20x15 cm, Documents / Garments / Food items" />
+          </div>
         </div>
-        <button type="button" class="btn-wa-action" onclick="sendLogWA()">Get Logistics Quote on WhatsApp (+91 7592 888 789)</button>
+        <button type="button" class="btn-submit-wa" onclick="sendLogisticsWhatsApp()">Get Logistics Quote on WhatsApp &rarr;</button>
       </div>
 
-      <div id="formPrt" class="hidden">
-        <div class="grid-form">
-          <div class="field">
-            <label for="prtName">Customer Name</label>
-            <input type="text" id="prtName" placeholder="Your Name / Company" />
+      <!-- Printing Quote Form -->
+      <div id="printingFields" class="hidden">
+        <div class="quote-form-grid">
+          <div class="field-group">
+            <label for="printCustomer">Customer / Organization Name</label>
+            <input type="text" id="printCustomer" placeholder="Your Name or Company / Club" />
           </div>
-          <div class="field">
-            <label for="prtItem">Product</label>
-            <select id="prtItem">
-              <option value="Polo Uniforms (25-50 pcs @ ₹450/pc)">Polo Uniforms (25–50 pcs @ ₹450/pc)</option>
-              <option value="Sports Jerseys">Sports Jerseys</option>
-              <option value="Commercial DTF Prints">Commercial DTF Prints</option>
-              <option value="Mugs / Metal Prints / ID Cards">Mugs / Metal Prints / ID Cards</option>
+          <div class="field-group">
+            <label for="printProduct">Product Type</label>
+            <select id="printProduct">
+              <option value="Custom Polo T-Shirts">Custom Polo T-Shirts</option>
+              <option value="Sports Team Jerseys">Sports Team Jerseys</option>
+              <option value="DTF Meter Print / Ready-to-Press Stickers">DTF Meter Print / Ready-to-Press Stickers</option>
+              <option value="Corporate Uniforms">Corporate Uniforms</option>
+              <option value="Metal Photo Prints / Mugs">Metal Photo Prints / Mugs</option>
+              <option value="School / Office ID Cards">School / Office ID Cards</option>
             </select>
           </div>
-          <div class="field">
-            <label for="prtQty">Quantity / Details</label>
-            <input type="text" id="prtQty" placeholder="e.g., 25 pcs Black Polo, Half Sleeve" />
+          <div class="field-group">
+            <label for="printQty">Quantity</label>
+            <input type="text" id="printQty" placeholder="e.g., 25 pcs / 5 meters" />
+          </div>
+          <div class="field-group">
+            <label for="printSpec">Material / Color / Neck / Sleeve</label>
+            <input type="text" id="printSpec" placeholder="e.g., Navy Blue, Matty Cotton, Collar, Half Sleeve" />
           </div>
         </div>
-        <button type="button" class="btn-wa-action" onclick="sendPrtWA()">Get Printing Quote on WhatsApp (+91 8891 888 040)</button>
+        <button type="button" class="btn-submit-wa" onclick="sendPrintingWhatsApp()">Get Printing Quote on WhatsApp &rarr;</button>
       </div>
     </div>
+  </section>
 
-    <!-- Divisions -->
-    <div class="info-section" id="divisions">
-      <h2>Our Divisions</h2>
-      <div class="two-col-cards">
-        <div class="box-card">
-          <h3>BLUEIN BLACK PRINTING</h3>
-          <p>Custom DTF printing, corporate polo uniforms, sports jerseys, mugs, metal prints, and ID cards under BB HOLDING (bluein black printing &amp; logistics).</p>
-          <a href="https://wa.me/918891888040?text=Hello%20BLUEIN%20BLACK%20PRINTING%20(BB%20HOLDING),%20I%20want%20to%20order%20custom%20prints." target="_blank" rel="noopener" class="btn-wa-action">WhatsApp Printing (+91 8891 888 040)</a>
-        </div>
-        <div class="box-card">
-          <h3>BLUEIN BLACK LOGISTICS</h3>
-          <p>Domestic and international courier booking across 11 trusted networks from Pathanamthitta.</p>
-          <a href="https://wa.me/917592888789?text=Hello%20BLUEIN%20BLACK%20LOGISTICS%20(BB%20HOLDING),%20I%20want%20to%20book%20a%20courier." target="_blank" rel="noopener" class="btn-wa-action">WhatsApp Logistics (+91 7592 888 789)</a>
-        </div>
-      </div>
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="num">11+</div>
+      <div class="lbl">Courier Networks</div>
     </div>
-
-    <!-- 11 Courier Partners -->
-    <div class="info-section" id="courier-network">
-      <h2>Our 11 Courier &amp; Logistics Partners</h2>
-      <div class="courier-grid">
-        <div class="courier-tile">
-          <strong>Sree Gokulam Speed &amp; Safe</strong>
-          <span>Kerala &amp; South India Express</span>
-        </div>
-        <div class="courier-tile">
-          <strong>Shree Maruti Courier</strong>
-          <span>19,000+ Indian Pin Codes</span>
-        </div>
-        <div class="courier-tile">
-          <strong>Delhivery &amp; Amazon Shipping</strong>
-          <span>Pan-India Parcel &amp; E-Commerce</span>
-        </div>
-        <div class="courier-tile">
-          <strong>India Post, Xpressbees &amp; Shadowfax</strong>
-          <span>Speed Post &amp; Nationwide Reach</span>
-        </div>
-        <div class="courier-tile">
-          <strong>DHL &amp; FedEx Express</strong>
-          <span>220+ Countries Priority Air</span>
-        </div>
-        <div class="courier-tile">
-          <strong>Aramex &amp; UPS</strong>
-          <span>GCC, UK, USA &amp; Europe</span>
-        </div>
-      </div>
+    <div class="stat-item">
+      <div class="num">220+</div>
+      <div class="lbl">Countries Covered</div>
     </div>
-
-    <!-- Office -->
-    <div class="info-section" id="office">
-      <h2>Office — Pathanamthitta</h2>
-      <div class="box-card">
-        <h3>BB HOLDING — bluein black printing &amp; logistics</h3>
-        <p>Kairali Building, Ring Road (Sreevalsam Road), Opp. Jockey Showroom, Near City Cycle, Pathanamthitta, Kerala 689645</p>
-        <a href="https://maps.google.com/?q=9.269020,76.791362" target="_blank" rel="noopener" class="btn-navy">Open Google Maps</a>
-      </div>
+    <div class="stat-item">
+      <div class="num">19,000+</div>
+      <div class="lbl">Indian Pin Codes</div>
     </div>
-
+    <div class="stat-item">
+      <div class="num">7 Days</div>
+      <div class="lbl">Max Print Dispatch</div>
+    </div>
   </div>
 
+  <!-- Divisions Section -->
+  <section class="section" id="divisions">
+    <div class="section-head">
+      <div class="eyebrow">BB HOLDING DIVISIONS</div>
+      <h2>bluein black printing &amp; logistics</h2>
+    </div>
+
+    <div class="divisions-grid">
+      <!-- Division 01 -->
+      <div class="division-card">
+        <div>
+          <div class="div-tag">Division 01 &bull; Custom Studio</div>
+          <h3>BLUEIN BLACK PRINTING</h3>
+          <p>Wholesale &amp; retail commercial DTF and sublimation printing studio in Pathanamthitta.</p>
+          <ul class="check-list">
+            <li>&#10003; Corporate Polo Uniforms &amp; Custom Sports Jerseys</li>
+            <li>&#10003; Commercial DTF Film &amp; Ready-to-Press Stickers</li>
+            <li>&#10003; Metal Photo Prints, Mugs &amp; School ID Cards</li>
+            <li>&#10003; Mockup Approval &amp; 7-Day Dispatch Guarantee</li>
+          </ul>
+        </div>
+        <div class="card-actions">
+          <button type="button" class="btn-outline" onclick="openTabAndScroll('printing')">Configure Print Quote</button>
+          <a href="https://wa.me/918891888040?text=Hello%20BLUEIN%20BLACK%20PRINTING,%20I%20would%20like%20to%20place%20a%20printing%20order." target="_blank" rel="noopener" class="btn-solid-wa">WhatsApp (+91 8891 888 040)</a>
+        </div>
+      </div>
+
+      <!-- Division 02 -->
+      <div class="division-card">
+        <div>
+          <div class="div-tag">Division 02 &bull; Courier &amp; Cargo</div>
+          <h3>BLUEIN BLACK LOGISTICS</h3>
+          <p>Authorized pickup and booking hub for 11 top Indian and international courier networks.</p>
+          <ul class="check-list">
+            <li>&#10003; Sree Gokulam Speed &amp; Safe &amp; Shree Maruti Courier</li>
+            <li>&#10003; Delhivery, India Post, Xpressbees, Shadowfax &amp; Amazon</li>
+            <li>&#10003; International Air Express: DHL, FedEx, Aramex &amp; UPS</li>
+            <li>&#10003; Doorstep Pickup &amp; Transparent Weight Billing</li>
+          </ul>
+        </div>
+        <div class="card-actions">
+          <button type="button" class="btn-outline" onclick="openTabAndScroll('logistics')">Check Shipping Rate</button>
+          <a href="https://wa.me/917592888789?text=Hello%20BLUEIN%20BLACK%20LOGISTICS,%20I%20want%20to%20book%20a%20courier%20pickup." target="_blank" rel="noopener" class="btn-solid-wa">WhatsApp (+91 7592 888 789)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courier Network Section -->
+  <section class="section" id="courier-network">
+    <div class="section-head">
+      <div class="eyebrow">Authorized Multi-Brand Hub</div>
+      <h2>Our 11 Courier &amp; Logistics Partners</h2>
+    </div>
+
+    <!-- Scroll Aayi Pokunna Courier Logos Strip -->
+    <div class="marquee-wrap">
+      <div class="marquee-track">
+        <span class="marquee-item"><span class="marquee-dot"></span>SPEED &amp; SAFE</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>SHREE MARUTI</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>DELHIVERY</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>INDIA POST</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>XPRESSBEES</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>SHADOWFAX</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>AMAZON SHIPPING</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>DHL EXPRESS</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>FEDEX</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>ARAMEX</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>UPS</span>
+        <!-- Duplicate for seamless infinite loop -->
+        <span class="marquee-item"><span class="marquee-dot"></span>SPEED &amp; SAFE</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>SHREE MARUTI</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>DELHIVERY</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>INDIA POST</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>XPRESSBEES</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>SHADOWFAX</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>AMAZON SHIPPING</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>DHL EXPRESS</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>FEDEX</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>ARAMEX</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>UPS</span>
+      </div>
+    </div>
+
+    <div class="network-grid">
+      <div class="net-card">
+        <div class="net-top">
+          <h4>Sree Gokulam Speed &amp; Safe</h4>
+          <span class="net-pill">South India</span>
+        </div>
+        <p>Fast overnight express delivery across Kerala, Tamil Nadu, Karnataka &amp; South India.</p>
+        <div class="net-foot">Next-Day Kerala &amp; South Hubs</div>
+      </div>
+
+      <div class="net-card">
+        <div class="net-top">
+          <h4>Shree Maruti Courier</h4>
+          <span class="net-pill">Pan-India</span>
+        </div>
+        <p>Authorized franchise for nationwide express documents, parcels, and surface cargo.</p>
+        <div class="net-foot">19,000+ Pin Codes Across India</div>
+      </div>
+
+      <div class="net-card">
+        <div class="net-top">
+          <h4>Delhivery &amp; Amazon Shipping</h4>
+          <span class="net-pill">Nationwide</span>
+        </div>
+        <p>Tech-enabled pan-India parcel and commercial shipment fulfillment with live tracking.</p>
+        <div class="net-foot">All Major Metros &amp; Tier-2/3 Cities</div>
+      </div>
+
+      <div class="net-card">
+        <div class="net-top">
+          <h4>India Post, Xpressbees &amp; Shadowfax</h4>
+          <span class="net-pill">Express &amp; Rural</span>
+        </div>
+        <p>Speed Post &amp; rapid e-commerce logistics covering 100% urban and rural Indian pin codes.</p>
+        <div class="net-foot">Complete India Pin Code Reach</div>
+      </div>
+
+      <div class="net-card">
+        <div class="net-top">
+          <h4>DHL &amp; FedEx Express</h4>
+          <span class="net-pill">International</span>
+        </div>
+        <p>Priority worldwide air shipping for documents, university files, food &amp; commercial parcels.</p>
+        <div class="net-foot">220+ Countries &bull; 2–5 Days Global</div>
+      </div>
+
+      <div class="net-card">
+        <div class="net-top">
+          <h4>Aramex &amp; UPS</h4>
+          <span class="net-pill">GCC &amp; Global</span>
+        </div>
+        <p>Dedicated Middle East (UAE, Saudi, Qatar, Kuwait, Oman), UK, USA &amp; Europe express.</p>
+        <div class="net-foot">GCC, UK, USA &amp; Europe Doorstep</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Headquarters Section -->
+  <section class="section" id="office">
+    <div class="hq-box">
+      <div class="hq-logo-frame">
+        <img src="bnb-logo1.png" alt="BB HOLDING Emblem" />
+      </div>
+      <div class="hq-details">
+        <div class="div-tag">BB HOLDING HEADQUARTERS</div>
+        <h3>Visit Us in Pathanamthitta</h3>
+        <p><strong>bluein black printing &amp; logistics</strong></p>
+        <p>Kairali Building, Ring Road (Sreevalsam Road), Opp. Jockey Showroom, Near City Cycle, Pathanamthitta, Kerala 689645</p>
+        <p style="font-size: 0.85rem; color: var(--text-secondary);">GPS: 9.269020, 76.791362</p>
+        <a href="https://maps.google.com/?q=9.269020,76.791362" target="_blank" rel="noopener" class="btn-maps">Open Google Maps &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    &copy; 2026 BB HOLDING — bluein black printing &amp; logistics, Pathanamthitta. All rights reserved.
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>BB HOLDING</h4>
+        <p>Parent enterprise operating bluein black printing &amp; logistics in Pathanamthitta, Kerala.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Direct Desks</h4>
+        <p>BLUEIN BLACK PRINTING: +91 8891 888 040</p>
+        <p>BLUEIN BLACK LOGISTICS: +91 7592 888 789</p>
+        <p>Email: info@blueinblack.in</p>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p>Kairali Building, Ring Road, Opp. Jockey Showroom, Near City Cycle, Pathanamthitta 689645</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 BB HOLDING &bull; bluein black printing &amp; logistics. All Rights Reserved.
+    </div>
   </footer>
 
   <script>
-    function setQuoteMode(mode) {
-      const logDiv = document.getElementById("formLog");
-      const prtDiv = document.getElementById("formPrt");
-      const btnLog = document.getElementById("btnLog");
-      const btnPrt = document.getElementById("btnPrt");
+    function switchQuoteTab(tab) {
+      const logFields = document.getElementById("logisticsFields");
+      const printFields = document.getElementById("printingFields");
+      const tabLog = document.getElementById("tabLogistics");
+      const tabPrint = document.getElementById("tabPrinting");
 
-      if (mode === "logistics") {
-        logDiv.classList.remove("hidden");
-        prtDiv.classList.add("hidden");
-        btnLog.classList.add("active");
-        btnPrt.classList.remove("active");
+      if (tab === "logistics") {
+        logFields.classList.remove("hidden");
+        printFields.classList.add("hidden");
+        tabLog.classList.add("active");
+        tabPrint.classList.remove("active");
       } else {
-        prtDiv.classList.remove("hidden");
-        logDiv.classList.add("hidden");
-        btnPrt.classList.add("active");
-        btnLog.classList.remove("active");
+        printFields.classList.remove("hidden");
+        logFields.classList.add("hidden");
+        tabPrint.classList.add("active");
+        tabLog.classList.remove("active");
       }
     }
 
-    function sendLogWA() {
-      const name = document.getElementById("logName").value.trim() || "Customer";
-      const dest = document.getElementById("logDest").value.trim() || "Not specified";
-      const weight = document.getElementById("logWeight").value.trim() || "Not specified";
-      const courier = document.getElementById("logCourier").value;
-
-      const msg = `*BLUEIN BLACK LOGISTICS (BB HOLDING)*\nName: ${name}\nDestination: ${dest}\nWeight: ${weight}\nCourier: ${courier}`;
-      window.open(`https://wa.me/917592888789?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
+    function openTabAndScroll(tab) {
+      switchQuoteTab(tab);
+      document.getElementById("quote-desk").scrollIntoView({ behavior: "smooth" });
     }
 
-    function sendPrtWA() {
-      const name = document.getElementById("prtName").value.trim() || "Customer";
-      const item = document.getElementById("prtItem").value;
-      const qty = document.getElementById("prtQty").value.trim() || "Not specified";
+    function sendLogisticsWhatsApp() {
+      const name = document.getElementById("senderName").value.trim() || "Customer";
+      const service = document.getElementById("logServiceType").value;
+      const pickup = document.getElementById("pickupPin").value.trim() || "Not specified";
+      const dest = document.getElementById("destination").value.trim() || "Not specified";
+      const weight = document.getElementById("parcelWeight").value.trim() || "Not specified";
+      const courier = document.getElementById("courierChoice").value;
+      const contents = document.getElementById("boxContents").value.trim() || "Standard Parcel";
 
-      const msg = `*BLUEIN BLACK PRINTING (BB HOLDING)*\nName: ${name}\nProduct: ${item}\nDetails: ${qty}`;
-      window.open(`https://wa.me/918891888040?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
+      const text = `*BLUEIN BLACK LOGISTICS (BB HOLDING)*\n` +
+                   `Sender: ${name}\n` +
+                   `Service: ${service}\n` +
+                   `Pickup: ${pickup}\n` +
+                   `Destination: ${dest}\n` +
+                   `Weight: ${weight}\n` +
+                   `Preferred Courier: ${courier}\n` +
+                   `Box/Contents: ${contents}\n\n` +
+                   `Please share courier rate & pickup details.`;
+
+      window.open(`https://wa.me/917592888789?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+    }
+
+    function sendPrintingWhatsApp() {
+      const customer = document.getElementById("printCustomer").value.trim() || "Customer";
+      const product = document.getElementById("printProduct").value;
+      const qty = document.getElementById("printQty").value.trim() || "Not specified";
+      const spec = document.getElementById("printSpec").value.trim() || "Standard";
+
+      const text = `*BLUEIN BLACK PRINTING (BB HOLDING)*\n` +
+                   `Customer: ${customer}\n` +
+                   `Product: ${product}\n` +
+                   `Quantity: ${qty}\n` +
+                   `Specs: ${spec}\n\n` +
+                   `Please share quote & mockup details.`;
+
+      window.open(`https://wa.me/918891888040?text=${encodeURIComponent(text)}`, "_blank", "noopener");
     }
   </script>
 

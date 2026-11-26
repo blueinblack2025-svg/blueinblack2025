@@ -52,7 +52,7 @@
     }
     .umbrella-contacts a:hover { color: var(--accent-gold); }
 
-    /* Main Corporate Navbar (Gokulam Speed & Safe Style) */
+    /* Main Corporate Navbar */
     header {
       background: var(--white);
       padding: 12px 5%;
@@ -130,7 +130,7 @@
     .h-btn-blue { background: var(--primary-blue); color: #fff; }
     .h-btn-gold { background: var(--accent-gold); color: var(--deep-blue); }
 
-    /* Hero Banner (Gokulam Speed & Safe Corporate Split Hero) */
+    /* Hero Banner */
     .hero {
       background: linear-gradient(120deg, var(--deep-blue) 0%, var(--primary-blue) 60%, var(--mid-blue) 100%);
       color: #ffffff;
@@ -213,7 +213,7 @@
       letter-spacing: 0.5px;
     }
 
-    /* Compact Floating Quote Widget (Smaller & Sleeker) */
+    /* Compact Floating Quote Widget */
     .compact-quote-wrap {
       max-width: 960px;
       margin: -48px auto 45px;
@@ -346,7 +346,7 @@
     }
     .sec-header h2 { font-size: 1.75rem; font-weight: 800; color: var(--primary-blue); }
 
-    /* Two Divisions Showcase (BLUEIN BLACK PRINTING & BLUEIN BLACK LOGISTICS) */
+    /* Two Divisions Showcase */
     .divisions-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
@@ -513,7 +513,7 @@
     </div>
   </header>
 
-  <!-- Hero Section (Gokulam Speed & Safe Corporate Theme) -->
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-inner">
       <div>
@@ -545,20 +545,20 @@
     </div>
   </section>
 
-  <!-- Compact Floating Quote Widget (Smaller Size) -->
+  <!-- Compact Floating Quote Widget -->
   <div id="quick-quote" class="compact-quote-wrap">
     <div class="compact-card">
       <div class="cq-header">
         <div class="cq-title">Instant WhatsApp Quote Desk</div>
         <div class="cq-tabs">
-          <button id="tab-log" class="cq-tab active" onclick="switchQuote('log')">BLUEIN BLACK LOGISTICS</button>
-          <button id="tab-prt" class="cq-tab" onclick="switchQuote('prt')">BLUEIN BLACK PRINTING</button>
+          <button type="button" id="tab-log" class="cq-tab active" onclick="switchQuote('log')">BLUEIN BLACK LOGISTICS</button>
+          <button type="button" id="tab-prt" class="cq-tab" onclick="switchQuote('prt')">BLUEIN BLACK PRINTING</button>
         </div>
       </div>
 
       <div class="cq-body">
         <!-- Compact Logistics Quote Form -->
-        <div id="panel-log" class="cq-panel active">
+        <form id="panel-log" class="cq-panel active" onsubmit="sendLogistics(event)">
           <div class="cq-grid">
             <div class="cq-field">
               <label>Sender Name</label>
@@ -603,12 +603,12 @@
               <label>Box Size & Contents (Optional)</label>
               <input type="text" id="lNotes" placeholder="e.g., 30x20x15 cm, Documents / Clothes" />
             </div>
-            <button class="cq-btn" onclick="sendLogistics()">Get Logistics Quote on WhatsApp →</button>
+            <button type="submit" class="cq-btn">Get Logistics Quote on WhatsApp →</button>
           </div>
-        </div>
+        </form>
 
         <!-- Compact Printing Quote Form -->
-        <div id="panel-prt" class="cq-panel">
+        <form id="panel-prt" class="cq-panel" onsubmit="sendPrinting(event)">
           <div class="cq-grid">
             <div class="cq-field">
               <label>Client Name</label>
@@ -665,9 +665,9 @@
               <label>Print Placement, Pocket & Sizes</label>
               <input type="text" id="pNotes" placeholder="e.g., Front logo + Back print, With Pocket, Sizes S-L" />
             </div>
-            <button class="cq-btn" onclick="sendPrinting()">Get Printing Quote on WhatsApp →</button>
+            <button type="submit" class="cq-btn">Get Printing Quote on WhatsApp →</button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
@@ -848,16 +848,39 @@
       document.getElementById('tab-prt').classList.toggle('active', type === 'prt');
     }
 
-    function sendLogistics() {
-      const msg = `*BLUEIN BLACK LOGISTICS — QUOTE REQUEST*\n` +
-        `Name: ${document.getElementById('lName').value \vert{}\vert{} 'Customer'}\n` + `Service: ${document.getElementById('lType').value}\n` +
-        `From: ${document.getElementById('lPickup').value \vert{}\vert{} 'Pathanamthitta'}\n` + `To: ${document.getElementById('lDest').value || 'Not specified'}\n` +
-        `Weight: ${document.getElementById('lWeight').value \vert{}\vert{} 'Not specified'}\n` + `Courier: ${document.getElementById('lPartner').value}\n` +
-        `Notes: ${document.getElementById('lNotes').value \vert{}\vert{} '-'}`; window.open(`https://wa.me/917592888789?text=${encodeURIComponent(msg)}`, '_blank');
+    function openWhatsApp(phone, message) {
+      const url = 'https://api.whatsapp.com/send?phone=' + phone + '&text=' + encodeURIComponent(message);
+      const win = window.open(url, '_blank');
+      if (!win || win.closed || typeof win.closed === 'undefined') {
+        window.location.href = url;
+      }
     }
 
-    function sendPrinting() {
-      const msg = `*BLUEIN BLACK PRINTING — QUOTE REQUEST*\n` +
-        `Name: ${document.getElementById('pName').value \vert{}\vert{} 'Customer'}\n` + `Product: ${document.getElementById('pProduct').value}\n` +
-        `Qty: ${document.getElementById('pQty').value \vert{}\vert{} 'Not specified'}\n` + `Color: ${document.getElementById('pColor').value}\n` +
-        `Style: ${document.getElementById('pStyle').value}\n` + `Material: ${document.getElementById('pMaterial').value}\n
+    function sendLogistics(e) {
+      if (e) e.preventDefault();
+      const msg = '*BLUEIN BLACK LOGISTICS — QUOTE REQUEST*\n' +
+        'Name: ' + (document.getElementById('lName').value || 'Customer') + '\n' +
+        'Service: ' + document.getElementById('lType').value + '\n' +
+        'From: ' + (document.getElementById('lPickup').value || 'Pathanamthitta') + '\n' +
+        'To: ' + (document.getElementById('lDest').value || 'Not specified') + '\n' +
+        'Weight: ' + (document.getElementById('lWeight').value || 'Not specified') + '\n' +
+        'Courier: ' + document.getElementById('lPartner').value + '\n' +
+        'Notes: ' + (document.getElementById('lNotes').value || '-');
+      openWhatsApp('917592888789', msg);
+    }
+
+    function sendPrinting(e) {
+      if (e) e.preventDefault();
+      const msg = '*BLUEIN BLACK PRINTING — QUOTE REQUEST*\n' +
+        'Name: ' + (document.getElementById('pName').value || 'Customer') + '\n' +
+        'Product: ' + document.getElementById('pProduct').value + '\n' +
+        'Qty: ' + (document.getElementById('pQty').value || 'Not specified') + '\n' +
+        'Color: ' + document.getElementById('pColor').value + '\n' +
+        'Style: ' + document.getElementById('pStyle').value + '\n' +
+        'Material: ' + document.getElementById('pMaterial').value + '\n' +
+        'Notes: ' + (document.getElementById('pNotes').value || '-');
+      openWhatsApp('918891888040', msg);
+    }
+  </script>
+</body>
+</html>

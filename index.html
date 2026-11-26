@@ -5,43 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BB HOLDING at pathanamthitta | BLUEIN BLACK PRINTING &amp; LOGISTICS</title>
   <style>
+    :root {
+      --navy: #072257;
+      --navy-dark: #04163a;
+      --accent: #f59e0b;
+      --white: #ffffff;
+      --text-light: #e2e8f0;
+      --card-bg: rgba(255, 255, 255, 0.08);
+      --border-light: rgba(255, 255, 255, 0.16);
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
       font-family: "Segoe UI", Arial, sans-serif;
-      scroll-behavior: smooth;
     }
 
-    html, body {
-      width: 100%;
+    body {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 65%, #0a2e75 100%);
+      color: var(--white);
       min-height: 100vh;
-      background-color: #051942;
-      color: #ffffff;
-      overflow-x: hidden;
     }
 
     .top-bar {
       height: 5px;
+      background: var(--accent);
       width: 100%;
-      background: #f59e0b;
     }
 
-    /* HEADER */
     header {
-      width: 100%;
       background: #ffffff;
-      color: #072257;
+      color: var(--navy);
       padding: 12px 32px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      gap: 20px;
       flex-wrap: wrap;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     }
 
     .brand-left {
@@ -50,38 +52,38 @@
       gap: 14px;
     }
 
-    .header-logo-wrap {
+    .header-logo-box {
       background: #ffffff;
       border: 2px solid #cbd5e1;
       border-radius: 8px;
-      padding: 3px;
-      width: 155px;
-      height: 62px;
+      padding: 2px;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      flex-shrink: 0;
+      width: 92px;
+      height: 56px;
     }
 
     .header-logo {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
+      border-radius: 6px;
       display: block;
     }
 
     .brand-title {
       font-size: 22px;
       font-weight: 800;
-      color: #072257;
-      line-height: 1.15;
+      letter-spacing: 0.4px;
+      color: var(--navy);
     }
 
     .division-pills {
       display: flex;
       gap: 8px;
-      margin-top: 5px;
+      margin-top: 4px;
       flex-wrap: wrap;
     }
 
@@ -105,31 +107,26 @@
 
     nav {
       display: flex;
-      gap: 20px;
+      gap: 22px;
       align-items: center;
       flex-wrap: wrap;
     }
 
     nav a {
       text-decoration: none;
-      color: #072257;
+      color: var(--navy);
       font-weight: 600;
       font-size: 14px;
-    }
-
-    nav a:hover {
-      color: #d97706;
     }
 
     .wa-actions {
       display: flex;
       gap: 10px;
       align-items: center;
-      flex-wrap: wrap;
     }
 
     .btn-wa-printing {
-      background: #072257;
+      background: var(--navy);
       color: #ffffff;
       text-decoration: none;
       padding: 9px 14px;
@@ -139,8 +136,8 @@
     }
 
     .btn-wa-logistics {
-      background: #f59e0b;
-      color: #04163a;
+      background: var(--accent);
+      color: var(--navy-dark);
       text-decoration: none;
       padding: 9px 14px;
       border-radius: 6px;
@@ -148,281 +145,139 @@
       font-weight: 700;
     }
 
-    /* HERO SECTION */
-    .hero-section {
-      width: 100%;
-      background: linear-gradient(135deg, #041436 0%, #072257 62%, #0d3685 100%);
-      padding: 44px 32px 58px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    .hero-inner {
-      max-width: 1200px;
+    .hero {
+      max-width: 1180px;
       margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      padding: 44px 32px 60px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 36px;
-      flex-wrap: wrap;
+      align-items: center;
     }
 
-    .hero-left {
-      flex: 1 1 530px;
-      min-width: 300px;
-    }
-
-    /* Position 1: bnb-logo1.png */
-    .pos1-logo-box {
+    .hero-logo-box {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       background: #ffffff;
-      border: 2px solid #e2e8f0;
+      padding: 3px;
+      width: 170px;
+      height: 68px;
       border-radius: 10px;
-      padding: 5px 10px;
-      width: 240px;
-      height: 86px;
       margin-bottom: 16px;
       overflow: hidden;
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.32);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
     }
 
-    .pos1-logo-box img {
+    .hero-blueinblack-logo {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
+      border-radius: 8px;
       display: block;
     }
 
     .hub-badge {
       display: block;
       width: fit-content;
-      background: rgba(245, 158, 11, 0.18);
-      border: 1px solid rgba(245, 158, 11, 0.5);
-      color: #fde68a;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
       font-size: 12px;
       font-weight: 700;
-      letter-spacing: 0.5px;
-      padding: 7px 13px;
-      border-radius: 6px;
-      margin-bottom: 16px;
+      letter-spacing: 0.6px;
+      padding: 6px 12px;
+      border-radius: 4px;
+      margin-bottom: 18px;
     }
 
     h1 {
       font-size: 42px;
-      line-height: 1.16;
+      line-height: 1.15;
       font-weight: 800;
-      color: #ffffff;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     h1 span {
-      color: #f59e0b;
+      color: var(--accent);
     }
 
     .hero-sub {
-      color: #e2e8f0;
-      font-size: 17px;
-      font-weight: 600;
-      line-height: 1.55;
-      margin-bottom: 22px;
+      color: var(--text-light);
+      font-size: 16px;
+      line-height: 1.65;
+      margin-bottom: 26px;
+      max-width: 570px;
     }
 
     .hero-cards {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 14px;
-      flex-wrap: wrap;
+      max-width: 570px;
     }
 
     .mini-card {
-      flex: 1 1 230px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 10px;
-      padding: 15px 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 14px 16px;
     }
 
     .mini-card h3 {
-      font-size: 14px;
-      color: #ffffff;
+      font-size: 13px;
+      letter-spacing: 0.5px;
       margin-bottom: 6px;
+      color: #ffffff;
     }
 
     .mini-card p {
-      font-size: 12.5px;
-      color: #cbd5e1;
-      line-height: 1.5;
-    }
-
-    .hero-right {
-      flex: 1 1 430px;
-      min-width: 290px;
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    /* Position 2: Old DTF Banner Card */
-    .pos2-banner-card {
-      flex: 1 1 205px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      border-radius: 12px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 250px;
-    }
-
-    .pos2-media {
-      position: relative;
-      width: 100%;
-      height: 195px;
-      background: linear-gradient(145deg, #0b2d6e 0%, #154296 100%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    .pos2-media img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 2;
-    }
-
-    .dtf-fallback-badge {
-      background: #f59e0b;
-      color: #04163a;
-      font-size: 11px;
-      font-weight: 800;
-      padding: 4px 10px;
-      border-radius: 999px;
-      margin-bottom: 8px;
-      letter-spacing: 0.5px;
-    }
-
-    .dtf-fallback-title {
-      font-size: 17px;
-      font-weight: 800;
-      color: #ffffff;
-      margin-bottom: 6px;
-    }
-
-    .dtf-fallback-sub {
       font-size: 12px;
-      color: #e2e8f0;
-      line-height: 1.45;
+      color: var(--text-light);
     }
 
-    .card-footer-label {
-      background: rgba(4, 20, 54, 0.94);
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .showcase-box {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .showcase-box img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .showcase-label {
+      background: rgba(4, 22, 58, 0.85);
       text-align: center;
-      padding: 11px;
+      padding: 10px;
       font-size: 12px;
       font-weight: 700;
-      letter-spacing: 0.5px;
-      color: #ffffff;
-      z-index: 3;
-    }
-
-    /* LOWER SECTIONS */
-    .section-block {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 46px 32px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .section-title {
-      font-size: 26px;
-      font-weight: 800;
-      color: #ffffff;
-      margin-bottom: 8px;
-    }
-
-    .section-title span {
-      color: #f59e0b;
-    }
-
-    .section-sub {
-      color: #cbd5e1;
-      font-size: 14px;
-      margin-bottom: 24px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .info-card {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 10px;
-      padding: 18px;
-    }
-
-    .info-card h3 {
-      font-size: 16px;
-      color: #f59e0b;
-      margin-bottom: 8px;
-    }
-
-    .info-card p {
-      font-size: 13.5px;
-      color: #e2e8f0;
-      line-height: 1.6;
-    }
-
-    .partner-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .partner-pill {
-      background: rgba(255, 255, 255, 0.09);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #ffffff;
-      padding: 9px 14px;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    footer {
-      background: #031029;
-      padding: 28px 32px;
-      text-align: center;
-      color: #94a3b8;
-      font-size: 13px;
-    }
-
-    footer strong {
-      color: #ffffff;
+      letter-spacing: 0.6px;
     }
 
     @media (max-width: 900px) {
-      .grid-3 {
+      .hero {
         grid-template-columns: 1fr;
+        padding: 28px 20px 44px;
       }
 
       h1 {
         font-size: 32px;
       }
 
-      header, .hero-section, .section-block {
-        padding-left: 18px;
-        padding-right: 18px;
+      .hero-cards,
+      .showcase-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -430,16 +285,11 @@
 <body>
   <div class="top-bar"></div>
 
-  <!-- TOP HEADER -->
   <header>
     <div class="brand-left">
-      <div class="header-logo-wrap">
-        <img
-          src="bnb-logo.png"
-          alt="BB HOLDING Logo"
-          class="header-logo"
-          onerror="this.parentElement.style.display='none';"
-        />
+      <!-- Top Header Logo -->
+      <div class="header-logo-box">
+        <img src="bnb-logo.png" alt="BB HOLDING Logo" class="header-logo" />
       </div>
       <div>
         <div class="brand-title">BB HOLDING</div>
@@ -458,121 +308,4 @@
     </nav>
 
     <div class="wa-actions">
-      <a href="https://wa.me/918891888040" class="btn-wa-printing" target="_blank" rel="noopener">Printing WA</a>
-      <a href="https://wa.me/917592888789" class="btn-wa-logistics" target="_blank" rel="noopener">Logistics WA</a>
-    </div>
-  </header>
-
-  <!-- HERO SECTION -->
-  <section class="hero-section">
-    <div class="hero-inner">
-      <div class="hero-left">
-        <!-- Position 1: bnb-logo1.png -->
-        <div class="pos1-logo-box">
-          <img
-            src="bnb-logo1.png"
-            alt="BLUEIN BLACK Logo"
-            onerror="this.style.display='none';"
-          />
-        </div>
-
-        <span class="hub-badge">BB HOLDING at pathanamthitta</span>
-
-        <h1>
-          Bold <span>Custom Prints</span> &amp; Swift <span>Global Dispatch</span> — Built for Speed.
-        </h1>
-
-        <p class="hero-sub">
-          BB HOLDING — BLUEIN BLACK PRINTING &amp; LOGISTICS
-        </p>
-
-        <div class="hero-cards" id="divisions">
-          <div class="mini-card">
-            <h3>BLUEIN BLACK PRINTING</h3>
-            <p>DTF, Sublimation, Jerseys, Uniforms, Mugs &amp; ID Cards</p>
-          </div>
-          <div class="mini-card">
-            <h3>BLUEIN BLACK LOGISTICS</h3>
-            <p>11 Domestic &amp; International Courier Partners</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <!-- Position 2: Old DTF Banner -->
-        <div class="pos2-banner-card">
-          <div class="pos2-media">
-            <img
-              src="dtf-banner.jpg"
-              alt="BLUEIN BLACK DTF Printing Banner"
-              onerror="this.style.display='none';"
-            />
-            <span class="dtf-fallback-badge">DTF PRINTING STUDIO</span>
-            <div class="dtf-fallback-title">Custom DTF &amp; Apparel</div>
-            <div class="dtf-fallback-sub">Jerseys, Corporate Uniforms, Mugs &amp; Custom Prints</div>
-          </div>
-          <div class="card-footer-label">BLUEIN BLACK PRINTING</div>
-        </div>
-
-        <!-- Right Card: Logistics -->
-        <div class="pos2-banner-card">
-          <div class="pos2-media">
-            <img
-              src="logistics-banner.jpg"
-              alt="BLUEIN BLACK LOGISTICS"
-              onerror="this.style.display='none';"
-            />
-            <span class="dtf-fallback-badge">COURIER &amp; PARCELS</span>
-            <div class="dtf-fallback-title">Domestic &amp; Global</div>
-            <div class="dtf-fallback-sub">Authorized pickup &amp; dispatch across 11 courier partners</div>
-          </div>
-          <div class="card-footer-label">BLUEIN BLACK LOGISTICS</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COURIER NETWORK SECTION -->
-  <section class="section-block" id="network">
-    <h2 class="section-title">Courier <span>Network</span></h2>
-    <p class="section-sub">Domestic &amp; international courier pickup and dispatch support under BB HOLDING — BLUEIN BLACK LOGISTICS.</p>
-    <div class="partner-tags">
-      <span class="partner-pill">Shree Maruti Courier Service</span>
-      <span class="partner-pill">Sree Gokulam Speed and Safe</span>
-      <span class="partner-pill">Delhivery</span>
-      <span class="partner-pill">India Post</span>
-      <span class="partner-pill">Xpressbees</span>
-      <span class="partner-pill">Shadowfax</span>
-      <span class="partner-pill">Amazon Shipping</span>
-      <span class="partner-pill">DHL</span>
-      <span class="partner-pill">FedEx</span>
-      <span class="partner-pill">Aramex</span>
-      <span class="partner-pill">UPS</span>
-    </div>
-  </section>
-
-  <!-- OFFICE & QUICK CONTACT SECTION -->
-  <section class="section-block" id="office">
-    <h2 class="section-title">Office &amp; <span>Quick Contact</span></h2>
-    <p class="section-sub">BB HOLDING at pathanamthitta — Kairali Building, Ring Road, Pathanamthitta.</p>
-    <div class="grid-3" id="quote">
-      <div class="info-card">
-        <h3>Printing Orders &amp; Quotes</h3>
-        <p>DTF prints, corporate uniforms, jerseys &amp; custom gifts.<br />WhatsApp: +91 88918 88040</p>
-      </div>
-      <div class="info-card">
-        <h3>Courier &amp; Parcel Desk</h3>
-        <p>Domestic &amp; international parcel booking and tracking support.<br />WhatsApp: +91 75928 88789</p>
-      </div>
-      <div class="info-card">
-        <h3>Location &amp; Email</h3>
-        <p>Kairali Building, Ring Road, Pathanamthitta, Kerala<br />Email: info@blueinblack.in</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <strong>BB HOLDING</strong> — BLUEIN BLACK PRINTING &amp; LOGISTICS • Pathanamthitta, Kerala
-  </footer>
-</body>
-</html>
+      <a href="

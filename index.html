@@ -5,16 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BB HOLDING at pathanamthitta | BLUEIN BLACK PRINTING &amp; LOGISTICS</title>
   <style>
-    :root {
-      --navy: #072257;
-      --navy-dark: #04163a;
-      --accent: #f59e0b;
-      --white: #ffffff;
-      --text-light: #e2e8f0;
-      --card-bg: rgba(255, 255, 255, 0.08);
-      --border-light: rgba(255, 255, 255, 0.16);
-    }
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -22,68 +12,73 @@
       font-family: "Segoe UI", Arial, sans-serif;
     }
 
-    body {
-      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 65%, #0a2e75 100%);
-      color: var(--white);
+    html, body {
+      width: 100%;
       min-height: 100vh;
+      background-color: #061d4c;
+      color: #ffffff;
+      overflow-x: hidden;
     }
 
     .top-bar {
       height: 5px;
-      background: var(--accent);
       width: 100%;
+      background: #f59e0b;
     }
 
     header {
+      width: 100%;
       background: #ffffff;
-      color: var(--navy);
+      color: #072257;
       padding: 12px 32px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 18px;
       flex-wrap: wrap;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+      position: relative;
+      z-index: 10;
     }
 
     .brand-left {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
     }
 
-    .header-logo-box {
+    .header-logo-wrap {
       background: #ffffff;
       border: 2px solid #cbd5e1;
       border-radius: 8px;
-      padding: 2px;
+      padding: 3px;
+      width: 145px;
+      height: 62px;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      width: 92px;
-      height: 56px;
+      flex-shrink: 0;
     }
 
     .header-logo {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      border-radius: 6px;
+      object-fit: contain;
       display: block;
     }
 
     .brand-title {
       font-size: 22px;
       font-weight: 800;
-      letter-spacing: 0.4px;
-      color: var(--navy);
+      color: #072257;
+      line-height: 1.2;
     }
 
     .division-pills {
       display: flex;
       gap: 8px;
-      margin-top: 4px;
+      margin-top: 5px;
       flex-wrap: wrap;
     }
 
@@ -107,14 +102,14 @@
 
     nav {
       display: flex;
-      gap: 22px;
+      gap: 20px;
       align-items: center;
       flex-wrap: wrap;
     }
 
     nav a {
       text-decoration: none;
-      color: var(--navy);
+      color: #072257;
       font-weight: 600;
       font-size: 14px;
     }
@@ -126,7 +121,7 @@
     }
 
     .btn-wa-printing {
-      background: var(--navy);
+      background: #072257;
       color: #ffffff;
       text-decoration: none;
       padding: 9px 14px;
@@ -136,8 +131,8 @@
     }
 
     .btn-wa-logistics {
-      background: var(--accent);
-      color: var(--navy-dark);
+      background: #f59e0b;
+      color: #04163a;
       text-decoration: none;
       padding: 9px 14px;
       border-radius: 6px;
@@ -145,41 +140,52 @@
       font-weight: 700;
     }
 
-    .hero {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 44px 32px 60px;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 36px;
-      align-items: center;
+    .hero-section {
+      width: 100%;
+      background: linear-gradient(135deg, #04163a 0%, #072257 65%, #0c337d 100%);
+      padding: 40px 32px 60px;
+      display: block;
     }
 
-    .hero-logo-box {
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+
+    .hero-left {
+      flex: 1 1 520px;
+      min-width: 300px;
+    }
+
+    .hero-logo-wrap {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       background: #ffffff;
-      padding: 3px;
-      width: 170px;
-      height: 68px;
+      border: 2px solid #e2e8f0;
       border-radius: 10px;
+      padding: 4px;
+      width: 230px;
+      height: 82px;
       margin-bottom: 16px;
       overflow: hidden;
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
 
-    .hero-blueinblack-logo {
+    .hero-logo {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      border-radius: 8px;
+      object-fit: contain;
       display: block;
     }
 
     .hub-badge {
-      display: block;
-      width: fit-content;
+      display: inline-block;
       background: rgba(255, 255, 255, 0.14);
       border: 1px solid rgba(255, 255, 255, 0.25);
       color: #ffffff;
@@ -188,61 +194,63 @@
       letter-spacing: 0.6px;
       padding: 6px 12px;
       border-radius: 4px;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-size: 42px;
-      line-height: 1.15;
-      font-weight: 800;
       margin-bottom: 16px;
     }
 
+    h1 {
+      font-size: 40px;
+      line-height: 1.18;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 14px;
+    }
+
     h1 span {
-      color: var(--accent);
+      color: #f59e0b;
     }
 
     .hero-sub {
-      color: var(--text-light);
+      color: #e2e8f0;
       font-size: 16px;
-      line-height: 1.65;
-      margin-bottom: 26px;
-      max-width: 570px;
+      line-height: 1.6;
+      margin-bottom: 24px;
     }
 
     .hero-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
       gap: 14px;
-      max-width: 570px;
+      flex-wrap: wrap;
     }
 
     .mini-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-light);
+      flex: 1 1 220px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
       border-radius: 8px;
       padding: 14px 16px;
     }
 
     .mini-card h3 {
       font-size: 13px;
-      letter-spacing: 0.5px;
-      margin-bottom: 6px;
       color: #ffffff;
+      margin-bottom: 6px;
     }
 
     .mini-card p {
       font-size: 12px;
-      color: var(--text-light);
+      color: #cbd5e1;
     }
 
-    .showcase-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    .hero-right {
+      flex: 1 1 420px;
+      min-width: 290px;
+      display: flex;
       gap: 16px;
+      flex-wrap: wrap;
     }
 
     .showcase-box {
+      flex: 1 1 200px;
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 10px;
@@ -257,27 +265,25 @@
     }
 
     .showcase-label {
-      background: rgba(4, 22, 58, 0.85);
+      background: rgba(4, 22, 58, 0.9);
       text-align: center;
       padding: 10px;
       font-size: 12px;
       font-weight: 700;
-      letter-spacing: 0.6px;
+      color: #ffffff;
     }
 
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 28px 20px 44px;
+    @media (max-width: 768px) {
+      header {
+        padding: 12px 16px;
+      }
+
+      .hero-section {
+        padding: 28px 16px 44px;
       }
 
       h1 {
-        font-size: 32px;
-      }
-
-      .hero-cards,
-      .showcase-grid {
-        grid-template-columns: 1fr;
+        font-size: 30px;
       }
     }
   </style>
@@ -287,8 +293,7 @@
 
   <header>
     <div class="brand-left">
-      <!-- Top Header Logo -->
-      <div class="header-logo-box">
+      <div class="header-logo-wrap">
         <img src="bnb-logo.png" alt="BB HOLDING Logo" class="header-logo" />
       </div>
       <div>
@@ -308,4 +313,53 @@
     </nav>
 
     <div class="wa-actions">
-      <a href="
+      <a href="https://wa.me/918891888040" class="btn-wa-printing" target="_blank" rel="noopener">Printing WA</a>
+      <a href="https://wa.me/917592888789" class="btn-wa-logistics" target="_blank" rel="noopener">Logistics WA</a>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-logo-wrap">
+          <img src="bnb-logo1.png" alt="BLUEIN BLACK Logo" class="hero-logo" />
+        </div>
+
+        <div>
+          <span class="hub-badge">BB HOLDING at pathanamthitta</span>
+        </div>
+
+        <h1>
+          Bold <span>Custom Prints</span> &amp; Swift <span>Global Dispatch</span> — Built for Speed.
+        </h1>
+
+        <p class="hero-sub">
+          BB HOLDING — BLUEIN BLACK PRINTING &amp; LOGISTICS
+        </p>
+
+        <div class="hero-cards" id="divisions">
+          <div class="mini-card">
+            <h3>BLUEIN BLACK PRINTING</h3>
+            <p>DTF, Jerseys, Uniforms, Mugs &amp; ID Cards</p>
+          </div>
+          <div class="mini-card">
+            <h3>BLUEIN BLACK LOGISTICS</h3>
+            <p>11 Domestic &amp; International Courier Partners</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="showcase-box">
+          <img src="printing-banner.jpg" alt="BLUEIN BLACK PRINTING" />
+          <div class="showcase-label">BLUEIN BLACK PRINTING</div>
+        </div>
+        <div class="showcase-box">
+          <img src="logistics-banner.jpg" alt="BLUEIN BLACK LOGISTICS" />
+          <div class="showcase-label">BLUEIN BLACK LOGISTICS</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

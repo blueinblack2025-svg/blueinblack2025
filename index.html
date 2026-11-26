@@ -3,363 +3,725 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BB HOLDING at pathanamthitta | BLUEIN BLACK PRINTING &amp; LOGISTICS</title>
+  <title>BB HOLDING at pathanamthitta — bluein black printing &amp; logistics</title>
+  <meta name="description" content="BB HOLDING at pathanamthitta — bluein black printing &amp; logistics. Bold custom prints and swift global dispatch across 11 courier partners." />
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
 
-    html, body {
-      width: 100%;
-      min-height: 100vh;
-      background-color: #061d4c;
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #0b245c;
       color: #ffffff;
+      line-height: 1.5;
       overflow-x: hidden;
     }
 
-    .top-bar {
-      height: 5px;
-      width: 100%;
-      background: #f59e0b;
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
-    header {
+    /* Top Yellow Accent Line */
+    .top-accent {
+      height: 4px;
+      background: #f59e0b;
       width: 100%;
+    }
+
+    /* White Header Bar */
+    header {
       background: #ffffff;
-      color: #072257;
-      padding: 12px 32px;
+      color: #0f172a;
+      padding: 12px 4%;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
-      position: relative;
-      z-index: 10;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .brand-left {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
     }
 
-    .header-logo-wrap {
-      background: #ffffff;
-      border: 2px solid #cbd5e1;
-      border-radius: 8px;
-      padding: 3px;
-      width: 145px;
-      height: 62px;
+    .header-logo-box {
+      background: #0b1120;
+      padding: 6px 10px;
+      border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
-      flex-shrink: 0;
+      height: 46px;
     }
 
-    .header-logo {
-      width: 100%;
-      height: 100%;
+    .header-logo-box img {
+      height: 34px;
+      width: auto;
       object-fit: contain;
-      display: block;
     }
 
-    .brand-title {
-      font-size: 22px;
-      font-weight: 800;
-      color: #072257;
-      line-height: 1.2;
-    }
-
-    .division-pills {
+    .brand-meta {
       display: flex;
-      gap: 8px;
-      margin-top: 5px;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 4px;
     }
 
-    .pill-printing {
+    .brand-meta .title {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: #0f172a;
+      letter-spacing: 0.3px;
+      line-height: 1.1;
+    }
+
+    .div-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pill-blue {
       background: #dbeafe;
-      color: #1e3a8a;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 3px 8px;
+      color: #1d4ed8;
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 2px 8px;
       border-radius: 4px;
+      letter-spacing: 0.3px;
     }
 
-    .pill-logistics {
+    .pill-gold {
       background: #fef3c7;
-      color: #92400e;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 3px 8px;
+      color: #b45309;
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 2px 8px;
       border-radius: 4px;
+      letter-spacing: 0.3px;
     }
 
-    nav {
+    .nav-center {
       display: flex;
-      gap: 20px;
       align-items: center;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #072257;
+      gap: 22px;
+      font-size: 0.9rem;
       font-weight: 600;
-      font-size: 14px;
+      color: #334155;
     }
 
-    .wa-actions {
+    .nav-center a:hover {
+      color: #0b245c;
+    }
+
+    .header-cta {
       display: flex;
-      gap: 10px;
       align-items: center;
+      gap: 8px;
     }
 
-    .btn-wa-printing {
-      background: #072257;
+    .btn-navy {
+      background: #0b245c;
       color: #ffffff;
-      text-decoration: none;
       padding: 9px 14px;
       border-radius: 6px;
-      font-size: 13px;
+      font-size: 0.82rem;
       font-weight: 700;
+      transition: 0.2s;
+      white-space: nowrap;
     }
 
-    .btn-wa-logistics {
+    .btn-navy:hover {
+      background: #173a8a;
+    }
+
+    .btn-amber {
       background: #f59e0b;
-      color: #04163a;
-      text-decoration: none;
+      color: #ffffff;
       padding: 9px 14px;
       border-radius: 6px;
-      font-size: 13px;
+      font-size: 0.82rem;
       font-weight: 700;
+      transition: 0.2s;
+      white-space: nowrap;
     }
 
+    .btn-amber:hover {
+      background: #d97706;
+    }
+
+    /* Hero Section */
     .hero-section {
-      width: 100%;
-      background: linear-gradient(135deg, #04163a 0%, #072257 65%, #0c337d 100%);
-      padding: 40px 32px 60px;
-      display: block;
+      background: linear-gradient(135deg, #091d4a 0%, #0d2a6b 55%, #12388a 100%);
+      padding: 46px 4% 54px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .hero-inner {
-      max-width: 1200px;
+    .hero-container {
+      max-width: 1240px;
       margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 36px;
-      flex-wrap: wrap;
+      align-items: center;
     }
 
-    .hero-left {
-      flex: 1 1 520px;
-      min-width: 300px;
-    }
-
-    .hero-logo-wrap {
-      display: inline-flex;
+    .lower-emblem-box {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 8px 14px;
+      width: 185px;
+      height: 76px;
+      display: flex;
       align-items: center;
       justify-content: center;
-      background: #ffffff;
-      border: 2px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 4px;
-      width: 230px;
-      height: 82px;
-      margin-bottom: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      margin-bottom: 18px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
     }
 
-    .hero-logo {
-      width: 100%;
-      height: 100%;
+    .lower-emblem-box img {
+      max-width: 100%;
+      max-height: 100%;
       object-fit: contain;
-      display: block;
     }
 
-    .hub-badge {
+    .hero-tag {
       display: inline-block;
-      background: rgba(255, 255, 255, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      color: #ffffff;
-      font-size: 12px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #e2e8f0;
+      font-size: 0.75rem;
       font-weight: 700;
-      letter-spacing: 0.6px;
-      padding: 6px 12px;
-      border-radius: 4px;
-      margin-bottom: 16px;
-    }
-
-    h1 {
-      font-size: 40px;
-      line-height: 1.18;
-      font-weight: 800;
-      color: #ffffff;
+      padding: 5px 12px;
+      border-radius: 6px;
       margin-bottom: 14px;
     }
 
-    h1 span {
-      color: #f59e0b;
+    .hero-left h1 {
+      font-size: clamp(2rem, 3.8vw, 3.1rem);
+      font-weight: 900;
+      line-height: 1.15;
+      color: #ffffff;
+      margin-bottom: 12px;
     }
 
-    .hero-sub {
-      color: #e2e8f0;
-      font-size: 16px;
-      line-height: 1.6;
-      margin-bottom: 24px;
+    .hero-left h1 span.gold {
+      color: #fbbf24;
     }
 
-    .hero-cards {
-      display: flex;
+    .parent-line {
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #cbd5e1;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .hero-subcards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: 14px;
-      flex-wrap: wrap;
+      max-width: 620px;
     }
 
-    .mini-card {
-      flex: 1 1 220px;
+    .hero-mini-card {
       background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 10px;
       padding: 14px 16px;
     }
 
-    .mini-card h3 {
-      font-size: 13px;
+    .hero-mini-card strong {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 800;
       color: #ffffff;
-      margin-bottom: 6px;
+      margin-bottom: 3px;
     }
 
-    .mini-card p {
-      font-size: 12px;
+    .hero-mini-card span {
+      font-size: 0.78rem;
       color: #cbd5e1;
     }
 
+    /* Hero Right Photo Cards */
     .hero-right {
-      flex: 1 1 420px;
-      min-width: 290px;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 16px;
-      flex-wrap: wrap;
     }
 
-    .showcase-box {
-      flex: 1 1 200px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 10px;
+    .visual-card {
+      background: #132c66;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 12px;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 250px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
     }
 
-    .showcase-box img {
+    .visual-card img {
       width: 100%;
-      height: 190px;
+      height: 205px;
       object-fit: cover;
       display: block;
+      background: #1a387a;
     }
 
-    .showcase-label {
-      background: rgba(4, 22, 58, 0.9);
+    .visual-card .caption {
+      background: #08183d;
+      padding: 10px 12px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      color: #ffffff;
       text-align: center;
-      padding: 10px;
-      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    /* Main Content Sections */
+    .main-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 44px 4%;
+    }
+
+    .quote-panel {
+      background: #0f2963;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 14px;
+      padding: 26px;
+      margin-bottom: 40px;
+    }
+
+    .quote-panel-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .quote-panel-head h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+
+    .tab-switch {
+      display: flex;
+      gap: 8px;
+    }
+
+    .tab-btn {
+      padding: 8px 14px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: transparent;
+      color: #e2e8f0;
+      font-size: 0.8rem;
       font-weight: 700;
+      cursor: pointer;
+    }
+
+    .tab-btn.active {
+      background: #f59e0b;
+      border-color: #f59e0b;
       color: #ffffff;
     }
 
-    @media (max-width: 768px) {
-      header {
-        padding: 12px 16px;
-      }
+    .grid-form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px;
+      margin-bottom: 16px;
+    }
 
-      .hero-section {
-        padding: 28px 16px 44px;
-      }
+    .field label {
+      display: block;
+      font-size: 0.78rem;
+      color: #cbd5e1;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
 
-      h1 {
-        font-size: 30px;
+    .field input,
+    .field select {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 7px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: #071638;
+      color: #ffffff;
+      font-size: 0.9rem;
+    }
+
+    .btn-wa-action {
+      background: #25D366;
+      color: #052e16;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-wa-action:hover {
+      background: #1ebe5d;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .info-section {
+      margin-top: 44px;
+    }
+
+    .info-section h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+      color: #ffffff;
+    }
+
+    .two-col-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .box-card {
+      background: #0f2963;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .box-card h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #fbbf24;
+    }
+
+    .box-card p {
+      font-size: 0.9rem;
+      color: #e2e8f0;
+      margin-bottom: 14px;
+    }
+
+    .courier-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .courier-tile {
+      background: #0f2963;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .courier-tile strong {
+      display: block;
+      font-size: 0.95rem;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .courier-tile span {
+      font-size: 0.8rem;
+      color: #cbd5e1;
+    }
+
+    footer {
+      background: #061330;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 28px 4%;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #cbd5e1;
+    }
+
+    @media (max-width: 900px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+      }
+      .nav-center {
+        display: none;
       }
     }
   </style>
 </head>
 <body>
-  <div class="top-bar"></div>
 
+  <div class="top-accent"></div>
+
+  <!-- White Header Bar -->
   <header>
     <div class="brand-left">
-      <div class="header-logo-wrap">
-        <img src="bnb-logo.png" alt="BB HOLDING Logo" class="header-logo" />
+      <div class="header-logo-box">
+        <img src="bnb-logo.png" alt="BB HOLDING Logo" onerror="this.style.display='none'" />
       </div>
-      <div>
-        <div class="brand-title">BB HOLDING</div>
-        <div class="division-pills">
-          <span class="pill-printing">BLUEIN BLACK PRINTING</span>
-          <span class="pill-logistics">BLUEIN BLACK LOGISTICS</span>
+      <div class="brand-meta">
+        <span class="title">BB HOLDING</span>
+        <div class="div-pills">
+          <span class="pill-blue">BLUEIN BLACK PRINTING</span>
+          <span class="pill-gold">BLUEIN BLACK LOGISTICS</span>
         </div>
       </div>
     </div>
 
-    <nav>
-      <a href="#quote">Quick Quote</a>
+    <nav class="nav-center">
+      <a href="#quick-quote">Quick Quote</a>
       <a href="#divisions">Our Divisions</a>
-      <a href="#network">Courier Network</a>
+      <a href="#courier-network">Courier Network</a>
       <a href="#office">Office</a>
     </nav>
 
-    <div class="wa-actions">
-      <a href="https://wa.me/918891888040" class="btn-wa-printing" target="_blank" rel="noopener">Printing WA</a>
-      <a href="https://wa.me/917592888789" class="btn-wa-logistics" target="_blank" rel="noopener">Logistics WA</a>
+    <div class="header-cta">
+      <a href="https://wa.me/918891888040?text=Hello%20BB%20HOLDING%20(bluein%20black%20printing%20%26%20logistics),%20I%20need%20a%20printing%20quote." target="_blank" rel="noopener" class="btn-navy">Printing WA</a>
+      <a href="https://wa.me/917592888789?text=Hello%20BB%20HOLDING%20(bluein%20black%20printing%20%26%20logistics),%20I%20need%20logistics%20help." target="_blank" rel="noopener" class="btn-amber">Logistics WA</a>
     </div>
   </header>
 
+  <!-- Hero Section (Matching Your Layout) -->
   <section class="hero-section">
-    <div class="hero-inner">
+    <div class="hero-container">
       <div class="hero-left">
-        <div class="hero-logo-wrap">
-          <img src="bnb-logo1.png" alt="BLUEIN BLACK Logo" class="hero-logo" />
+        <div class="lower-emblem-box">
+          <img src="bnb-logo1.png" alt="BB HOLDING Emblem" onerror="this.parentElement.style.display='none'" />
         </div>
 
-        <div>
-          <span class="hub-badge">BB HOLDING at pathanamthitta</span>
-        </div>
+        <div class="hero-tag">BB HOLDING at pathanamthitta</div>
 
         <h1>
-          Bold <span>Custom Prints</span> &amp; Swift <span>Global Dispatch</span> — Built for Speed.
+          Bold <span class="gold">Custom Prints</span> &amp; Swift<br />
+          Global Dispatch — Built for<br />
+          Speed.
         </h1>
 
-        <p class="hero-sub">
-          BB HOLDING — BLUEIN BLACK PRINTING &amp; LOGISTICS
-        </p>
+        <div class="parent-line">BB HOLDING — bluein black printing &amp; logistics</div>
 
-        <div class="hero-cards" id="divisions">
-          <div class="mini-card">
-            <h3>BLUEIN BLACK PRINTING</h3>
-            <p>DTF, Jerseys, Uniforms, Mugs &amp; ID Cards</p>
+        <div class="hero-subcards">
+          <div class="hero-mini-card">
+            <strong>BLUEIN BLACK PRINTING</strong>
+            <span>DTF, Jerseys, Uniforms, Mugs &amp; ID Cards</span>
           </div>
-          <div class="mini-card">
-            <h3>BLUEIN BLACK LOGISTICS</h3>
-            <p>11 Domestic &amp; International Courier Partners</p>
+          <div class="hero-mini-card">
+            <strong>BLUEIN BLACK LOGISTICS</strong>
+            <span>11 Domestic &amp; International Courier Partners</span>
           </div>
         </div>
       </div>
 
       <div class="hero-right">
-        <div class="showcase-box">
-          <img src="printing-banner.jpg" alt="BLUEIN BLACK PRINTING" />
-          <div class="showcase-label">BLUEIN BLACK PRINTING</div>
+        <div class="visual-card">
+          <img src="printing.jpg" alt="BLUEIN BLACK PRINTING" onerror="this.style.display='none'" />
+          <div class="caption">BLUEIN BLACK PRINTING</div>
         </div>
-        <div class="showcase-box">
-          <img src="logistics-banner.jpg" alt="BLUEIN BLACK LOGISTICS" />
-          <div class="showcase-label">BLUEIN BLACK LOGISTICS</div>
+        <div class="visual-card">
+          <img src="logistics.jpg" alt="BLUEIN BLACK LOGISTICS" onerror="this.style.display='none'" />
+          <div class="caption">BLUEIN BLACK LOGISTICS</div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Main Interactive Sections -->
+  <div class="main-container">
+
+    <!-- Quick Quote Section -->
+    <div class="quote-panel" id="quick-quote">
+      <div class="quote-panel-head">
+        <h2>Instant WhatsApp Quote — BB HOLDING</h2>
+        <div class="tab-switch">
+          <button type="button" class="tab-btn active" id="btnLog" onclick="setQuoteMode('logistics')">BLUEIN BLACK LOGISTICS</button>
+          <button type="button" class="tab-btn" id="btnPrt" onclick="setQuoteMode('printing')">BLUEIN BLACK PRINTING</button>
+        </div>
+      </div>
+
+      <div id="formLog">
+        <div class="grid-form">
+          <div class="field">
+            <label for="logName">Sender Name</label>
+            <input type="text" id="logName" placeholder="Your Name" />
+          </div>
+          <div class="field">
+            <label for="logDest">Destination / Pin</label>
+            <input type="text" id="logDest" placeholder="e.g., Kochi / Dubai / 689645" />
+          </div>
+          <div class="field">
+            <label for="logWeight">Weight (kg)</label>
+            <input type="text" id="logWeight" placeholder="e.g., 2 kg" />
+          </div>
+          <div class="field">
+            <label for="logCourier">Courier Choice</label>
+            <select id="logCourier">
+              <option value="Best Rate / Fastest">Best Rate / Fastest</option>
+              <option value="Speed &amp; Safe">Speed &amp; Safe</option>
+              <option value="Shree Maruti">Shree Maruti</option>
+              <option value="Delhivery">Delhivery</option>
+              <option value="DHL / FedEx">DHL / FedEx</option>
+              <option value="Aramex / UPS">Aramex / UPS</option>
+              <option value="India Post / Xpressbees">India Post / Xpressbees</option>
+            </select>
+          </div>
+        </div>
+        <button type="button" class="btn-wa-action" onclick="sendLogWA()">Get Logistics Quote on WhatsApp (+91 7592 888 789)</button>
+      </div>
+
+      <div id="formPrt" class="hidden">
+        <div class="grid-form">
+          <div class="field">
+            <label for="prtName">Customer Name</label>
+            <input type="text" id="prtName" placeholder="Your Name / Company" />
+          </div>
+          <div class="field">
+            <label for="prtItem">Product</label>
+            <select id="prtItem">
+              <option value="Polo Uniforms (25-50 pcs @ ₹450/pc)">Polo Uniforms (25–50 pcs @ ₹450/pc)</option>
+              <option value="Sports Jerseys">Sports Jerseys</option>
+              <option value="Commercial DTF Prints">Commercial DTF Prints</option>
+              <option value="Mugs / Metal Prints / ID Cards">Mugs / Metal Prints / ID Cards</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="prtQty">Quantity / Details</label>
+            <input type="text" id="prtQty" placeholder="e.g., 25 pcs Black Polo, Half Sleeve" />
+          </div>
+        </div>
+        <button type="button" class="btn-wa-action" onclick="sendPrtWA()">Get Printing Quote on WhatsApp (+91 8891 888 040)</button>
+      </div>
+    </div>
+
+    <!-- Divisions -->
+    <div class="info-section" id="divisions">
+      <h2>Our Divisions</h2>
+      <div class="two-col-cards">
+        <div class="box-card">
+          <h3>BLUEIN BLACK PRINTING</h3>
+          <p>Custom DTF printing, corporate polo uniforms, sports jerseys, mugs, metal prints, and ID cards under BB HOLDING (bluein black printing &amp; logistics).</p>
+          <a href="https://wa.me/918891888040?text=Hello%20BLUEIN%20BLACK%20PRINTING%20(BB%20HOLDING),%20I%20want%20to%20order%20custom%20prints." target="_blank" rel="noopener" class="btn-wa-action">WhatsApp Printing (+91 8891 888 040)</a>
+        </div>
+        <div class="box-card">
+          <h3>BLUEIN BLACK LOGISTICS</h3>
+          <p>Domestic and international courier booking across 11 trusted networks from Pathanamthitta.</p>
+          <a href="https://wa.me/917592888789?text=Hello%20BLUEIN%20BLACK%20LOGISTICS%20(BB%20HOLDING),%20I%20want%20to%20book%20a%20courier." target="_blank" rel="noopener" class="btn-wa-action">WhatsApp Logistics (+91 7592 888 789)</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11 Courier Partners -->
+    <div class="info-section" id="courier-network">
+      <h2>Our 11 Courier &amp; Logistics Partners</h2>
+      <div class="courier-grid">
+        <div class="courier-tile">
+          <strong>Sree Gokulam Speed &amp; Safe</strong>
+          <span>Kerala &amp; South India Express</span>
+        </div>
+        <div class="courier-tile">
+          <strong>Shree Maruti Courier</strong>
+          <span>19,000+ Indian Pin Codes</span>
+        </div>
+        <div class="courier-tile">
+          <strong>Delhivery &amp; Amazon Shipping</strong>
+          <span>Pan-India Parcel &amp; E-Commerce</span>
+        </div>
+        <div class="courier-tile">
+          <strong>India Post, Xpressbees &amp; Shadowfax</strong>
+          <span>Speed Post &amp; Nationwide Reach</span>
+        </div>
+        <div class="courier-tile">
+          <strong>DHL &amp; FedEx Express</strong>
+          <span>220+ Countries Priority Air</span>
+        </div>
+        <div class="courier-tile">
+          <strong>Aramex &amp; UPS</strong>
+          <span>GCC, UK, USA &amp; Europe</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Office -->
+    <div class="info-section" id="office">
+      <h2>Office — Pathanamthitta</h2>
+      <div class="box-card">
+        <h3>BB HOLDING — bluein black printing &amp; logistics</h3>
+        <p>Kairali Building, Ring Road (Sreevalsam Road), Opp. Jockey Showroom, Near City Cycle, Pathanamthitta, Kerala 689645</p>
+        <a href="https://maps.google.com/?q=9.269020,76.791362" target="_blank" rel="noopener" class="btn-navy">Open Google Maps</a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2026 BB HOLDING — bluein black printing &amp; logistics, Pathanamthitta. All rights reserved.
+  </footer>
+
+  <script>
+    function setQuoteMode(mode) {
+      const logDiv = document.getElementById("formLog");
+      const prtDiv = document.getElementById("formPrt");
+      const btnLog = document.getElementById("btnLog");
+      const btnPrt = document.getElementById("btnPrt");
+
+      if (mode === "logistics") {
+        logDiv.classList.remove("hidden");
+        prtDiv.classList.add("hidden");
+        btnLog.classList.add("active");
+        btnPrt.classList.remove("active");
+      } else {
+        prtDiv.classList.remove("hidden");
+        logDiv.classList.add("hidden");
+        btnPrt.classList.add("active");
+        btnLog.classList.remove("active");
+      }
+    }
+
+    function sendLogWA() {
+      const name = document.getElementById("logName").value.trim() || "Customer";
+      const dest = document.getElementById("logDest").value.trim() || "Not specified";
+      const weight = document.getElementById("logWeight").value.trim() || "Not specified";
+      const courier = document.getElementById("logCourier").value;
+
+      const msg = `*BLUEIN BLACK LOGISTICS (BB HOLDING)*\nName: ${name}\nDestination: ${dest}\nWeight: ${weight}\nCourier: ${courier}`;
+      window.open(`https://wa.me/917592888789?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
+    }
+
+    function sendPrtWA() {
+      const name = document.getElementById("prtName").value.trim() || "Customer";
+      const item = document.getElementById("prtItem").value;
+      const qty = document.getElementById("prtQty").value.trim() || "Not specified";
+
+      const msg = `*BLUEIN BLACK PRINTING (BB HOLDING)*\nName: ${name}\nProduct: ${item}\nDetails: ${qty}`;
+      window.open(`https://wa.me/918891888040?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
+    }
+  </script>
+
 </body>
 </html>

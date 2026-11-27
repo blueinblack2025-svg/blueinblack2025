@@ -488,11 +488,11 @@
       font-style: italic;
     }
 
-    /* Sliding Courier Partner Bar */
+    /* Sliding Courier Partner Logo Bar (Domestic first, then International in White Square Boxes) */
     .courier-slider {
-      background: var(--bg-white);
+      background: #eef2f6;
       border-bottom: 1px solid var(--border);
-      padding: 11px 0;
+      padding: 12px 0;
       overflow: hidden;
       white-space: nowrap;
     }
@@ -500,28 +500,30 @@
     .slider-track {
       display: inline-flex;
       align-items: center;
-      animation: slideCouriers 26s linear infinite;
+      animation: slideCouriers 28s linear infinite;
     }
 
-    .partner-pill {
+    .partner-logo-box {
+      width: 92px;
+      height: 68px;
+      margin: 0 9px;
+      padding: 7px;
+      border-radius: 8px;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      margin: 0 12px;
-      padding: 5px 12px;
-      border-radius: 5px;
-      background: #f8fafc;
-      border: 1px solid #cbd5e1;
-      font-size: 12.5px;
-      font-weight: 700;
-      color: var(--navy);
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
     }
 
-    .partner-pill .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--gold-bright);
+    .partner-logo-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
     }
 
     @keyframes slideCouriers {
@@ -1414,31 +1416,34 @@
     </div>
   </section>
 
-  <!-- Sliding Courier Partner Bar -->
-  <div class="courier-slider">
+  <!-- Sliding Courier Partner Logo Bar: Domestic First, Then International in White Square Boxes -->
+  <div class="courier-slider" aria-label="Domestic and International Courier Partners">
     <div class="slider-track">
-      <span class="partner-pill"><span class="dot"></span>SHREE MARUTI</span>
-      <span class="partner-pill"><span class="dot"></span>SREE GOKULAM SPEED &amp; SAFE</span>
-      <span class="partner-pill"><span class="dot"></span>DELHIVERY</span>
-      <span class="partner-pill"><span class="dot"></span>INDIA POST</span>
-      <span class="partner-pill"><span class="dot"></span>XPRESSBEES</span>
-      <span class="partner-pill"><span class="dot"></span>SHADOWFAX</span>
-      <span class="partner-pill"><span class="dot"></span>AMAZON SHIPPING</span>
-      <span class="partner-pill"><span class="dot"></span>DHL</span>
-      <span class="partner-pill"><span class="dot"></span>FEDEX</span>
-      <span class="partner-pill"><span class="dot"></span>ARAMEX</span>
-      <span class="partner-pill"><span class="dot"></span>UPS</span>
-      <span class="partner-pill"><span class="dot"></span>SHREE MARUTI</span>
-      <span class="partner-pill"><span class="dot"></span>SREE GOKULAM SPEED &amp; SAFE</span>
-      <span class="partner-pill"><span class="dot"></span>DELHIVERY</span>
-      <span class="partner-pill"><span class="dot"></span>INDIA POST</span>
-      <span class="partner-pill"><span class="dot"></span>XPRESSBEES</span>
-      <span class="partner-pill"><span class="dot"></span>SHADOWFAX</span>
-      <span class="partner-pill"><span class="dot"></span>AMAZON SHIPPING</span>
-      <span class="partner-pill"><span class="dot"></span>DHL</span>
-      <span class="partner-pill"><span class="dot"></span>FEDEX</span>
-      <span class="partner-pill"><span class="dot"></span>ARAMEX</span>
-      <span class="partner-pill"><span class="dot"></span>UPS</span>
+      <!-- Set 1: Domestic first, then International -->
+      <div class="partner-logo-box"><img src="maruti.png.png" alt="Shree Maruti Courier" /></div>
+      <div class="partner-logo-box"><img src="gokulam.png.png" alt="Sree Gokulam Speed and Safe" /></div>
+      <div class="partner-logo-box"><img src="delhivery.png.png" alt="Delhivery" /></div>
+      <div class="partner-logo-box"><img src="indiapost.png.png" alt="India Post" /></div>
+      <div class="partner-logo-box"><img src="xpressbees.png.png" alt="Xpressbees" /></div>
+      <div class="partner-logo-box"><img src="shadowfax.png.png" alt="Shadowfax" /></div>
+      <div class="partner-logo-box"><img src="amazone.png" alt="Amazon Shipping" /></div>
+      <div class="partner-logo-box"><img src="dhl.png" alt="DHL" /></div>
+      <div class="partner-logo-box"><img src="fedex.png" alt="FedEx" /></div>
+      <div class="partner-logo-box"><img src="aramex.png" alt="Aramex" /></div>
+      <div class="partner-logo-box"><img src="ups.png" alt="UPS" /></div>
+
+      <!-- Set 2: Seamless loop duplicate -->
+      <div class="partner-logo-box"><img src="maruti.png.png" alt="Shree Maruti Courier" /></div>
+      <div class="partner-logo-box"><img src="gokulam.png.png" alt="Sree Gokulam Speed and Safe" /></div>
+      <div class="partner-logo-box"><img src="delhivery.png.png" alt="Delhivery" /></div>
+      <div class="partner-logo-box"><img src="indiapost.png.png" alt="India Post" /></div>
+      <div class="partner-logo-box"><img src="xpressbees.png.png" alt="Xpressbees" /></div>
+      <div class="partner-logo-box"><img src="shadowfax.png.png" alt="Shadowfax" /></div>
+      <div class="partner-logo-box"><img src="amazone.png" alt="Amazon Shipping" /></div>
+      <div class="partner-logo-box"><img src="dhl.png" alt="DHL" /></div>
+      <div class="partner-logo-box"><img src="fedex.png" alt="FedEx" /></div>
+      <div class="partner-logo-box"><img src="aramex.png" alt="Aramex" /></div>
+      <div class="partner-logo-box"><img src="ups.png" alt="UPS" /></div>
     </div>
   </div>
 
@@ -1645,9 +1650,9 @@
       <div class="category-gallery-block">
         <div class="category-gallery-heading">1. DTF Printing Work</div>
         <div class="work-gallery-grid">
-          <div class="work-photo-card" onclick="openLightbox('dtf-work-1.jpg', 'DTF Printing Work 1 — BLUEIN BLACK STUDIO')">
+          <div class="work-photo-card" onclick="openLightbox('https://raw.githubusercontent.com/blueinblack2025-svg/blueinblack2025/main/dtf-work-1.jpg', 'DTF Printing Work 1 — BLUEIN BLACK STUDIO')">
             <div class="work-photo-thumb">
-              <img src="dtf-work-1.jpg" alt="DTF Printing Work 1" />
+              <img src="https://raw.githubusercontent.com/blueinblack2025-svg/blueinblack2025/main/dtf-work-1.jpg" alt="DTF Printing Work 1" />
             </div>
             <div class="work-photo-meta">
               <strong>DTF Work 01</strong>
@@ -1665,9 +1670,9 @@
             </div>
           </div>
 
-          <div class="work-photo-card" onclick="openLightbox('dtf-work-3.jpg', 'DTF Printing Work 3 — BLUEIN BLACK STUDIO')">
+          <div class="work-photo-card" onclick="openLightbox('https://raw.githubusercontent.com/blueinblack2025-svg/blueinblack2025/main/dtf-work-3.jpg', 'DTF Printing Work 3 — BLUEIN BLACK STUDIO')">
             <div class="work-photo-thumb">
-              <img src="dtf-work-3.jpg" alt="DTF Printing Work 3" />
+              <img src="https://raw.githubusercontent.com/blueinblack2025-svg/blueinblack2025/main/dtf-work-3.jpg" alt="DTF Printing Work 3" />
             </div>
             <div class="work-photo-meta">
               <strong>DTF Work 03</strong>

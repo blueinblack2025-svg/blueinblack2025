@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BB HOLDING | bluein black printing &amp; logistics — ISO 9001:2015 Certified</title>
-  <meta name="description" content="BB HOLDING in Pathanamthitta — bluein black printing &amp; logistics. ISO 9001:2015 Certified (No: 25-07-2015606). Direct in-page parcel tracking for Sree Gokulam Speed &amp; Safe and Shree Maruti Courier, DTF, Sublimation &amp; Mug Printing, Corporate Uniforms @ 450/- INR, and XMAS Free Pickup Offer." />
+  <title>BB HOLDING | PRINTING &amp; LOGISTICS — ISO 9001:2015 Certified</title>
+  <meta name="description" content="BB HOLDING in Pathanamthitta — PRINTING &amp; LOGISTICS. ISO 9001:2015 Certified (No: 25-07-2015606). Direct in-page parcel tracking for Sree Gokulam Speed &amp; Safe and Shree Maruti Courier, DTF, Sublimation &amp; Mug Printing, Corporate Uniforms @ 450/- INR, and XMAS Free Pickup Offer." />
   <style>
     :root {
       --navy: #0b1f44;
       --navy-mid: #143269;
       --gold: #d97706;
       --gold-bright: #f59e0b;
-      --bg-page: #f4f6fa;
+      --bg-page: #07090d;
       --bg-white: #ffffff;
       --text-dark: #0f172a;
       --text-muted: #475569;
@@ -46,10 +46,10 @@
 
     /* Top Strip */
     .top-strip {
-      background: var(--navy);
+      background: #05070a;
       color: #e2e8f0;
       font-size: 12.5px;
-      padding: 7px 5%;
+      padding: 8px 5%;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -74,9 +74,9 @@
 
     /* Sticky Navbar */
     header {
-      background: var(--bg-white);
-      border-bottom: 1px solid var(--border);
-      padding: 11px 5%;
+      background: #0d1017;
+      border-bottom: 1px solid #1e293b;
+      padding: 12px 5%;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -84,7 +84,7 @@
       justify-content: space-between;
       align-items: center;
       gap: 12px;
-      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
     }
 
     .brand-box {
@@ -94,12 +94,13 @@
     }
 
     .brand-box img {
-      height: 40px;
+      height: 42px;
       width: auto;
       object-fit: contain;
-      background: var(--navy);
+      background: #111827;
       padding: 3px 8px;
       border-radius: 5px;
+      border: 1px solid rgba(245, 158, 11, 0.35);
     }
 
     .brand-titles {
@@ -110,15 +111,16 @@
     .brand-titles .b-main {
       font-size: 17px;
       font-weight: 800;
-      color: var(--navy);
+      color: #ffffff;
       line-height: 1.15;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.4px;
     }
 
     .brand-titles .b-sub {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      color: #fbbf24;
+      letter-spacing: 0.8px;
     }
 
     .nav-links {
@@ -127,11 +129,20 @@
       gap: 18px;
       font-size: 14px;
       font-weight: 600;
-      color: #334155;
+      color: #cbd5e1;
     }
 
     .nav-links a:hover {
-      color: var(--navy);
+      color: #fbbf24;
+    }
+
+    .nav-links a.nav-track-pill {
+      background: rgba(245, 158, 11, 0.16);
+      border: 1px solid rgba(245, 158, 11, 0.55);
+      color: #fbbf24;
+      padding: 4px 10px;
+      border-radius: 5px;
+      font-weight: 700;
     }
 
     .nav-actions {
@@ -155,6 +166,7 @@
     .btn-top-navy {
       background: var(--navy);
       color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.18);
     }
 
     .btn-top-navy:hover {
@@ -163,26 +175,27 @@
 
     .btn-top-gold {
       background: var(--gold-bright);
-      color: #0f172a;
+      color: #07090d;
     }
 
     .btn-top-gold:hover {
       background: #eab308;
     }
 
-    /* Hero Section */
+    /* Hero Section — Deep Black Premium */
     .hero-section {
-      background: linear-gradient(135deg, #0b1f44 0%, #153775 100%);
+      background: radial-gradient(circle at top left, #171c28 0%, #07090d 65%, #040508 100%);
       color: #ffffff;
-      padding: 28px 5% 32px;
+      padding: 36px 5% 42px;
+      border-bottom: 1px solid #1e293b;
     }
 
     .hero-grid {
       max-width: 1180px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1.02fr 0.98fr;
-      gap: 24px;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
       align-items: center;
     }
 
@@ -192,18 +205,40 @@
       justify-content: center;
     }
 
+    .hero-brand-lockup {
+      margin-bottom: 12px;
+    }
+
+    .hero-brand-main {
+      font-size: clamp(38px, 5vw, 56px);
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.02;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .hero-brand-sub {
+      font-size: clamp(14px, 1.8vw, 19px);
+      font-weight: 800;
+      color: #fbbf24;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      margin-top: 5px;
+    }
+
     .hero-badges-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 10px;
+      margin-bottom: 14px;
     }
 
-    .hero-badge {
+    .hero-badge.iso-badge {
       display: inline-block;
-      background: rgba(245, 158, 11, 0.18);
-      border: 1px solid rgba(245, 158, 11, 0.5);
-      color: #fcd34d;
+      background: rgba(34, 197, 94, 0.14);
+      border: 1px solid rgba(74, 222, 128, 0.5);
+      color: #bbf7d0;
       font-size: 11.5px;
       font-weight: 700;
       padding: 4px 10px;
@@ -211,17 +246,12 @@
       letter-spacing: 0.4px;
     }
 
-    .hero-badge.iso-badge {
-      background: rgba(34, 197, 94, 0.18);
-      border-color: rgba(74, 222, 128, 0.55);
-      color: #bbf7d0;
-    }
-
     .hero-left h1 {
-      font-size: clamp(25px, 3vw, 35px);
+      font-size: clamp(22px, 2.5vw, 29px);
       font-weight: 800;
-      line-height: 1.22;
-      margin-bottom: 11px;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      color: #f8fafc;
     }
 
     .hero-left h1 span {
@@ -229,23 +259,23 @@
     }
 
     .hero-left p {
-      font-size: 14.5px;
-      color: #e2e8f0;
-      margin-bottom: 16px;
+      font-size: 15px;
+      color: #cbd5e1;
+      margin-bottom: 18px;
     }
 
     .mini-divisions {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 11px;
-      margin-bottom: 15px;
+      gap: 12px;
+      margin-bottom: 16px;
     }
 
     .mini-div {
-      background: rgba(255, 255, 255, 0.09);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 7px;
-      padding: 10px 13px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 8px;
+      padding: 12px 14px;
     }
 
     .mini-div strong {
@@ -256,23 +286,23 @@
     }
 
     .mini-div span {
-      font-size: 12px;
-      color: #f1f5f9;
+      font-size: 12.5px;
+      color: #e2e8f0;
     }
 
     /* Scanner Animation Strip */
     .scanner-box {
       position: relative;
-      background: rgba(6, 15, 36, 0.85);
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      border-radius: 7px;
-      padding: 9px 13px;
+      background: #0c0f17;
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      border-radius: 8px;
+      padding: 11px 14px;
       overflow: hidden;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 12px;
-      color: #93c5fd;
+      font-size: 12.5px;
+      color: #fde68a;
     }
 
     .scanner-line {
@@ -281,7 +311,7 @@
       left: -30%;
       width: 30%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.28), transparent);
+      background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.25), transparent);
       animation: scanSweep 2.8s linear infinite;
     }
 
@@ -294,23 +324,23 @@
     .hero-right-stack {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
     }
 
     .banners-pair {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 14px;
     }
 
     .banner-tile {
       position: relative;
       border-radius: 10px;
       overflow: hidden;
-      border: 1.5px solid rgba(255, 255, 255, 0.22);
-      background: #081633;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.32);
-      height: 140px;
+      border: 1.5px solid rgba(245, 158, 11, 0.32);
+      background: #0d1017;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
+      height: 175px;
     }
 
     .banner-tile img {
@@ -330,15 +360,15 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(to top, rgba(6, 15, 36, 0.94), rgba(6, 15, 36, 0.55), transparent);
-      padding: 18px 10px 8px;
+      background: linear-gradient(to top, rgba(4, 5, 8, 0.96), rgba(4, 5, 8, 0.6), transparent);
+      padding: 20px 11px 9px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
     .banner-caption strong {
-      font-size: 11px;
+      font-size: 11.5px;
       font-weight: 800;
       color: #ffffff;
       letter-spacing: 0.4px;
@@ -348,7 +378,7 @@
       font-size: 10px;
       font-weight: 800;
       background: var(--gold-bright);
-      color: #0b1f44;
+      color: #07090d;
       padding: 2px 6px;
       border-radius: 3px;
     }
@@ -357,7 +387,7 @@
     .offers-pair {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 14px;
     }
 
     .offer-spotlight {
@@ -365,9 +395,9 @@
       background: linear-gradient(145deg, #ffffff 0%, #fffbeb 100%);
       color: var(--navy);
       border-radius: 10px;
-      padding: 14px 15px;
+      padding: 16px 16px;
       border: 2px solid var(--gold-bright);
-      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.32);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.5);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -405,7 +435,7 @@
     }
 
     .offer-spotlight h2 {
-      font-size: 14px;
+      font-size: 14.5px;
       font-weight: 900;
       color: var(--navy);
       line-height: 1.3;
@@ -416,8 +446,8 @@
       background: #fef3c7;
       border: 1px dashed #d97706;
       border-radius: 6px;
-      padding: 6px 10px;
-      margin-bottom: 9px;
+      padding: 7px 10px;
+      margin-bottom: 10px;
       display: flex;
       align-items: baseline;
       gap: 6px;
@@ -490,9 +520,9 @@
 
     /* Sliding Courier Partner Logo Bar (Domestic first, then International in White Square Boxes) */
     .courier-slider {
-      background: #eef2f6;
-      border-bottom: 1px solid var(--border);
-      padding: 12px 0;
+      background: #10141d;
+      border-bottom: 1px solid #1e293b;
+      padding: 13px 0;
       overflow: hidden;
       white-space: nowrap;
     }
@@ -511,7 +541,7 @@
       border-radius: 8px;
       background: #ffffff;
       border: 1px solid #cbd5e1;
-      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -531,85 +561,98 @@
       100% { transform: translateX(-50%); }
     }
 
-    /* Main Content Wrapper */
-    .wrapper {
+    /* Projected Live Parcel Tracking Spotlight Section */
+    .track-spotlight-section {
+      background: linear-gradient(180deg, #0c1018 0%, #07090d 100%);
+      padding: 26px 5% 10px;
+    }
+
+    .track-box-projected {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 28px 5%;
+      background: linear-gradient(145deg, #ffffff 0%, #fffbeb 100%);
+      border: 2.5px solid var(--gold-bright);
+      border-radius: 12px;
+      padding: 22px 24px;
+      box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.16), 0 18px 40px rgba(0, 0, 0, 0.65);
+      position: relative;
     }
 
-    .sec-title {
-      margin-bottom: 15px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 8px;
-    }
-
-    .sec-title span {
-      display: block;
-      font-size: 11.5px;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: var(--gold);
-      letter-spacing: 0.8px;
-    }
-
-    .sec-title h2 {
-      font-size: 21px;
-      font-weight: 800;
-      color: var(--navy);
-    }
-
-    .iso-cert-tag {
-      background: #ecfdf5;
-      border: 1px solid #10b981;
-      color: #065f46;
-      font-size: 12px;
-      font-weight: 800;
-      padding: 5px 12px;
-      border-radius: 6px;
-    }
-
-    /* Direct In-Page Tracking Box */
-    .track-box {
-      background: var(--bg-white);
-      border: 1px solid var(--border);
-      border-top: 3px solid var(--gold-bright);
-      border-radius: 9px;
-      padding: 18px 20px;
-      margin-bottom: 24px;
-      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
-    }
-
-    .track-header {
+    .track-projected-header {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
       gap: 10px;
-      margin-bottom: 12px;
-      padding-bottom: 9px;
-      border-bottom: 1px solid var(--border);
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed #cbd5e1;
     }
 
-    .track-header h3 {
-      font-size: 16px;
-      font-weight: 800;
+    .track-projected-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .track-live-pill {
+      background: #dc2626;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 4px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      animation: pulseBadge 2s infinite;
+    }
+
+    @keyframes pulseBadge {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.78; }
+    }
+
+    .track-projected-title h3 {
+      font-size: 19px;
+      font-weight: 900;
       color: var(--navy);
     }
 
     .track-grid {
       display: grid;
       grid-template-columns: 1.5fr 1.2fr 0.8fr;
-      gap: 10px;
+      gap: 12px;
       align-items: end;
+    }
+
+    .btn-track-projected {
+      width: 100%;
+      height: 42px;
+      border: none;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #0b1f44 0%, #153775 100%);
+      color: #fbbf24;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 0.3px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      box-shadow: 0 4px 12px rgba(11, 31, 68, 0.25);
+      transition: 0.15s;
+    }
+
+    .btn-track-projected:hover {
+      background: #07090d;
+      color: #ffffff;
     }
 
     .inpage-track-output {
       display: none;
-      margin-top: 14px;
+      margin-top: 15px;
       padding: 16px;
       border-radius: 8px;
       background: #f8fafc;
@@ -688,15 +731,56 @@
       white-space: nowrap;
     }
 
+    /* Main Content Wrapper */
+    .wrapper {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 24px 5% 34px;
+    }
+
+    .sec-title {
+      margin-bottom: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 8px;
+    }
+
+    .sec-title span {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #fbbf24;
+      letter-spacing: 0.8px;
+    }
+
+    .sec-title h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .iso-cert-tag {
+      background: #ecfdf5;
+      border: 1px solid #10b981;
+      color: #065f46;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 6px;
+    }
+
     /* Compact Quote Section */
     .quote-section-box {
       background: var(--bg-white);
       border: 1px solid var(--border);
-      border-top: 3px solid var(--navy);
+      border-top: 3px solid var(--gold-bright);
       border-radius: 9px;
       padding: 18px 20px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+      margin-bottom: 32px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
     }
 
     .quote-header-bar {
@@ -758,7 +842,7 @@
     .q-field input,
     .q-field select {
       width: 100%;
-      padding: 8px 10px;
+      padding: 9px 11px;
       border: 1px solid #cbd5e1;
       border-radius: 5px;
       font-size: 13.5px;
@@ -815,7 +899,7 @@
     .print-item-card {
       background: var(--bg-white);
       border: 1px solid var(--border);
-      border-top: 3px solid var(--navy);
+      border-top: 3px solid var(--gold-bright);
       border-radius: 8px;
       padding: 16px;
     }
@@ -839,7 +923,7 @@
       color: var(--gold);
     }
 
-    /* Category-wise 3-Slide Work Galleries */
+    /* Category-wise Work Galleries */
     .category-gallery-block {
       margin-bottom: 24px;
     }
@@ -847,7 +931,7 @@
     .category-gallery-heading {
       font-size: 15px;
       font-weight: 800;
-      color: var(--navy);
+      color: #f8fafc;
       margin-bottom: 10px;
       padding-left: 10px;
       border-left: 3px solid var(--gold-bright);
@@ -865,13 +949,13 @@
       border-radius: 9px;
       overflow: hidden;
       cursor: pointer;
-      box-shadow: 0 3px 10px rgba(15, 23, 42, 0.05);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
       transition: transform 0.2s, border-color 0.2s;
     }
 
     .work-photo-card:hover {
       transform: translateY(-2px);
-      border-color: var(--navy);
+      border-color: var(--gold-bright);
     }
 
     .work-photo-thumb {
@@ -906,6 +990,92 @@
     .work-photo-meta span {
       font-size: 11.5px;
       font-weight: 700;
+      color: var(--gold);
+    }
+
+    /* Detailed + Clean Simple Logistics Cards (Inspired by Services Ecosystem Layout) */
+    .log-showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .log-service-card {
+      background: var(--bg-white);
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .log-service-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--gold-bright);
+    }
+
+    .log-card-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 185px;
+      background: #0b1f44;
+      overflow: hidden;
+    }
+
+    .log-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .log-card-img-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(7, 9, 13, 0.92), rgba(7, 9, 13, 0.45), transparent);
+      padding: 22px 14px 10px;
+    }
+
+    .log-card-img-overlay h4 {
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .log-card-body {
+      padding: 15px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+    }
+
+    .log-card-body p {
+      font-size: 13.5px;
+      color: #334155;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .log-card-foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--navy);
+      border-top: 1px solid #f1f5f9;
+      padding-top: 9px;
+    }
+
+    .log-card-foot span.zoom-hint {
       color: var(--gold);
     }
 
@@ -1237,7 +1407,7 @@
 
     /* Footer */
     footer {
-      background: var(--navy);
+      background: #05070a;
       color: #cbd5e1;
       padding: 22px 5%;
       font-size: 13px;
@@ -1254,7 +1424,8 @@
       .office-map-card {
         grid-template-columns: 1fr;
       }
-      .work-gallery-grid {
+      .work-gallery-grid,
+      .log-showcase-grid {
         grid-template-columns: 1fr 1fr;
       }
       .q-grid-compact {
@@ -1272,6 +1443,7 @@
       .banners-pair,
       .offers-pair,
       .work-gallery-grid,
+      .log-showcase-grid,
       .q-grid-compact {
         grid-template-columns: 1fr;
       }
@@ -1301,14 +1473,15 @@
       <img src="bnb-logo.png" alt="BB HOLDING" />
       <div class="brand-titles">
         <span class="b-main">BB HOLDING</span>
-        <span class="b-sub">bluein black printing &amp; logistics</span>
+        <span class="b-sub">PRINTING &amp; LOGISTICS</span>
       </div>
     </a>
 
     <nav class="nav-links">
-      <a href="#track-parcel">Track Parcel</a>
+      <a href="#track-parcel" class="nav-track-pill">&#128269; Track Parcel</a>
       <a href="#quick-quote">Quick Quote</a>
       <a href="#printing-services">Print Work</a>
+      <a href="#logistics-gallery">Logistics Work</a>
       <a href="#happy-clients">Happy Clients</a>
       <a href="#office">Location &amp; Map</a>
     </nav>
@@ -1323,10 +1496,15 @@
   <section class="hero-section" id="special-offers">
     <div class="hero-grid">
       <div class="hero-left">
+        <div class="hero-brand-lockup">
+          <div class="hero-brand-main">BB HOLDING</div>
+          <div class="hero-brand-sub">PRINTING &amp; LOGISTICS</div>
+        </div>
+
         <div class="hero-badges-row">
-          <div class="hero-badge">BB HOLDING &bull; PATHANAMTHITTA HUB</div>
           <div class="hero-badge iso-badge">&#10003; BLUEIN BLACK ISO 9001:2015 CERTIFIED (NO: 25-07-2015606)</div>
         </div>
+
         <h1>Commercial <span>DTF Printing</span> &amp; Multi-Brand <span>Courier Hub</span></h1>
         <p>Authorized pickup center for 11 domestic &amp; international courier networks alongside commercial DTF, sublimation &amp; mug printing, ID card printing, and corporate uniforms — operated by <strong>bluein black printing &amp; logistics</strong>.</p>
 
@@ -1447,21 +1625,20 @@
     </div>
   </div>
 
-  <!-- Main Content Wrapper -->
-  <div class="wrapper">
-
-    <!-- Direct In-Page Courier Tracking Hub -->
-    <div class="track-box" id="track-parcel">
-      <div class="track-header">
-        <div>
-          <h3>&#128269; Direct In-Page Parcel Tracking &mdash; BLUEIN BLACK LOGISTICS</h3>
-          <span style="font-size: 12px; color: #475569; font-weight: 600;">Sree Gokulam Speed &amp; Safe &amp; Shree Maruti Courier &bull; Instant History Right Here on BB HOLDING</span>
+  <!-- Projected Direct In-Page Courier Tracking Spotlight -->
+  <section class="track-spotlight-section" id="track-parcel">
+    <div class="track-box-projected">
+      <div class="track-projected-header">
+        <div class="track-projected-title">
+          <span class="track-live-pill">&#9679; LIVE PARCEL TRACKING</span>
+          <h3>Track Your Shipment &mdash; BLUEIN BLACK LOGISTICS</h3>
         </div>
+        <span style="font-size: 12px; color: #334155; font-weight: 700;">Sree Gokulam Speed &amp; Safe &bull; Shree Maruti Courier</span>
       </div>
 
       <div class="track-grid">
         <div class="q-field">
-          <label for="awbInput">Consignment / AWB / Docket Number</label>
+          <label for="awbInput">Enter Consignment / AWB / Docket Number</label>
           <input type="text" id="awbInput" placeholder="e.g., 4718971 or 26020340022440" />
         </div>
         <div class="q-field">
@@ -1472,14 +1649,18 @@
           </select>
         </div>
         <div>
-          <button type="button" onclick="trackInPage()" class="btn-top btn-top-navy" style="width: 100%; justify-content: center; height: 38px;">
-            Track Now &rarr;
+          <button type="button" onclick="trackInPage()" class="btn-track-projected">
+            &#128269; Track Parcel Now &rarr;
           </button>
         </div>
       </div>
 
       <div class="inpage-track-output" id="inPageTrackResult"></div>
     </div>
+  </section>
+
+  <!-- Main Content Wrapper -->
+  <div class="wrapper">
 
     <!-- Compact Quick Quote Desk -->
     <div class="quote-section-box" id="quick-quote">
@@ -1791,12 +1972,109 @@
       </div>
     </div>
 
+    <!-- Logistics Operations & Ecosystem Gallery (5 Photos) -->
+    <div id="logistics-gallery" class="category-gallery-block" style="margin-bottom: 34px;">
+      <div class="sec-title">
+        <div>
+          <span>BLUEIN BLACK LOGISTICS</span>
+          <h2>Logistics Operations That Power Our Hub</h2>
+        </div>
+      </div>
+
+      <div class="log-showcase-grid">
+        <!-- 1st Card: Detailed -->
+        <div class="log-service-card" onclick="openLightbox('logistic1.jpg', 'Express Parcel & Pickup — BLUEIN BLACK LOGISTICS')">
+          <div class="log-card-img-wrap">
+            <img src="logistic1.jpg" alt="Express Parcel and Pickup" />
+            <div class="log-card-img-overlay">
+              <h4>Express Parcel &amp; Pickup</h4>
+            </div>
+          </div>
+          <div class="log-card-body">
+            <p>Send parcels and documents across Kerala, South India, and nationwide with timely dispatch, doorstep pickup options, and live consignment tracking.</p>
+            <div class="log-card-foot">
+              <span>Domestic Express</span>
+              <span class="zoom-hint">Tap to Zoom &rarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2nd Card: Detailed -->
+        <div class="log-service-card" onclick="openLightbox('logistic2.jpg', 'Multi-Brand Hub & Dispatch — BLUEIN BLACK LOGISTICS')">
+          <div class="log-card-img-wrap">
+            <img src="logistic2.jpg" alt="Multi-Brand Hub and Dispatch" />
+            <div class="log-card-img-overlay">
+              <h4>Multi-Brand Hub &amp; Dispatch</h4>
+            </div>
+          </div>
+          <div class="log-card-body">
+            <p>Compare and book across 11 trusted domestic and global courier partners under one roof at Pathanamthitta with safe handling and structured sorting.</p>
+            <div class="log-card-foot">
+              <span>11 Courier Networks</span>
+              <span class="zoom-hint">Tap to Zoom &rarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3rd Card: Simple & Clean -->
+        <div class="log-service-card" onclick="openLightbox('logistic3.jpeg', 'International Air Express — BLUEIN BLACK LOGISTICS')">
+          <div class="log-card-img-wrap">
+            <img src="logistic3.jpeg" alt="International Air Express" />
+            <div class="log-card-img-overlay">
+              <h4>International Air Express</h4>
+            </div>
+          </div>
+          <div class="log-card-body">
+            <p>Fast global air shipping to 220+ countries including GCC, UK, USA &amp; Europe.</p>
+            <div class="log-card-foot">
+              <span>220+ Countries</span>
+              <span class="zoom-hint">Tap to Zoom &rarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4th Card: Simple & Clean -->
+        <div class="log-service-card" onclick="openLightbox('logistic4.jpg', 'Bulk & Surface Cargo — BLUEIN BLACK LOGISTICS')">
+          <div class="log-card-img-wrap">
+            <img src="logistic4.jpg" alt="Bulk and Surface Cargo" />
+            <div class="log-card-img-overlay">
+              <h4>Bulk &amp; Surface Cargo</h4>
+            </div>
+          </div>
+          <div class="log-card-body">
+            <p>Reliable surface freight and commercial parcel movement across India.</p>
+            <div class="log-card-foot">
+              <span>Pan-India Cargo</span>
+              <span class="zoom-hint">Tap to Zoom &rarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5th Card: Simple & Clean -->
+        <div class="log-service-card" onclick="openLightbox('lgistic5.jpg', 'Secure Packing & Support — BLUEIN BLACK LOGISTICS')">
+          <div class="log-card-img-wrap">
+            <img src="lgistic5.jpg" alt="Secure Packing and Support" />
+            <div class="log-card-img-overlay">
+              <h4>Secure Packing &amp; Support</h4>
+            </div>
+          </div>
+          <div class="log-card-body">
+            <p>Protective parcel packing and direct branch assistance in Pathanamthitta.</p>
+            <div class="log-card-foot">
+              <span>Safe Transit</span>
+              <span class="zoom-hint">Tap to Zoom &rarr;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Our Divisions -->
     <div id="divisions">
       <div class="sec-title">
         <div>
           <span>BB HOLDING DIVISIONS</span>
-          <h2>bluein black printing &amp; logistics</h2>
+          <h2>PRINTING &amp; LOGISTICS</h2>
         </div>
       </div>
 
@@ -2076,7 +2354,7 @@
             <img src="bnb-logo.png" alt="BB HOLDING" />
           </div>
           <div class="office-text">
-            <h3>BB HOLDING &mdash; bluein black printing &amp; logistics</h3>
+            <h3>BB HOLDING &mdash; PRINTING &amp; LOGISTICS</h3>
             <p><strong>Address:</strong> Kairali Building, Ring Road (Sreevalsam Road), Opp. Jockey Showroom, Near City Cycle, Pathanamthitta, Kerala 689645</p>
             <p><strong>Landmark:</strong> Opposite Jockey Showroom / Near City Cycle, Ring Road</p>
             <p style="font-weight: 700; color: var(--navy);">GPS: 9.269020, 76.791362 &bull; Email: info@blueinblack.in</p>
@@ -2104,7 +2382,7 @@
   <!-- Lightbox Modal -->
   <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox(event)">
     <div class="lightbox-card" onclick="event.stopPropagation()">
-      <img id="lightboxImg" src="" alt="Printing Work Preview" />
+      <img id="lightboxImg" src="" alt="Work Preview" />
       <div class="lightbox-bar">
         <strong id="lightboxCaption" style="color: var(--navy); font-size: 14px;"></strong>
         <button type="button" class="lightbox-close" onclick="closeLightbox()">Close &times;</button>
@@ -2114,7 +2392,7 @@
 
   <!-- Footer -->
   <footer>
-    &copy; 2026 <strong>BB HOLDING</strong> &bull; bluein black printing &amp; logistics, Pathanamthitta &bull; <strong>BLUEIN BLACK ISO 9001:2015 CERTIFIED (No: 25-07-2015606)</strong>. All Rights Reserved.
+    &copy; 2026 <strong>BB HOLDING</strong> &bull; PRINTING &amp; LOGISTICS, Pathanamthitta &bull; <strong>BLUEIN BLACK ISO 9001:2015 CERTIFIED (No: 25-07-2015606)</strong>. All Rights Reserved.
   </footer>
 
   <script>

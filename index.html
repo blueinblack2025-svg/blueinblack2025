@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BB HOLDING | bluein black printing &amp; logistics — ISO 9001:2015 Certified</title>
-  <meta name="description" content="BB HOLDING in Pathanamthitta — bluein black printing &amp; logistics. ISO 9001:2015 Certified (No: 25-07-2015606). In-page parcel tracking, DTF &amp; Sublimation Print, Corporate Uniforms @ 450/- INR, XMAS Free Pickup Offer, and 11 Courier Partners." />
+  <meta name="description" content="BB HOLDING in Pathanamthitta — bluein black printing &amp; logistics. ISO 9001:2015 Certified (No: 25-07-2015606). Direct in-page parcel tracking for Sree Gokulam Speed &amp; Safe and Shree Maruti Courier, DTF &amp; Sublimation Print, Corporate Uniforms @ 450/- INR, and XMAS Free Pickup Offer." />
   <style>
     :root {
       --navy: #0b1f44;
@@ -290,7 +290,7 @@
       100% { left: 100%; }
     }
 
-    /* Hero Right Column: 2 Visual Banners + 2 Offer Cards */
+    /* Hero Right Column */
     .hero-right-stack {
       display: flex;
       flex-direction: column;
@@ -570,7 +570,7 @@
       border-radius: 6px;
     }
 
-    /* In-Page Courier Tracking Box */
+    /* Direct In-Page Tracking Box */
     .track-box {
       background: var(--bg-white);
       border: 1px solid var(--border);
@@ -608,13 +608,80 @@
     .inpage-track-output {
       display: none;
       margin-top: 14px;
-      padding: 14px 16px;
+      padding: 16px;
       border-radius: 8px;
       background: #f8fafc;
       border: 1px solid #cbd5e1;
       font-size: 13.5px;
       color: var(--text-dark);
       overflow-x: auto;
+    }
+
+    .track-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .track-meta-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-left: 3px solid var(--navy);
+      border-radius: 6px;
+      padding: 10px 12px;
+    }
+
+    .track-meta-card small {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .track-meta-card strong {
+      font-size: 13.5px;
+      color: var(--navy);
+    }
+
+    .history-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #ffffff;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+    }
+
+    .history-table th {
+      background: var(--navy);
+      color: #ffffff;
+      text-align: left;
+      padding: 9px 12px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .history-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 13px;
+      color: var(--text-dark);
+    }
+
+    .history-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .status-pill {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-weight: 700;
+      background: #dcfce7;
+      color: #166534;
     }
 
     /* Compact Quote Section */
@@ -1245,22 +1312,22 @@
   <!-- Main Content Wrapper -->
   <div class="wrapper">
 
-    <!-- In-Page Courier Tracking Hub (No External Redirect) -->
+    <!-- Direct In-Page Courier Tracking Hub -->
     <div class="track-box" id="track-parcel">
       <div class="track-header">
         <div>
-          <h3>&#128269; In-Page Parcel Tracking &mdash; BLUEIN BLACK LOGISTICS</h3>
-          <span style="font-size: 12px; color: #475569; font-weight: 600;">Authorized Franchise Hub &bull; View Tracking Status Right Here Without Leaving This Page</span>
+          <h3>&#128269; Direct In-Page Parcel Tracking &mdash; BLUEIN BLACK LOGISTICS</h3>
+          <span style="font-size: 12px; color: #475569; font-weight: 600;">Sree Gokulam Speed &amp; Safe &amp; Shree Maruti Courier &bull; Instant History Right Here on BB HOLDING</span>
         </div>
       </div>
 
       <div class="track-grid">
         <div class="q-field">
           <label for="awbInput">Consignment / AWB / Docket Number</label>
-          <input type="text" id="awbInput" placeholder="Enter Tracking Number" />
+          <input type="text" id="awbInput" placeholder="e.g., 4718971 or 26018200040718" />
         </div>
         <div class="q-field">
-          <label for="courierSelect">Select Tracking Software / Network</label>
+          <label for="courierSelect">Select Courier Network</label>
           <select id="courierSelect">
             <option value="speedandsafe">Sree Gokulam Speed &amp; Safe</option>
             <option value="shreemaruti">Shree Maruti Courier</option>
@@ -1268,7 +1335,7 @@
         </div>
         <div>
           <button type="button" onclick="trackInPage()" class="btn-top btn-top-navy" style="width: 100%; justify-content: center; height: 38px;">
-            Track Here &rarr;
+            Track Now &rarr;
           </button>
         </div>
       </div>
@@ -1758,67 +1825,198 @@
   </footer>
 
   <script>
-    // Replace with your deployed Cloudflare Worker URL once created (e.g., https://bib-track.your-sub.workers.dev)
+    // Replace with your deployed Cloudflare Worker URL (e.g., https://bib-track.your-subdomain.workers.dev)
     const TRACK_WORKER_URL = "";
+
+    function escHtml(val) {
+      return String(val ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function formatGokulamResponse(awb, payload) {
+      const rows = Array.isArray(payload?.data) ? payload.data : [];
+      if (!rows.length) {
+        return `<div style="color:#b45309; font-weight:700;">No tracking records found for AWB: ${escHtml(awb)}</div>`;
+      }
+
+      const first = rows[0];
+      const tableRows = rows
+        .map((item) => {
+          const dt = escHtml(item.processdate || item.date || "-");
+          const st = escHtml((item.status || "").trim() || "-");
+          const loc = escHtml(`${item.source || ""} ${item.dest ? "→ " + item.dest : ""}`.trim() || "-");
+          const rem = escHtml(item.remarks || item.branchcontact || "-");
+          return `
+            <tr>
+              <td>${dt}</td>
+              <td><span class="status-pill">${st}</span></td>
+              <td>${loc}</td>
+              <td>${rem}</td>
+            </tr>
+          `;
+        })
+        .join("");
+
+      return `
+        <div class="track-meta-grid">
+          <div class="track-meta-card">
+            <small>Consignment</small>
+            <strong>${escHtml(first.consignmentno || awb)}</strong>
+          </div>
+          <div class="track-meta-card">
+            <small>Latest Status</small>
+            <strong>${escHtml((first.status || "").trim() || "Updated")}</strong>
+          </div>
+          <div class="track-meta-card">
+            <small>Route / Destination</small>
+            <strong>${escHtml(`${first.source || "-"} → ${first.dest || "-"}`)}</strong>
+          </div>
+          <div class="track-meta-card">
+            <small>Branch Contact</small>
+            <strong>${escHtml((first.branchcontact || "").trim() || "+91 7592 888 789")}</strong>
+          </div>
+        </div>
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th>Date &amp; Time</th>
+              <th>Status</th>
+              <th>Location</th>
+              <th>Remarks / Contact</th>
+            </tr>
+          </thead>
+          <tbody>${tableRows}</tbody>
+        </table>
+      `;
+    }
+
+    function formatMarutiResponse(awb, payload) {
+      const info = payload?.orderInformation || payload?.data?.orderInformation || payload;
+      const srcCity = info?.sourceLocation?.city || "-";
+      const dstCity = `${info?.destinationLocation?.city || "-"} (${info?.destinationLocation?.pincode || ""})`;
+      const sender = info?.senderDetails?.sender_name || "-";
+      const receiver = info?.receiverDetails?.receiver_name || "-";
+      const trackId = info?.trackingId || awb;
+
+      const scanList =
+        info?.scanDetails ||
+        info?.trackingHistory ||
+        info?.history ||
+        info?.events ||
+        [];
+
+      let historyHtml = "";
+      if (Array.isArray(scanList) && scanList.length) {
+        const rowsHtml = scanList
+          .map((ev) => {
+            const dt = escHtml(ev.date || ev.eventDate || ev.timestamp || ev.processdate || "-");
+            const st = escHtml(ev.status || ev.activity || ev.scanStatus || "In Transit");
+            const loc = escHtml(ev.location || ev.city || ev.hub || "-");
+            const rem = escHtml(ev.remarks || ev.description || "-");
+            return `
+              <tr>
+                <td>${dt}</td>
+                <td><span class="status-pill">${st}</span></td>
+                <td>${loc}</td>
+                <td>${rem}</td>
+              </tr>
+            `;
+          })
+          .join("");
+
+        historyHtml = `
+          <table class="history-table">
+            <thead>
+              <tr>
+                <th>Date &amp; Time</th>
+                <th>Activity / Status</th>
+                <th>Location</th>
+                <th>Remarks</th>
+              </tr>
+            </thead>
+            <tbody>${rowsHtml}</tbody>
+          </table>
+        `;
+      } else {
+        historyHtml = `
+          <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:6px; padding:12px; font-size:13px;">
+            <strong>Shipment Summary:</strong> Tracking ID <strong>${escHtml(trackId)}</strong> is active from <strong>${escHtml(srcCity)}</strong> to <strong>${escHtml(dstCity)}</strong>.
+          </div>
+        `;
+      }
+
+      return `
+        <div class="track-meta-grid">
+          <div class="track-meta-card">
+            <small>Tracking ID</small>
+            <strong>${escHtml(trackId)}</strong>
+          </div>
+          <div class="track-meta-card">
+            <small>Origin → Destination</small>
+            <strong>${escHtml(`${srcCity} → ${dstCity}`)}</strong>
+          </div>
+          <div class="track-meta-card">
+            <small>Sender</small>
+            <strong>${escHtml(sender)}</strong>
+          </div>
+          <div class="track-meta-card">
+            <small>Receiver</small>
+            <strong>${escHtml(receiver)}</strong>
+          </div>
+        </div>
+        ${historyHtml}
+      `;
+    }
 
     async function trackInPage() {
       const awb = document.getElementById("awbInput").value.trim();
       const partner = document.getElementById("courierSelect").value;
       const outBox = document.getElementById("inPageTrackResult");
 
-      const partnerNames = {
-        speedandsafe: "Sree Gokulam Speed & Safe",
-        shreemaruti: "Shree Maruti Courier"
-      };
-
-      const portalUrls = {
-        speedandsafe: "https://www.gokulamspeedandsafe.com/speedandsafe-tracking/",
-        shreemaruti: "https://shreemaruti.com/track-shipment/"
-      };
+      const partnerLabel = partner === "shreemaruti" ? "Shree Maruti Courier" : "Sree Gokulam Speed & Safe";
 
       if (!awb) {
         outBox.style.display = "block";
-        outBox.innerHTML = `<strong style="color:#dc2626;">Please enter a Consignment / AWB / Docket Number to check status.</strong>`;
+        outBox.innerHTML = `<strong style="color:#dc2626;">Please enter a Consignment / AWB / Docket Number.</strong>`;
+        return;
+      }
+
+      if (!TRACK_WORKER_URL) {
+        outBox.style.display = "block";
+        outBox.innerHTML = `<strong style="color:#b45309;">Please add your Cloudflare Worker URL to TRACK_WORKER_URL in index.html to enable live in-page tracking.</strong>`;
         return;
       }
 
       outBox.style.display = "block";
-      outBox.innerHTML = `<strong>Checking ${partnerNames[partner]} status for AWB: ${awb}...</strong>`;
+      outBox.innerHTML = `<strong>Fetching live tracking history for ${escHtml(awb)} (${escHtml(partnerLabel)})...</strong>`;
 
-      if (TRACK_WORKER_URL) {
-        try {
-          const resp = await fetch(`${TRACK_WORKER_URL}?partner=${encodeURIComponent(partner)}&awb=${encodeURIComponent(awb)}`);
-          const data = await resp.json();
+      try {
+        const res = await fetch(`${TRACK_WORKER_URL}?partner=${encodeURIComponent(partner)}&awb=${encodeURIComponent(awb)}`);
+        const json = await res.json();
 
-          if (data && data.html) {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(data.html, "text/html");
-            const panel = doc.querySelector("table") || doc.querySelector(".tracking-details") || doc.querySelector(".track-result");
-
-            if (panel) {
-              outBox.innerHTML = `<div style="font-weight:800; color:#0b1f44; margin-bottom:8px;">${partnerNames[partner]} &mdash; AWB: ${awb}</div>` + panel.outerHTML;
-              return;
-            }
-          }
-        } catch (err) {
-          // Falls back smoothly to in-page frame below
+        if (!json.ok) {
+          outBox.innerHTML = `<strong style="color:#dc2626;">${escHtml(json.error || "Unable to fetch tracking details right now.")}</strong>`;
+          return;
         }
-      }
 
-      // In-page embedded view fallback when Worker URL is not yet connected
-      outBox.innerHTML = `
-        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px; margin-bottom:10px;">
-          <div>
-            <strong style="color:#0b1f44;">${partnerNames[partner]}</strong> &bull; AWB: <strong>${awb}</strong>
+        const content =
+          partner === "shreemaruti"
+            ? formatMarutiResponse(awb, json.data)
+            : formatGokulamResponse(awb, json.data);
+
+        outBox.innerHTML = `
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px; margin-bottom:12px;">
+            <strong style="color:#0b1f44; font-size:14.5px;">${escHtml(partnerLabel)} &mdash; Tracking History (${escHtml(awb)})</strong>
+            <span style="font-size:11.5px; font-weight:700; color:#15803d;">Live on blueinblack.in</span>
           </div>
-          <span style="font-size:12px; color:#15803d; font-weight:700;">Viewing inside blueinblack.in</span>
-        </div>
-        <iframe
-          src="${portalUrls[partner]}"
-          title="${partnerNames[partner]} In-Page Tracking"
-          style="width:100%; height:360px; border:1px solid #cbd5e1; border-radius:6px; background:#ffffff;">
-        </iframe>
-      `;
+          ${content}
+        `;
+      } catch (err) {
+        outBox.innerHTML = `<strong style="color:#dc2626;">Network error while loading tracking status. Please try again.</strong>`;
+      }
     }
 
     function setDeskTab(mode) {

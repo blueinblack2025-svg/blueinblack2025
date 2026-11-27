@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BB HOLDING | bluein black printing &amp; logistics — Pathanamthitta</title>
-  <meta name="description" content="BB HOLDING in Pathanamthitta — bluein black printing &amp; logistics. DTF & Sublimation Print, ID Card Printing, Mug Printing, Corporate Uniforms @ 450/- INR, XMAS Free Pickup Offer, and 11 Courier Partners." />
+  <title>BB HOLDING | bluein black printing &amp; logistics — ISO 9001:2015 Certified</title>
+  <meta name="description" content="BB HOLDING in Pathanamthitta — bluein black printing &amp; logistics. ISO 9001:2015 Certified (No: 25-07-2015606). DTF & Sublimation Print, ID Card Printing, Mug Printing, Corporate Uniforms @ 450/- INR, XMAS Free Pickup Offer, and 11 Courier Partners." />
   <style>
     :root {
       --navy: #0b1f44;
@@ -48,7 +48,7 @@
     .top-strip {
       background: var(--navy);
       color: #e2e8f0;
-      font-size: 13px;
+      font-size: 12.5px;
       padding: 7px 5%;
       display: flex;
       flex-wrap: wrap;
@@ -60,6 +60,16 @@
 
     .top-strip strong {
       color: #fbbf24;
+    }
+
+    .iso-top-pill {
+      background: rgba(251, 191, 36, 0.16);
+      border: 1px solid rgba(251, 191, 36, 0.45);
+      color: #fde68a;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 11.5px;
     }
 
     /* Sticky Navbar */
@@ -114,7 +124,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 20px;
       font-size: 14px;
       font-weight: 600;
       color: #334155;
@@ -180,18 +190,29 @@
       justify-content: center;
     }
 
+    .hero-badges-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
     .hero-badge {
       display: inline-block;
-      width: fit-content;
       background: rgba(245, 158, 11, 0.18);
       border: 1px solid rgba(245, 158, 11, 0.5);
       color: #fcd34d;
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
-      padding: 4px 11px;
+      padding: 4px 10px;
       border-radius: 4px;
-      letter-spacing: 0.5px;
-      margin-bottom: 10px;
+      letter-spacing: 0.4px;
+    }
+
+    .hero-badge.iso-badge {
+      background: rgba(34, 197, 94, 0.18);
+      border-color: rgba(74, 222, 128, 0.55);
+      color: #bbf7d0;
     }
 
     .hero-left h1 {
@@ -515,9 +536,15 @@
 
     .sec-title {
       margin-bottom: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 8px;
     }
 
     .sec-title span {
+      display: block;
       font-size: 11.5px;
       font-weight: 800;
       text-transform: uppercase;
@@ -529,6 +556,16 @@
       font-size: 21px;
       font-weight: 800;
       color: var(--navy);
+    }
+
+    .iso-cert-tag {
+      background: #ecfdf5;
+      border: 1px solid #10b981;
+      color: #065f46;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 6px;
     }
 
     /* Compact Quote Section */
@@ -625,7 +662,7 @@
     }
 
     .btn-wa-send {
-      padding: 9px 20px;
+      padding: 10px 22px;
       border: none;
       border-radius: 6px;
       background: var(--wa-green);
@@ -634,6 +671,9 @@
       font-weight: 700;
       cursor: pointer;
       transition: 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .btn-wa-send:hover {
@@ -811,6 +851,67 @@
       color: var(--gold);
     }
 
+    /* Our Happy Clients Corporate Wall */
+    .clients-panel {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--gold-bright);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 32px;
+    }
+
+    .clients-wall {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+      gap: 11px;
+    }
+
+    .client-badge-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 7px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .client-badge-item:hover {
+      border-color: var(--navy);
+      transform: translateY(-1px);
+    }
+
+    .c-monogram {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      background: var(--navy);
+      color: #fbbf24;
+      font-size: 12px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      letter-spacing: 0.4px;
+    }
+
+    .c-info strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+
+    .c-info span {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
     /* Headquarters & Live Interactive Map Card */
     .office-map-card {
       background: var(--bg-white);
@@ -829,7 +930,6 @@
       gap: 16px;
     }
 
-    /* Projected Bottom Logo Box Matching Top Header Logo */
     .office-logo {
       width: 114px;
       height: 114px;
@@ -898,6 +998,10 @@
       border-top: 3px solid var(--gold-bright);
     }
 
+    footer strong {
+      color: #fbbf24;
+    }
+
     @media (max-width: 980px) {
       .hero-grid,
       .office-map-card {
@@ -928,9 +1032,12 @@
 </head>
 <body>
 
-  <!-- Top Strip -->
+  <!-- Top Strip with ISO 9001:2015 Certification -->
   <div class="top-strip">
-    <div><strong>BB HOLDING</strong> &bull; Kairali Building, Ring Road, Pathanamthitta</div>
+    <div>
+      <strong>BB HOLDING</strong> &bull; Kairali Building, Ring Road, Pathanamthitta &nbsp;
+      <span class="iso-top-pill">ISO 9001:2015 CERTIFIED (No: 25-07-2015606)</span>
+    </div>
     <div>Printing: <a href="tel:+918891888040"><strong>+91 8891 888 040</strong></a> &nbsp;|&nbsp; Logistics: <a href="tel:+917592888789"><strong>+91 7592 888 789</strong></a></div>
   </div>
 
@@ -948,7 +1055,7 @@
       <a href="#special-offers">Special Offers</a>
       <a href="#quick-quote">Quick Quote</a>
       <a href="#divisions">Our Divisions</a>
-      <a href="#courier-network">Courier Partners</a>
+      <a href="#happy-clients">Happy Clients</a>
       <a href="#office">Location &amp; Map</a>
     </nav>
 
@@ -962,7 +1069,10 @@
   <section class="hero-section" id="special-offers">
     <div class="hero-grid">
       <div class="hero-left">
-        <div class="hero-badge">BB HOLDING &bull; PATHANAMTHITTA HUB</div>
+        <div class="hero-badges-row">
+          <div class="hero-badge">BB HOLDING &bull; PATHANAMTHITTA HUB</div>
+          <div class="hero-badge iso-badge">&#10003; BLUEIN BLACK ISO 9001:2015 CERTIFIED (NO: 25-07-2015606)</div>
+        </div>
         <h1>Commercial <span>DTF Printing</span> &amp; Multi-Brand <span>Courier Hub</span></h1>
         <p>Authorized pickup center for 11 domestic &amp; international courier networks alongside commercial DTF &amp; sublimation printing, ID card printing, mug printing, and corporate uniforms — operated by <strong>bluein black printing &amp; logistics</strong>.</p>
 
@@ -1156,7 +1266,7 @@
           </div>
         </div>
         <div class="quote-footer-bar">
-          <button type="button" class="btn-wa-send" onclick="sendPrintingQuote()">Send Printing Quote on WhatsApp (+91 8891 888 040) &rarr;</button>
+          <button type="button" class="btn-wa-send" onclick="sendPrintingQuote()">Send Printing Quote to Concerned Department &rarr;</button>
         </div>
       </div>
 
@@ -1207,7 +1317,7 @@
           </div>
         </div>
         <div class="quote-footer-bar">
-          <button type="button" class="btn-wa-send" onclick="sendLogisticsQuote()">Send Logistics Quote on WhatsApp (+91 7592 888 789) &rarr;</button>
+          <button type="button" class="btn-wa-send" onclick="sendLogisticsQuote()">Send Logistics Quote to Concerned Department &rarr;</button>
         </div>
       </div>
     </div>
@@ -1215,8 +1325,11 @@
     <!-- Printing Services Showcase -->
     <div id="printing-services">
       <div class="sec-title">
-        <span>BLUEIN BLACK PRINTING STUDIO</span>
-        <h2>Custom Printing &amp; Branding Solutions</h2>
+        <div>
+          <span>BLUEIN BLACK PRINTING STUDIO</span>
+          <h2>Custom Printing &amp; Branding Solutions</h2>
+        </div>
+        <div class="iso-cert-tag">&#10003; ISO 9001:2015 Certified (No: 25-07-2015606)</div>
       </div>
 
       <div class="print-services-grid">
@@ -1249,15 +1362,17 @@
     <!-- Our Divisions -->
     <div id="divisions">
       <div class="sec-title">
-        <span>BB HOLDING DIVISIONS</span>
-        <h2>bluein black printing &amp; logistics</h2>
+        <div>
+          <span>BB HOLDING DIVISIONS</span>
+          <h2>bluein black printing &amp; logistics</h2>
+        </div>
       </div>
 
       <div class="div-grid">
         <div class="corp-card">
           <div>
             <h3>BLUEIN BLACK PRINTING</h3>
-            <p>Commercial DTF &amp; sublimation printing studio in Pathanamthitta for corporate, institutional, and retail orders.</p>
+            <p>ISO 9001:2015 Certified (No: 25-07-2015606) commercial DTF &amp; sublimation printing studio in Pathanamthitta.</p>
             <ul class="corp-list">
               <li>&bull; <strong>DTF &amp; Sublimation Print:</strong> Commercial DTF film, stickers &amp; jersey sublimation</li>
               <li>&bull; <strong>ID Card Printing:</strong> School, college &amp; corporate PVC ID cards with lanyards</li>
@@ -1267,7 +1382,7 @@
           </div>
           <div class="card-btns">
             <button type="button" class="btn-sm-outline" onclick="openQuote('printing')">Configure Print Quote</button>
-            <a href="https://wa.me/918891888040?text=Hello%20BLUEIN%20BLACK%20PRINTING,%20I%20want%20to%20place%20a%20printing%20order." target="_blank" rel="noopener" class="btn-sm-wa">WhatsApp (+91 8891 888 040)</a>
+            <a href="https://wa.me/918891888040?text=Hello%20BLUEIN%20BLACK%20PRINTING,%20I%20want%20to%20place%20a%20printing%20order." target="_blank" rel="noopener" class="btn-sm-wa">Chat Printing Dept.</a>
           </div>
         </div>
 
@@ -1284,7 +1399,7 @@
           </div>
           <div class="card-btns">
             <button type="button" class="btn-sm-outline" onclick="openQuote('logistics')">Book Free Pickup / Rate</button>
-            <a href="https://wa.me/917592888789?text=Hello%20BLUEIN%20BLACK%20LOGISTICS,%20I%20want%20to%20book%20a%20courier." target="_blank" rel="noopener" class="btn-sm-wa">WhatsApp (+91 7592 888 789)</a>
+            <a href="https://wa.me/917592888789?text=Hello%20BLUEIN%20BLACK%20LOGISTICS,%20I%20want%20to%20book%20a%20courier." target="_blank" rel="noopener" class="btn-sm-wa">Chat Logistics Dept.</a>
           </div>
         </div>
       </div>
@@ -1293,8 +1408,10 @@
     <!-- Courier Network -->
     <div id="courier-network">
       <div class="sec-title">
-        <span>AUTHORIZED NETWORK</span>
-        <h2>11 Domestic &amp; International Courier Partners</h2>
+        <div>
+          <span>AUTHORIZED NETWORK</span>
+          <h2>11 Domestic &amp; International Courier Partners</h2>
+        </div>
       </div>
 
       <div class="net-grid">
@@ -1354,11 +1471,171 @@
       </div>
     </div>
 
+    <!-- Our Happy Clients -->
+    <div id="happy-clients">
+      <div class="sec-title">
+        <div>
+          <span>TRUSTED BY LEADING BANKS, BRANDS &amp; INSTITUTIONS</span>
+          <h2>Our Happy Clients</h2>
+        </div>
+      </div>
+
+      <div class="clients-panel">
+        <div class="clients-wall">
+          <div class="client-badge-item">
+            <div class="c-monogram">SBI</div>
+            <div class="c-info">
+              <strong>State Bank of India</strong>
+              <span>Banking &amp; Financial Services</span>
+            </div>
+          </div>
+
+          <div class="client-badge-item">
+            <div class="c-monogram">HDFC</div>
+            <div class="c-info">
+              <strong>HDFC Bank</strong>
+              <span>Banking &amp; Corporate</span>
+            </div>
+          </div>
+
+          <div class="client-badge-item">
+            <div class="c-monogram">IB</div>
+            <div class="c-info">
+              <strong>IndusInd Bank</strong>
+              <span>Banking &amp; Financial Services</span>
+            </div>
+          </div>
+
+          <div class="client-badge-item">
+            <div class="c-monogram">SG</div>
+            <div class="c-info">
+              <strong>Sree Gokulam Chit Fund</strong>
+              <span>Financial Services</span>
+            </div>
+          </div>
+
+          <div class="client-badge-item">
+            <div class="c-monogram">MF</div>
+            <div class="c-info">
+              <strong>Mahindra Finance</strong>
+              <span>NBFC &amp; Financial Services</span>
+            </div>
+          </div>
+
+          <div class="client-badge-item">
+            <div class="c-monogram">LK</div>
+            <div class="c-info">
+              <strong>Lenskart</strong>
+              <span>Eyewear &amp; Retail</span>
+            </div>
+          </div>
+
+          <div class="client-badge-item">
+            <div class="c-monogram">EO</div>
+            <div class="c-info">
+              <strong>Edge Opticals</strong>
+              <span>Optical Retail</span>
+            </div>
+          </div>
+
+          <div class="client-badge-item">
+            <div class="c-monogram">IFB</div>
+            <div class="c-info">
+              <strong>IFB</strong>
+              <span>Home Appliances</span>
+            </div>
+          </div>
+
+          <div class="client-badge-item">
+            <div class="c-monogram">LG</div>
+            <div class="c-info">
+              <strong>LG</strong>
+              <span>Consumer Electronics</span>
+            </div>
+          </div>
+
+          <div class="client-badge-item">
+            <div class="c-monogram">HV</div>
+            <div class="c-info">
+              <strong>Havells</strong>
+              <span>Electrical &amp; Appliances</span>
+            </div>
+          </div>
+
+          <div class="client-badge-item">
+            <div class="c-monogram">BS</div>
+            <div class="c-info">
+              <strong>Bosch</strong>
+              <span>Engineering &amp; Appliances</span>
+            </div>
+          </div>
+
+          <div class="client-badge-item">
+            <div class="c-monogram">SD</div>
+            <div class="c-info">
+              <strong>Sun Direct</strong>
+              <span>DTH &amp; Media</span>
+            </div>
+          </div>
+
+          <div class="client-badge-item">
+            <div class="c-monogram">IE</div>
+            <div class="c-info">
+              <strong>Intelux Electronics</strong>
+              <span>Electronics &amp; Power</span>
+            </div>
+          </div>
+
+          <div class="client-badge-item">
+            <div class="c-monogram">SGH</div>
+            <div class="c-info">
+              <strong>Sree Gokulam Health Care</strong>
+              <span>Healthcare &amp; Medical</span>
+            </div>
+          </div>
+
+          <div class="client-badge-item">
+            <div class="c-monogram">KC</div>
+            <div class="c-info">
+              <strong>Kuttiyil Curtains</strong>
+              <span>Home Furnishings</span>
+            </div>
+          </div>
+
+          <div class="client-badge-item">
+            <div class="c-monogram">MU</div>
+            <div class="c-info">
+              <strong>Mars Uniform</strong>
+              <span>Apparel &amp; Uniforms</span>
+            </div>
+          </div>
+
+          <div class="client-badge-item">
+            <div class="c-monogram">TK</div>
+            <div class="c-info">
+              <strong>Triumph Kollam</strong>
+              <span>Automotive &amp; Retail</span>
+            </div>
+          </div>
+
+          <div class="client-badge-item">
+            <div class="c-monogram">CD</div>
+            <div class="c-info">
+              <strong>Civil Defence Pathanamthitta</strong>
+              <span>Emergency &amp; Public Service</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Office Location + Live Embedded Google Map -->
     <div id="office">
       <div class="sec-title">
-        <span>HEADQUARTERS &amp; LOCATION MAP</span>
-        <h2>Visit Us in Pathanamthitta</h2>
+        <div>
+          <span>HEADQUARTERS &amp; LOCATION MAP</span>
+          <h2>Visit Us in Pathanamthitta</h2>
+        </div>
       </div>
 
       <div class="office-map-card">
@@ -1394,7 +1671,7 @@
 
   <!-- Footer -->
   <footer>
-    &copy; 2026 BB HOLDING &bull; bluein black printing &amp; logistics, Pathanamthitta. All Rights Reserved.
+    &copy; 2026 <strong>BB HOLDING</strong> &bull; bluein black printing &amp; logistics, Pathanamthitta &bull; <strong>BLUEIN BLACK ISO 9001:2015 CERTIFIED (No: 25-07-2015606)</strong>. All Rights Reserved.
   </footer>
 
   <script>

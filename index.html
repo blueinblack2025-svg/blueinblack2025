@@ -1825,8 +1825,7 @@
   </footer>
 
   <script>
-    // Replace with your deployed Cloudflare Worker URL (e.g., https://bib-track.your-subdomain.workers.dev)
-    const TRACK_WORKER_URL = "";
+    const TRACK_WORKER_URL = "https://bib-trac.blueinblack2025.workers.dev";
 
     function escHtml(val) {
       return String(val ?? "")
@@ -1981,12 +1980,6 @@
       if (!awb) {
         outBox.style.display = "block";
         outBox.innerHTML = `<strong style="color:#dc2626;">Please enter a Consignment / AWB / Docket Number.</strong>`;
-        return;
-      }
-
-      if (!TRACK_WORKER_URL) {
-        outBox.style.display = "block";
-        outBox.innerHTML = `<strong style="color:#b45309;">Please add your Cloudflare Worker URL to TRACK_WORKER_URL in index.html to enable live in-page tracking.</strong>`;
         return;
       }
 

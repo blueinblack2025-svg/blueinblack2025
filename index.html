@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BB HOLDING | bluein black printing &amp; logistics — ISO 9001:2015 Certified</title>
-  <meta name="description" content="BB HOLDING in Pathanamthitta — bluein black printing &amp; logistics. ISO 9001:2015 Certified (No: 25-07-2015606). DTF & Sublimation Print, ID Card Printing, Mug Printing, Corporate Uniforms @ 450/- INR, XMAS Free Pickup Offer, and 11 Courier Partners." />
+  <meta name="description" content="BB HOLDING in Pathanamthitta — bluein black printing &amp; logistics. ISO 9001:2015 Certified (No: 25-07-2015606). Track Sree Gokulam Speed &amp; Safe and Shree Maruti shipments, DTF &amp; Sublimation Print, Corporate Uniforms @ 450/- INR." />
   <style>
     :root {
       --navy: #0b1f44;
@@ -124,7 +124,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 18px;
       font-size: 14px;
       font-weight: 600;
       color: #334155;
@@ -148,6 +148,8 @@
       align-items: center;
       gap: 5px;
       transition: 0.15s;
+      cursor: pointer;
+      border: none;
     }
 
     .btn-top-navy {
@@ -566,6 +568,70 @@
       font-weight: 800;
       padding: 5px 12px;
       border-radius: 6px;
+    }
+
+    /* 1-Stop Courier Tracking Card (Speed & Safe + Shree Maruti) */
+    .track-box {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--gold-bright);
+      border-radius: 9px;
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+    }
+
+    .track-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      padding-bottom: 9px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .track-header h3 {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .track-direct-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .track-mini-link {
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      transition: 0.15s;
+    }
+
+    .track-mini-link:hover {
+      background: #dbeafe;
+    }
+
+    .track-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1.3fr 0.8fr;
+      gap: 10px;
+      align-items: end;
+    }
+
+    .track-status-msg {
+      margin-top: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #15803d;
+      display: none;
     }
 
     /* Compact Quote Section */
@@ -1010,6 +1076,9 @@
       .q-grid-compact {
         grid-template-columns: repeat(2, 1fr);
       }
+      .track-grid {
+        grid-template-columns: 1fr;
+      }
       .nav-links {
         display: none;
       }
@@ -1052,7 +1121,7 @@
     </a>
 
     <nav class="nav-links">
-      <a href="#special-offers">Special Offers</a>
+      <a href="#track-parcel">Track Parcel</a>
       <a href="#quick-quote">Quick Quote</a>
       <a href="#divisions">Our Divisions</a>
       <a href="#happy-clients">Happy Clients</a>
@@ -1192,6 +1261,37 @@
 
   <!-- Main Content Wrapper -->
   <div class="wrapper">
+
+    <!-- Linked Courier Tracking Hub (Sree Gokulam Speed & Safe + Shree Maruti) -->
+    <div class="track-box" id="track-parcel">
+      <div class="track-header">
+        <h3>&#128269; Track Your Shipment (BLUEIN BLACK LOGISTICS)</h3>
+        <div class="track-direct-links">
+          <a href="https://www.gokulamspeedandsafe.com/speedandsafe-tracking/" target="_blank" rel="noopener" class="track-mini-link">Speed &amp; Safe Portal &nearr;</a>
+          <a href="https://shreemaruti.com/track-shipment/" target="_blank" rel="noopener" class="track-mini-link">Shree Maruti Portal &nearr;</a>
+        </div>
+      </div>
+
+      <div class="track-grid">
+        <div class="q-field">
+          <label for="awbInput">Consignment / AWB Number</label>
+          <input type="text" id="awbInput" placeholder="Enter your AWB / Docket Number" />
+        </div>
+        <div class="q-field">
+          <label for="courierSelect">Select Courier Network</label>
+          <select id="courierSelect">
+            <option value="speedandsafe">Sree Gokulam Speed &amp; Safe</option>
+            <option value="shreemaruti">Shree Maruti Courier</option>
+          </select>
+        </div>
+        <div>
+          <button type="button" onclick="launchCourierTracking()" class="btn-top btn-top-navy" style="width: 100%; justify-content: center; height: 38px;">
+            Track Now &rarr;
+          </button>
+        </div>
+      </div>
+      <div class="track-status-msg" id="trackStatusMsg"></div>
+    </div>
 
     <!-- Compact Quick Quote Desk -->
     <div class="quote-section-box" id="quick-quote">
@@ -1675,6 +1775,36 @@
   </footer>
 
   <script>
+    function launchCourierTracking() {
+      const awb = document.getElementById("awbInput").value.trim();
+      const partner = document.getElementById("courierSelect").value;
+      const statusEl = document.getElementById("trackStatusMsg");
+
+      const urls = {
+        speedandsafe: "https://www.gokulamspeedandsafe.com/speedandsafe-tracking/",
+        shreemaruti: "https://shreemaruti.com/track-shipment/"
+      };
+
+      const names = {
+        speedandsafe: "Sree Gokulam Speed & Safe",
+        shreemaruti: "Shree Maruti Courier"
+      };
+
+      if (awb && navigator.clipboard) {
+        navigator.clipboard.writeText(awb).catch(() => {});
+        statusEl.style.display = "block";
+        statusEl.textContent = `✓ AWB "${awb}" copied! Paste it in the ${names[partner]} tracking box now opening...`;
+      } else if (awb) {
+        statusEl.style.display = "block";
+        statusEl.textContent = `Opening ${names[partner]} tracking portal for AWB: ${awb}...`;
+      } else {
+        statusEl.style.display = "block";
+        statusEl.textContent = `Opening ${names[partner]} official tracking portal...`;
+      }
+
+      window.open(urls[partner], "_blank", "noopener");
+    }
+
     function setDeskTab(mode) {
       const prtBox = document.getElementById("boxPrt");
       const logBox = document.getElementById("boxLog");

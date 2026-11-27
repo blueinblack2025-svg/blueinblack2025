@@ -668,6 +668,7 @@
       border-bottom: 1px solid #e2e8f0;
       font-size: 13px;
       color: var(--text-dark);
+      vertical-align: top;
     }
 
     .history-table tr:last-child td {
@@ -682,6 +683,7 @@
       font-weight: 700;
       background: #dcfce7;
       color: #166534;
+      white-space: nowrap;
     }
 
     /* Compact Quote Section */
@@ -1324,7 +1326,7 @@
       <div class="track-grid">
         <div class="q-field">
           <label for="awbInput">Consignment / AWB / Docket Number</label>
-          <input type="text" id="awbInput" placeholder="e.g., 4718971 or 26018200040718" />
+          <input type="text" id="awbInput" placeholder="e.g., 4718971 or 26020340022440" />
         </div>
         <div class="q-field">
           <label for="courierSelect">Select Courier Network</label>
@@ -1835,6 +1837,23 @@
         .replace(/"/g, "&quot;");
     }
 
+    function formatDisplayDate(rawDate, timestamp) {
+      const d = rawDate ? new Date(rawDate) : (timestamp ? new Date(Number(timestamp)) : null);
+      if (!d || isNaN(d.getTime())) {
+        return escHtml(rawDate || "-");
+      }
+      return escHtml(
+        d.toLocaleString("en-IN", {
+          day: "2-digit",
+          month: "short",
+          year: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: true,
+        })
+      );
+    }
+
     function formatGokulamResponse(awb, payload) {
       const rows = Array.isArray(payload?.data) ? payload.data : [];
       if (!rows.length) {
@@ -1893,34 +1912,42 @@
     }
 
     function formatMarutiResponse(awb, payload) {
-      const info = payload?.orderInformation || payload?.data?.orderInformation || payload;
+      const info = payload?.orderInformation || payload?.data?.orderInformation || payload || {};
+      const scanList = Array.isArray(payload?.statuses)
+        ? payload.statuses
+        : Array.isArray(payload?.data?.statuses)
+        ? payload.data.statuses
+        : Array.isArray(info?.statuses)
+        ? info.statuses
+        : [];
+
       const srcCity = info?.sourceLocation?.city || "-";
       const dstCity = `${info?.destinationLocation?.city || "-"} (${info?.destinationLocation?.pincode || ""})`;
       const sender = info?.senderDetails?.sender_name || "-";
-      const receiver = info?.receiverDetails?.receiver_name || "-";
       const trackId = info?.trackingId || awb;
 
-      const scanList =
-        info?.scanDetails ||
-        info?.trackingHistory ||
-        info?.history ||
-        info?.events ||
-        [];
+      const latest = scanList[0] || {};
+      const latestStatusLabel = (latest.category || latest.status || "Active").replace(/_/g, " ");
+      const podLinks = Array.isArray(info?.pod_links) ? info.pod_links.filter(Boolean) : [];
+      const podHtml = podLinks.length
+        ? `<a href="${escHtml(podLinks[0])}" target="_blank" rel="noopener" style="display:inline-block; margin-top:4px; font-size:11.5px; font-weight:700; color:#1d4ed8; text-decoration:underline;">View POD Receipt &rarr;</a>`
+        : "";
 
       let historyHtml = "";
-      if (Array.isArray(scanList) && scanList.length) {
+      if (scanList.length) {
         const rowsHtml = scanList
           .map((ev) => {
-            const dt = escHtml(ev.date || ev.eventDate || ev.timestamp || ev.processdate || "-");
-            const st = escHtml(ev.status || ev.activity || ev.scanStatus || "In Transit");
-            const loc = escHtml(ev.location || ev.city || ev.hub || "-");
-            const rem = escHtml(ev.remarks || ev.description || "-");
+            const dt = formatDisplayDate(ev.createdAt || ev.updatedAt, ev.statusTimestamp);
+            const rawStatus = (ev.category || ev.status || "In Transit").replace(/_/g, " ");
+            const st = escHtml(rawStatus);
+            const loc = escHtml(ev.location || "-");
+            const desc = escHtml((ev.subcategory || ev.event || "-").trim());
             return `
               <tr>
                 <td>${dt}</td>
                 <td><span class="status-pill">${st}</span></td>
                 <td>${loc}</td>
-                <td>${rem}</td>
+                <td>${desc}</td>
               </tr>
             `;
           })
@@ -1931,9 +1958,9 @@
             <thead>
               <tr>
                 <th>Date &amp; Time</th>
-                <th>Activity / Status</th>
-                <th>Location</th>
-                <th>Remarks</th>
+                <th>Status</th>
+                <th>Location / Hub</th>
+                <th>Activity Details</th>
               </tr>
             </thead>
             <tbody>${rowsHtml}</tbody>
@@ -1954,16 +1981,17 @@
             <strong>${escHtml(trackId)}</strong>
           </div>
           <div class="track-meta-card">
-            <small>Origin → Destination</small>
+            <small>Latest Status</small>
+            <strong>${escHtml(latestStatusLabel)}</strong>
+            ${podHtml}
+          </div>
+          <div class="track-meta-card">
+            <small>Origin &rarr; Destination</small>
             <strong>${escHtml(`${srcCity} → ${dstCity}`)}</strong>
           </div>
           <div class="track-meta-card">
             <small>Sender</small>
             <strong>${escHtml(sender)}</strong>
-          </div>
-          <div class="track-meta-card">
-            <small>Receiver</small>
-            <strong>${escHtml(receiver)}</strong>
           </div>
         </div>
         ${historyHtml}

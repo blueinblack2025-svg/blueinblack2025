@@ -838,12 +838,38 @@
     }
 
     /* DTF, Sublimation & Mug Work Photo Gallery */
-    .work-gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-bottom: 32px;
-    }
+    .work-gallery-grid <!-- DTF, Sublimation & Mug Work Photo Showcase -->
+      <div class="work-gallery-grid">
+        <div class="work-photo-card" onclick="openLightbox('dtf-work-1.jpg', 'DTF Printing Work — BLUEIN BLACK STUDIO')">
+          <div class="work-photo-thumb">
+            <img src="dtf-work-1.jpg" alt="DTF Printing Work" />
+          </div>
+          <div class="work-photo-meta">
+            <strong>DTF Printing Work</strong>
+            <span>Tap to Zoom</span>
+          </div>
+        </div>
+
+        <div class="work-photo-card" onclick="openLightbox('dtf-work-2..jpeg', 'Sublimation Printing Work — BLUEIN BLACK STUDIO')">
+          <div class="work-photo-thumb">
+            <img src="dtf-work-2..jpeg" alt="Sublimation Printing Work" />
+          </div>
+          <div class="work-photo-meta">
+            <strong>Sublimation Printing Work</strong>
+            <span>Tap to Zoom</span>
+          </div>
+        </div>
+
+        <div class="work-photo-card" onclick="openLightbox('dtf-work-3.jpg', 'Mug Printing Work — BLUEIN BLACK STUDIO')">
+          <div class="work-photo-thumb">
+            <img src="dtf-work-3.jpg" alt="Mug Printing Work" />
+          </div>
+          <div class="work-photo-meta">
+            <strong>Mug Printing Work</strong>
+            <span>Tap to Zoom</span>
+          </div>
+        </div>
+      </div>
 
     .work-photo-card {
       background: var(--bg-white);

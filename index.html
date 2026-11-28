@@ -935,112 +935,14 @@
       background: var(--wa-hover);
     }
 
-    /* Printing Services Showcase */
-    .print-services-grid {
+    /* Unified Showcase Card Style (Used for Both Printing Cards & Logistics Cards) */
+    .showcase-grid-4 {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 12px;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
 
-    .print-item-card {
-      background: var(--bg-white);
-      border: 1px solid var(--border);
-      border-top: 3px solid var(--gold-bright);
-      border-radius: 8px;
-      padding: 13px 14px;
-    }
-
-    .print-item-card h4 {
-      font-size: 14px;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 4px;
-    }
-
-    .print-item-card p {
-      font-size: 12.5px;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-
-    .print-item-card span {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--gold);
-    }
-
-    /* Category-wise Work Galleries */
-    .category-gallery-block {
-      margin-bottom: 18px;
-    }
-
-    .category-gallery-heading {
-      font-size: 14px;
-      font-weight: 800;
-      color: #f8fafc;
-      margin-bottom: 8px;
-      padding-left: 9px;
-      border-left: 3px solid var(--gold-bright);
-    }
-
-    .work-gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-
-    .work-photo-card {
-      background: var(--bg-white);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-      cursor: pointer;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-      transition: transform 0.2s, border-color 0.2s;
-    }
-
-    .work-photo-card:hover {
-      transform: translateY(-2px);
-      border-color: var(--gold-bright);
-    }
-
-    .work-photo-thumb {
-      width: 100%;
-      height: 165px;
-      background: #0b1f44;
-      overflow: hidden;
-    }
-
-    .work-photo-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .work-photo-meta {
-      padding: 8px 12px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .work-photo-meta strong {
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--navy);
-      display: block;
-    }
-
-    .work-photo-meta span {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--gold);
-    }
-
-    /* Wide 5-Column Logistics Showcase Grid */
     .log-showcase-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -1048,7 +950,7 @@
       margin-bottom: 18px;
     }
 
-    .log-service-card {
+    .showcase-card {
       background: var(--bg-white);
       border: 1px solid #e2e8f0;
       border-radius: 9px;
@@ -1061,43 +963,43 @@
       transition: transform 0.2s, border-color 0.2s;
     }
 
-    .log-service-card:hover {
+    .showcase-card:hover {
       transform: translateY(-3px);
       border-color: var(--gold-bright);
     }
 
-    .log-card-img-wrap {
+    .card-img-wrap {
       position: relative;
       width: 100%;
-      height: 145px;
+      height: 150px;
       background: #0b1f44;
       overflow: hidden;
     }
 
-    .log-card-img-wrap img {
+    .card-img-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
 
-    .log-card-img-overlay {
+    .card-img-overlay {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(to top, rgba(7, 9, 13, 0.92), rgba(7, 9, 13, 0.45), transparent);
-      padding: 18px 10px 7px;
+      background: linear-gradient(to top, rgba(7, 9, 13, 0.94), rgba(7, 9, 13, 0.45), transparent);
+      padding: 20px 11px 8px;
     }
 
-    .log-card-img-overlay h4 {
+    .card-img-overlay h4 {
       color: #ffffff;
-      font-size: 13.5px;
+      font-size: 14px;
       font-weight: 800;
       line-height: 1.2;
     }
 
-    .log-card-body {
+    .card-body {
       padding: 11px 12px;
       display: flex;
       flex-direction: column;
@@ -1105,14 +1007,14 @@
       flex: 1;
     }
 
-    .log-card-body p {
+    .card-body p {
       font-size: 12px;
       color: #334155;
       line-height: 1.4;
       margin-bottom: 8px;
     }
 
-    .log-card-foot {
+    .card-foot {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -1123,7 +1025,7 @@
       padding-top: 6px;
     }
 
-    .log-card-foot span.zoom-hint {
+    .card-foot span.zoom-hint {
       color: var(--gold);
     }
 
@@ -1454,12 +1356,12 @@
       display: block;
     }
 
-    /* Lightbox Modal for Work Photos */
+    /* Lightbox Modal with Slide Controls (Shown Only When Photo is Opened) */
     .lightbox-modal {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(6, 15, 36, 0.88);
+      background: rgba(6, 15, 36, 0.9);
       z-index: 2000;
       align-items: center;
       justify-content: center;
@@ -1473,26 +1375,82 @@
     .lightbox-card {
       background: #ffffff;
       border-radius: 10px;
-      max-width: 720px;
+      max-width: 780px;
       width: 100%;
       overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
     }
 
-    .lightbox-card img {
-      width: 100%;
-      max-height: 72vh;
-      object-fit: contain;
+    .lightbox-stage {
+      position: relative;
       background: #0b1f44;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-stage img {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
       display: block;
     }
 
+    .lb-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(7, 9, 13, 0.72);
+      color: #fbbf24;
+      border: 1px solid rgba(251, 191, 36, 0.5);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      font-size: 18px;
+      font-weight: 900;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.15s;
+    }
+
+    .lb-nav-btn:hover {
+      background: var(--gold-bright);
+      color: #07090d;
+    }
+
+    .lb-prev {
+      left: 12px;
+    }
+
+    .lb-next {
+      right: 12px;
+    }
+
     .lightbox-bar {
-      padding: 12px 16px;
+      padding: 11px 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .lightbox-meta-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .lb-counter-pill {
+      background: #f1f5f9;
+      color: var(--navy);
+      font-size: 11.5px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 999px;
     }
 
     .lightbox-close {
@@ -1526,8 +1484,9 @@
       .q-row-prt {
         grid-template-columns: repeat(4, minmax(0, 1fr));
       }
+      .showcase-grid-4,
       .log-showcase-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
       }
       .net-grid,
       .clients-wall {
@@ -1545,13 +1504,6 @@
       .bb-full-meta {
         align-items: flex-start;
       }
-      .print-services-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .work-gallery-grid,
-      .log-showcase-grid {
-        grid-template-columns: 1fr 1fr;
-      }
       .track-grid {
         grid-template-columns: 1fr;
       }
@@ -1563,8 +1515,7 @@
     @media (max-width: 600px) {
       .full-videos-row,
       .offers-pair,
-      .print-services-grid,
-      .work-gallery-grid,
+      .showcase-grid-4,
       .log-showcase-grid,
       .net-grid,
       .clients-wall,
@@ -1825,7 +1776,7 @@
   <div class="wrapper">
     <div class="container-wide">
 
-      <!-- 1. PRINTING SERVICES & GALLERIES + CUSTOM PRINTING QUOTE BELOW IT -->
+      <!-- 1. PRINTING SERVICES & CARDS (Same Card Style as Logistics Operations + Lightbox Slide on Click) + PRINTING QUOTE BELOW -->
       <div id="printing-services">
         <div class="sec-title">
           <div>
@@ -1835,177 +1786,73 @@
           <div class="iso-cert-tag">&#10003; ISO 9001:2015 Certified (No: 25-07-2015606)</div>
         </div>
 
-        <div class="print-services-grid">
-          <div class="print-item-card">
-            <h4>1. Corporate Premium Uniform</h4>
-            <p>High-opacity commercial DTF transfers, ready-to-press logo stickers, and vibrant corporate uniforms.</p>
-            <span>Wholesale Meter Prints &amp; Retail</span>
-          </div>
-
-          <div class="print-item-card">
-            <h4>2. Sublimation Gift Items</h4>
-            <p>Crisp, fade-resistant full-color sublimation gift items, mugs, cushions, and custom panels.</p>
-            <span>Rich Color &amp; Durability</span>
-          </div>
-
-          <div class="print-item-card">
-            <h4>3. PVC Card &amp; Lanyard</h4>
-            <p>Durable PVC ID cards for schools, colleges, offices, and events with custom lanyards &amp; holders.</p>
-            <span>Bulk Institutional Orders</span>
-          </div>
-
-          <div class="print-item-card">
-            <h4>4. Team Jersey</h4>
-            <p>Custom sports team jerseys and athletic kits with high-durability prints and neat finishing.</p>
-            <span>Mockup Approval &amp; Fast Dispatch</span>
-          </div>
-        </div>
-
-        <!-- 1. DTF Work — Corporate Premium Uniform (3 Slides) -->
-        <div class="category-gallery-block">
-          <div class="category-gallery-heading">1. Corporate Premium Uniform (DTF Printing)</div>
-          <div class="work-gallery-grid">
-            <div class="work-photo-card" onclick="openLightbox('https://raw.githubusercontent.com/blueinblack2025-svg/blueinblack2025/main/dtf-work-1.jpg', 'Corporate Premium Uniform — BLUEIN BLACK STUDIO')">
-              <div class="work-photo-thumb">
-                <img src="https://raw.githubusercontent.com/blueinblack2025-svg/blueinblack2025/main/dtf-work-1.jpg" alt="Corporate Premium Uniform" />
-              </div>
-              <div class="work-photo-meta">
-                <strong>Corporate Premium Uniform</strong>
-                <span>Tap to Zoom</span>
+        <div class="showcase-grid-4">
+          <div class="showcase-card" onclick="openGalleryLightbox('dtf', 0)">
+            <div class="card-img-wrap">
+              <img src="https://raw.githubusercontent.com/blueinblack2025-svg/blueinblack2025/main/dtf-work-1.jpg" alt="Corporate Premium Uniform" />
+              <div class="card-img-overlay">
+                <h4>Corporate Premium Uniform</h4>
               </div>
             </div>
-
-            <div class="work-photo-card" onclick="openLightbox('dtf-work-2..jpeg', 'Corporate Premium Uniform — BLUEIN BLACK STUDIO')">
-              <div class="work-photo-thumb">
-                <img src="dtf-work-2..jpeg" alt="Corporate Premium Uniform" />
-              </div>
-              <div class="work-photo-meta">
-                <strong>Corporate Premium Uniform</strong>
-                <span>Tap to Zoom</span>
-              </div>
-            </div>
-
-            <div class="work-photo-card" onclick="openLightbox('https://raw.githubusercontent.com/blueinblack2025-svg/blueinblack2025/main/dtf-work-3.jpg', 'Corporate Premium Uniform — BLUEIN BLACK STUDIO')">
-              <div class="work-photo-thumb">
-                <img src="https://raw.githubusercontent.com/blueinblack2025-svg/blueinblack2025/main/dtf-work-3.jpg" alt="Corporate Premium Uniform" />
-              </div>
-              <div class="work-photo-meta">
-                <strong>Corporate Premium Uniform</strong>
-                <span>Tap to Zoom</span>
+            <div class="card-body">
+              <p>High-opacity commercial DTF transfers, ready-to-press logo stickers, and vibrant corporate uniforms in wholesale &amp; retail.</p>
+              <div class="card-foot">
+                <span>DTF &amp; Uniforms</span>
+                <span class="zoom-hint">Zoom &rarr;</span>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- 2. Sublimation Work — Sublimation Gift Items (3 Slides) -->
-        <div class="category-gallery-block">
-          <div class="category-gallery-heading">2. Sublimation Gift Items</div>
-          <div class="work-gallery-grid">
-            <div class="work-photo-card" onclick="openLightbox('work-sublimation1.jpg', 'Sublimation Gift Items — BLUEIN BLACK STUDIO')">
-              <div class="work-photo-thumb">
-                <img src="work-sublimation1.jpg" alt="Sublimation Gift Items" />
-              </div>
-              <div class="work-photo-meta">
-                <strong>Sublimation Gift Items</strong>
-                <span>Tap to Zoom</span>
+          <div class="showcase-card" onclick="openGalleryLightbox('sublimation', 0)">
+            <div class="card-img-wrap">
+              <img src="work-sublimation1.jpg" alt="Sublimation Gift Items" />
+              <div class="card-img-overlay">
+                <h4>Sublimation Gift Items</h4>
               </div>
             </div>
-
-            <div class="work-photo-card" onclick="openLightbox('work-sublimation2.jpg.jpeg', 'Sublimation Gift Items — BLUEIN BLACK STUDIO')">
-              <div class="work-photo-thumb">
-                <img src="work-sublimation2.jpg.jpeg" alt="Sublimation Gift Items" />
-              </div>
-              <div class="work-photo-meta">
-                <strong>Sublimation Gift Items</strong>
-                <span>Tap to Zoom</span>
+            <div class="card-body">
+              <p>Crisp, fade-resistant full-color sublimation gift items, photo &amp; magic mugs, cushions, and custom panels.</p>
+              <div class="card-foot">
+                <span>Mugs &amp; Gifts</span>
+                <span class="zoom-hint">Zoom &rarr;</span>
               </div>
             </div>
+          </div>
 
-            <div class="work-photo-card" onclick="openLightbox('work-sublimation3.jpg.jpeg', 'Sublimation Gift Items — BLUEIN BLACK STUDIO')">
-              <div class="work-photo-thumb">
-                <img src="work-sublimation3.jpg.jpeg" alt="Sublimation Gift Items" />
+          <div class="showcase-card" onclick="openGalleryLightbox('idcard', 0)">
+            <div class="card-img-wrap">
+              <img src="work-idcard1.jpg" alt="PVC Card &amp; Lanyard" />
+              <div class="card-img-overlay">
+                <h4>PVC Card &amp; Lanyard</h4>
               </div>
-              <div class="work-photo-meta">
-                <strong>Sublimation Gift Items</strong>
-                <span>Tap to Zoom</span>
+            </div>
+            <div class="card-body">
+              <p>Durable PVC ID cards for schools, colleges, offices, and events with custom printed lanyards &amp; holders.</p>
+              <div class="card-foot">
+                <span>ID &amp; Lanyards</span>
+                <span class="zoom-hint">Zoom &rarr;</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase-card" onclick="openGalleryLightbox('jersey', 0)">
+            <div class="card-img-wrap">
+              <img src="work-jersey.1.jpg.jpeg" alt="Team Jersey" />
+              <div class="card-img-overlay">
+                <h4>Team Jersey</h4>
+              </div>
+            </div>
+            <div class="card-body">
+              <p>Custom sports team jerseys and athletic kits with high-durability prints, mockup approval, and fast dispatch.</p>
+              <div class="card-foot">
+                <span>Sports &amp; Teams</span>
+                <span class="zoom-hint">Zoom &rarr;</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 3. ID Card Work — PVC Card & Lanyard (3 Slides) -->
-        <div class="category-gallery-block">
-          <div class="category-gallery-heading">3. PVC Card &amp; Lanyard</div>
-          <div class="work-gallery-grid">
-            <div class="work-photo-card" onclick="openLightbox('work-idcard1.jpg', 'PVC Card & Lanyard — BLUEIN BLACK STUDIO')">
-              <div class="work-photo-thumb">
-                <img src="work-idcard1.jpg" alt="PVC Card & Lanyard" />
-              </div>
-              <div class="work-photo-meta">
-                <strong>PVC Card &amp; Lanyard</strong>
-                <span>Tap to Zoom</span>
-              </div>
-            </div>
-
-            <div class="work-photo-card" onclick="openLightbox('work-idcard2.jpg', 'PVC Card & Lanyard — BLUEIN BLACK STUDIO')">
-              <div class="work-photo-thumb">
-                <img src="work-idcard2.jpg" alt="PVC Card & Lanyard" />
-              </div>
-              <div class="work-photo-meta">
-                <strong>PVC Card &amp; Lanyard</strong>
-                <span>Tap to Zoom</span>
-              </div>
-            </div>
-
-            <div class="work-photo-card" onclick="openLightbox('work-idcard3.jpg', 'PVC Card & Lanyard — BLUEIN BLACK STUDIO')">
-              <div class="work-photo-thumb">
-                <img src="work-idcard3.jpg" alt="PVC Card & Lanyard" />
-              </div>
-              <div class="work-photo-meta">
-                <strong>PVC Card &amp; Lanyard</strong>
-                <span>Tap to Zoom</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. Jersey Work — Team Jersey (3 Slides) -->
-        <div class="category-gallery-block">
-          <div class="category-gallery-heading">4. Team Jersey</div>
-          <div class="work-gallery-grid">
-            <div class="work-photo-card" onclick="openLightbox('work-jersey.1.jpg.jpeg', 'Team Jersey — BLUEIN BLACK STUDIO')">
-              <div class="work-photo-thumb">
-                <img src="work-jersey.1.jpg.jpeg" alt="Team Jersey" />
-              </div>
-              <div class="work-photo-meta">
-                <strong>Team Jersey</strong>
-                <span>Tap to Zoom</span>
-              </div>
-            </div>
-
-            <div class="work-photo-card" onclick="openLightbox('work-jersey2.jpg.jpeg', 'Team Jersey — BLUEIN BLACK STUDIO')">
-              <div class="work-photo-thumb">
-                <img src="work-jersey2.jpg.jpeg" alt="Team Jersey" />
-              </div>
-              <div class="work-photo-meta">
-                <strong>Team Jersey</strong>
-                <span>Tap to Zoom</span>
-              </div>
-            </div>
-
-            <div class="work-photo-card" onclick="openLightbox('work-jersey3.jpg.jpeg', 'Team Jersey — BLUEIN BLACK STUDIO')">
-              <div class="work-photo-thumb">
-                <img src="work-jersey3.jpg.jpeg" alt="Team Jersey" />
-              </div>
-              <div class="work-photo-meta">
-                <strong>Team Jersey</strong>
-                <span>Tap to Zoom</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Custom Printing Quote Directly Below Sublimation / Team Jersey / Corporate Uniform -->
+        <!-- Custom Printing Quote Directly Below Printing Cards -->
         <div class="quote-panel-card prt-panel" id="printing-quote-box">
           <div class="quote-panel-head">
             <h3>BLUEIN BLACK PRINTING &mdash; Custom Print, Sublimation, Jersey &amp; Uniform Quote</h3>
@@ -2079,7 +1926,7 @@
       </div>
 
       <!-- 2. LOGISTICS OPERATIONS -> AUTHORIZED NETWORK (11 COURIERS) -> PICKUP QUOTE (ABOVE BB HOLDING DIVISIONS) -->
-      <div id="logistics-gallery" class="category-gallery-block">
+      <div id="logistics-gallery">
         <div class="sec-title">
           <div>
             <span>BLUEIN BLACK LOGISTICS</span>
@@ -2088,80 +1935,80 @@
         </div>
 
         <div class="log-showcase-grid">
-          <div class="log-service-card" onclick="openLightbox('logistic1.jpg', 'Express Parcel & Pickup — BLUEIN BLACK LOGISTICS')">
-            <div class="log-card-img-wrap">
+          <div class="showcase-card" onclick="openGalleryLightbox('logistics', 0)">
+            <div class="card-img-wrap">
               <img src="logistic1.jpg" alt="Express Parcel and Pickup" />
-              <div class="log-card-img-overlay">
+              <div class="card-img-overlay">
                 <h4>Express Parcel &amp; Pickup</h4>
               </div>
             </div>
-            <div class="log-card-body">
+            <div class="card-body">
               <p>Send parcels and documents across Kerala, South India, and nationwide with timely dispatch, doorstep pickup, and live tracking.</p>
-              <div class="log-card-foot">
+              <div class="card-foot">
                 <span>Domestic Express</span>
                 <span class="zoom-hint">Zoom &rarr;</span>
               </div>
             </div>
           </div>
 
-          <div class="log-service-card" onclick="openLightbox('logistic2.jpg', 'Multi-Brand Hub & Dispatch — BLUEIN BLACK LOGISTICS')">
-            <div class="log-card-img-wrap">
+          <div class="showcase-card" onclick="openGalleryLightbox('logistics', 1)">
+            <div class="card-img-wrap">
               <img src="logistic2.jpg" alt="Multi-Brand Hub and Dispatch" />
-              <div class="log-card-img-overlay">
+              <div class="card-img-overlay">
                 <h4>Multi-Brand Hub &amp; Dispatch</h4>
               </div>
             </div>
-            <div class="log-card-body">
+            <div class="card-body">
               <p>Compare and book across 11 trusted domestic and global courier partners under one roof at Pathanamthitta with safe handling.</p>
-              <div class="log-card-foot">
+              <div class="card-foot">
                 <span>11 Courier Networks</span>
                 <span class="zoom-hint">Zoom &rarr;</span>
               </div>
             </div>
           </div>
 
-          <div class="log-service-card" onclick="openLightbox('logistic3.jpeg', 'International Air Express — BLUEIN BLACK LOGISTICS')">
-            <div class="log-card-img-wrap">
+          <div class="showcase-card" onclick="openGalleryLightbox('logistics', 2)">
+            <div class="card-img-wrap">
               <img src="logistic3.jpeg" alt="International Air Express" />
-              <div class="log-card-img-overlay">
+              <div class="card-img-overlay">
                 <h4>International Air Express</h4>
               </div>
             </div>
-            <div class="log-card-body">
+            <div class="card-body">
               <p>Fast global air shipping to 220+ countries including GCC, UK, USA &amp; Europe.</p>
-              <div class="log-card-foot">
+              <div class="card-foot">
                 <span>220+ Countries</span>
                 <span class="zoom-hint">Zoom &rarr;</span>
               </div>
             </div>
           </div>
 
-          <div class="log-service-card" onclick="openLightbox('logistic4.jpg', 'Bulk & Surface Cargo — BLUEIN BLACK LOGISTICS')">
-            <div class="log-card-img-wrap">
-              <img src="logistic4.jpg" alt="Bulk and Surface Cargo" />
-              <div class="log-card-img-overlay">
+          <div class="showcase-card" onclick="openGalleryLightbox('logistics', 3)">
+            <div class="card-img-wrap">
+              <img src="logistic4.jpg" alt="Bulk &amp; Surface Cargo" />
+              <div class="card-img-overlay">
                 <h4>Bulk &amp; Surface Cargo</h4>
               </div>
             </div>
-            <div class="log-card-body">
+            <div class="card-body">
               <p>Reliable surface freight and commercial parcel movement across India.</p>
-              <div class="log-card-foot">
+              <div class="card-foot">
                 <span>Pan-India Cargo</span>
                 <span class="zoom-hint">Zoom &rarr;</span>
               </div>
             </div>
           </div>
 
-          <div class="log-service-card" onclick="openLightbox('lgistic5.jpg', 'Secure Packing & Support — BLUEIN BLACK LOGISTICS')">
-            <div class="log-card-img-wrap">
-              <img src="lgistic5.jpg" alt="Secure Packing and Support" />
-              <div class="log-card-img-overlay">
+          <div class="showcase-card" onclick="openGalleryLightbox('logistics', 4)">
+            <div class="card-img-wrap">
+              <img src="lgistic5.jpg" alt="Secure Packing &amp; Support" />
+              <div class="card-img-overlay">
                 <h4>Secure Packing &amp; Support</h4>
               </div>
             </div>
-            <div class="log-card-body">
+            <div class="card-body">
               <p>Protective parcel packing and direct branch assistance in Pathanamthitta.</p>
-              <div class="log-card-foot">
+              <div class="card-foot">
                 <span>Safe Transit</span>
                 <span class="zoom-hint">Zoom &rarr;</span>
               </div>
@@ -2560,12 +2407,19 @@
     </div>
   </div>
 
-  <!-- Lightbox Modal -->
+  <!-- Lightbox Modal with Slide Controls (Shown Only When Photo is Opened) -->
   <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox(event)">
     <div class="lightbox-card" onclick="event.stopPropagation()">
-      <img id="lightboxImg" src="" alt="Work Preview" />
+      <div class="lightbox-stage">
+        <button type="button" class="lb-nav-btn lb-prev" id="lbPrevBtn" onclick="stepLightbox(-1)" title="Previous Photo">&lsaquo;</button>
+        <img id="lightboxImg" src="" alt="Work Preview" />
+        <button type="button" class="lb-nav-btn lb-next" id="lbNextBtn" onclick="stepLightbox(1)" title="Next Photo">&rsaquo;</button>
+      </div>
       <div class="lightbox-bar">
-        <strong id="lightboxCaption" style="color: var(--navy); font-size: 14px;"></strong>
+        <div class="lightbox-meta-group">
+          <strong id="lightboxCaption" style="color: var(--navy); font-size: 14px;"></strong>
+          <span class="lb-counter-pill" id="lightboxCounter"></span>
+        </div>
         <button type="button" class="lightbox-close" onclick="closeLightbox()">Close &times;</button>
       </div>
     </div>
@@ -2580,6 +2434,79 @@
 
   <script>
     const TRACK_WORKER_URL = "https://bib-trac.blueinblack2025.workers.dev";
+
+    const GALLERY_SETS = {
+      dtf: [
+        { src: "https://raw.githubusercontent.com/blueinblack2025-svg/blueinblack2025/main/dtf-work-1.jpg", caption: "Corporate Premium Uniform — BLUEIN BLACK STUDIO" },
+        { src: "dtf-work-2..jpeg", caption: "Corporate Premium Uniform — BLUEIN BLACK STUDIO" },
+        { src: "https://raw.githubusercontent.com/blueinblack2025-svg/blueinblack2025/main/dtf-work-3.jpg", caption: "Corporate Premium Uniform — BLUEIN BLACK STUDIO" },
+      ],
+      sublimation: [
+        { src: "work-sublimation1.jpg", caption: "Sublimation Gift Items — BLUEIN BLACK STUDIO" },
+        { src: "work-sublimation2.jpg.jpeg", caption: "Sublimation Gift Items — BLUEIN BLACK STUDIO" },
+        { src: "work-sublimation3.jpg.jpeg", caption: "Sublimation Gift Items — BLUEIN BLACK STUDIO" },
+      ],
+      idcard: [
+        { src: "work-idcard1.jpg", caption: "PVC Card & Lanyard — BLUEIN BLACK STUDIO" },
+        { src: "work-idcard2.jpg", caption: "PVC Card & Lanyard — BLUEIN BLACK STUDIO" },
+        { src: "work-idcard3.jpg", caption: "PVC Card & Lanyard — BLUEIN BLACK STUDIO" },
+      ],
+      jersey: [
+        { src: "work-jersey.1.jpg.jpeg", caption: "Team Jersey — BLUEIN BLACK STUDIO" },
+        { src: "work-jersey2.jpg.jpeg", caption: "Team Jersey — BLUEIN BLACK STUDIO" },
+        { src: "work-jersey3.jpg.jpeg", caption: "Team Jersey — BLUEIN BLACK STUDIO" },
+      ],
+      logistics: [
+        { src: "logistic1.jpg", caption: "Express Parcel & Pickup — BLUEIN BLACK LOGISTICS" },
+        { src: "logistic2.jpg", caption: "Multi-Brand Hub & Dispatch — BLUEIN BLACK LOGISTICS" },
+        { src: "logistic3.jpeg", caption: "International Air Express — BLUEIN BLACK LOGISTICS" },
+        { src: "logistic4.jpg", caption: "Bulk & Surface Cargo — BLUEIN BLACK LOGISTICS" },
+        { src: "lgistic5.jpg", caption: "Secure Packing & Support — BLUEIN BLACK LOGISTICS" },
+      ],
+    };
+
+    let activeGalleryKey = null;
+    let activeGalleryIndex = 0;
+
+    function renderLightboxSlide() {
+      const items = GALLERY_SETS[activeGalleryKey] || [];
+      if (!items.length) return;
+      const item = items[activeGalleryIndex];
+      document.getElementById("lightboxImg").src = item.src;
+      document.getElementById("lightboxCaption").textContent = item.caption;
+      document.getElementById("lightboxCounter").textContent = `${activeGalleryIndex + 1} / ${items.length}`;
+
+      const showNav = items.length > 1;
+      document.getElementById("lbPrevBtn").style.display = showNav ? "inline-flex" : "none";
+      document.getElementById("lbNextBtn").style.display = showNav ? "inline-flex" : "none";
+    }
+
+    function openGalleryLightbox(key, index = 0) {
+      activeGalleryKey = key;
+      const items = GALLERY_SETS[key] || [];
+      activeGalleryIndex = Math.max(0, Math.min(index, items.length - 1));
+      renderLightboxSlide();
+      document.getElementById("lightboxModal").classList.add("open");
+    }
+
+    function stepLightbox(delta) {
+      const items = GALLERY_SETS[activeGalleryKey] || [];
+      if (items.length <= 1) return;
+      activeGalleryIndex = (activeGalleryIndex + delta + items.length) % items.length;
+      renderLightboxSlide();
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightboxModal").classList.remove("open");
+    }
+
+    document.addEventListener("keydown", (e) => {
+      const modal = document.getElementById("lightboxModal");
+      if (!modal || !modal.classList.contains("open")) return;
+      if (e.key === "ArrowRight") stepLightbox(1);
+      else if (e.key === "ArrowLeft") stepLightbox(-1);
+      else if (e.key === "Escape") closeLightbox();
+    });
 
     const PARTNER_META = {
       speedandsafe: { label: "Sree Gokulam Speed & Safe", mode: "inpage" },
@@ -2983,16 +2910,6 @@
       } catch (err) {
         outBox.innerHTML = `<strong style="color:#dc2626;">Network error while loading tracking status. Please try again.</strong>`;
       }
-    }
-
-    function openLightbox(src, caption) {
-      document.getElementById("lightboxImg").src = src;
-      document.getElementById("lightboxCaption").textContent = caption;
-      document.getElementById("lightboxModal").classList.add("open");
-    }
-
-    function closeLightbox() {
-      document.getElementById("lightboxModal").classList.remove("open");
     }
 
     function sendPrintingQuote() {

@@ -194,7 +194,7 @@
       background: #eab308;
     }
 
-    /* Hero Section — Compact & Wide Fit */
+    /* Hero Section: Full-Width BB HOLDING Top + Next Line Large Dual Videos + Offers */
     .hero-section {
       background: radial-gradient(circle at top left, #171c28 0%, #07090d 65%, #040508 100%);
       color: #ffffff;
@@ -202,46 +202,60 @@
       border-bottom: 1px solid #1e293b;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 22px;
-      align-items: center;
-    }
-
-    .hero-left {
+    .bb-full-banner {
+      background: linear-gradient(135deg, #0d1320 0%, #131c31 100%);
+      border: 1.5px solid rgba(245, 158, 11, 0.42);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 14px;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
     }
 
-    .hero-brand-lockup {
-      margin-bottom: 8px;
+    .bb-full-left {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .bb-full-logo {
+      height: 54px;
+      width: auto;
+      object-fit: contain;
+      background: #0b1f44;
+      padding: 5px 10px;
+      border-radius: 7px;
+      border: 1px solid rgba(245, 158, 11, 0.45);
     }
 
     .hero-brand-main {
-      font-size: clamp(34px, 4vw, 48px);
+      font-size: clamp(28px, 3.6vw, 42px);
       font-weight: 900;
       color: #ffffff;
-      line-height: 1.0;
+      line-height: 1.02;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
 
     .hero-brand-sub {
-      font-size: clamp(13px, 1.5vw, 17px);
+      font-size: clamp(12px, 1.4vw, 15px);
       font-weight: 800;
       color: #fbbf24;
-      letter-spacing: 3px;
+      letter-spacing: 2.8px;
       text-transform: uppercase;
-      margin-top: 4px;
+      margin-top: 3px;
     }
 
-    .hero-badges-row {
+    .bb-full-meta {
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 10px;
+      flex-direction: column;
+      gap: 5px;
+      align-items: flex-end;
     }
 
     .hero-badge.iso-badge {
@@ -256,36 +270,124 @@
       letter-spacing: 0.3px;
     }
 
-    .hero-left h1 {
-      font-size: clamp(20px, 2.1vw, 25px);
+    .bb-full-subline {
+      font-size: 12.5px;
+      color: #cbd5e1;
+    }
+
+    /* Next Line: Full-Width Large Dual 10s Videos (Muted / No Voice, Auto-Play & Loop) */
+    .full-videos-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .video-showcase-card {
+      background: #0d1017;
+      border: 1.5px solid rgba(245, 158, 11, 0.45);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .video-showcase-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold-bright);
+    }
+
+    .video-title-strip {
+      background: linear-gradient(90deg, #0b1f44 0%, #143269 100%);
+      padding: 8px 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid rgba(245, 158, 11, 0.35);
+    }
+
+    .video-title-strip strong {
+      font-size: 12.5px;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .video-title-strip span {
+      font-size: 10px;
+      font-weight: 800;
+      background: var(--gold-bright);
+      color: #07090d;
+      padding: 2px 7px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .video-frame-wide {
+      width: 100%;
+      height: 310px;
+      background: #040508;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-frame-wide video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Bottom Hero Row: Summary & Scanner Left + 2 Offer Cards Right */
+    .hero-bottom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .hero-info-panel {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 10px;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .hero-info-panel h1 {
+      font-size: clamp(19px, 2vw, 24px);
       font-weight: 800;
       line-height: 1.2;
-      margin-bottom: 8px;
       color: #f8fafc;
     }
 
-    .hero-left h1 span {
+    .hero-info-panel h1 span {
       color: #fbbf24;
     }
 
-    .hero-left p {
-      font-size: 13.5px;
+    .hero-info-panel p {
+      font-size: 13px;
       color: #cbd5e1;
-      margin-bottom: 12px;
     }
 
     .mini-divisions {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px;
-      margin-bottom: 11px;
     }
 
     .mini-div {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: 8px;
-      padding: 9px 12px;
+      padding: 8px 11px;
     }
 
     .mini-div strong {
@@ -296,7 +398,7 @@
     }
 
     .mini-div span {
-      font-size: 12px;
+      font-size: 11.5px;
       color: #e2e8f0;
     }
 
@@ -328,69 +430,6 @@
     @keyframes scanSweep {
       0% { left: -30%; }
       100% { left: 100%; }
-    }
-
-    /* Hero Right Column */
-    .hero-right-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 11px;
-    }
-
-    .banners-pair {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .banner-tile {
-      position: relative;
-      border-radius: 9px;
-      overflow: hidden;
-      border: 1.5px solid rgba(245, 158, 11, 0.32);
-      background: #0d1017;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.55);
-      height: 146px;
-    }
-
-    .banner-tile img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-
-    .banner-tile:hover img {
-      transform: scale(1.04);
-    }
-
-    .banner-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(to top, rgba(4, 5, 8, 0.96), rgba(4, 5, 8, 0.6), transparent);
-      padding: 16px 10px 7px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .banner-caption strong {
-      font-size: 11px;
-      font-weight: 800;
-      color: #ffffff;
-      letter-spacing: 0.4px;
-    }
-
-    .banner-caption span {
-      font-size: 9.5px;
-      font-weight: 800;
-      background: var(--gold-bright);
-      color: #07090d;
-      padding: 2px 6px;
-      border-radius: 3px;
     }
 
     /* Offers Pair Grid */
@@ -445,7 +484,7 @@
     }
 
     .offer-spotlight h2 {
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 900;
       color: var(--navy);
       line-height: 1.25;
@@ -457,7 +496,7 @@
       border: 1px dashed #d97706;
       border-radius: 6px;
       padding: 5px 9px;
-      margin-bottom: 8px;
+      margin-bottom: 7px;
       display: flex;
       align-items: baseline;
       gap: 6px;
@@ -476,14 +515,14 @@
     }
 
     .offer-highlight-box .amount {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 900;
       color: #b45309;
       line-height: 1;
     }
 
     .offer-highlight-box.xmas-box .amount {
-      font-size: 16px;
+      font-size: 15.5px;
       color: #15803d;
     }
 
@@ -836,7 +875,6 @@
       color: #92400e;
     }
 
-    /* Wide Horizontal Field Rows to Keep Height Minimal */
     .q-row-log {
       display: grid;
       grid-template-columns: repeat(7, minmax(0, 1fr)) auto;
@@ -1453,10 +1491,13 @@
     }
 
     @media (max-width: 980px) {
-      .hero-grid,
+      .hero-bottom-grid,
       .office-map-card,
       .div-grid {
         grid-template-columns: 1fr;
+      }
+      .bb-full-meta {
+        align-items: flex-start;
       }
       .print-services-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1474,7 +1515,7 @@
     }
 
     @media (max-width: 600px) {
-      .banners-pair,
+      .full-videos-row,
       .offers-pair,
       .print-services-grid,
       .work-gallery-grid,
@@ -1484,6 +1525,9 @@
       .q-row-log,
       .q-row-prt {
         grid-template-columns: 1fr;
+      }
+      .video-frame-wide {
+        height: 220px;
       }
       .office-left {
         flex-direction: column;
@@ -1531,58 +1575,75 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section: Full-Width BB HOLDING Top + Next Line Large Dual Videos + Offers -->
   <section class="hero-section" id="special-offers">
-    <div class="container-wide hero-grid">
-      <div class="hero-left">
-        <div class="hero-brand-lockup">
-          <div class="hero-brand-main">BB HOLDING</div>
-          <div class="hero-brand-sub">PRINTING &amp; LOGISTICS</div>
+    <div class="container-wide">
+
+      <!-- 1. Full-Width BB HOLDING Header Block -->
+      <div class="bb-full-banner">
+        <div class="bb-full-left">
+          <img src="bnb-logo.png" alt="BB HOLDING" class="bb-full-logo" />
+          <div>
+            <div class="hero-brand-main">BB HOLDING</div>
+            <div class="hero-brand-sub">PRINTING &amp; LOGISTICS</div>
+          </div>
         </div>
 
-        <div class="hero-badges-row">
+        <div class="bb-full-meta">
           <div class="hero-badge iso-badge">&#10003; BLUEIN BLACK ISO 9001:2015 CERTIFIED (NO: 25-07-2015606)</div>
-        </div>
-
-        <h1>Commercial <span>DTF Printing</span> &amp; Multi-Brand <span>Courier Hub</span></h1>
-        <p>Authorized pickup center for 11 domestic &amp; international courier networks alongside commercial DTF, sublimation &amp; mug printing, ID card printing, and corporate uniforms — operated by <strong>bluein black printing &amp; logistics</strong>.</p>
-
-        <div class="mini-divisions">
-          <div class="mini-div">
-            <strong>BLUEIN BLACK PRINTING</strong>
-            <span>DTF, Sublimation &amp; Mug Printing, ID Cards &amp; Uniforms</span>
+          <div class="bb-full-subline">
+            Kairali Building, Ring Road, Pathanamthitta &bull; Printing: <strong>+91 8891 888 040</strong> &bull; Logistics: <strong>+91 7592 888 789</strong>
           </div>
-          <div class="mini-div">
-            <strong>BLUEIN BLACK LOGISTICS</strong>
-            <span>11 Domestic &amp; International Courier Partners</span>
-          </div>
-        </div>
-
-        <div class="scanner-box">
-          <div class="scanner-line"></div>
-          <span>&#9679; LIVE DISPATCH &amp; DTF PRINT SCANNER ACTIVE</span>
-          <strong>19,000+ Pin Codes &bull; 220+ Countries</strong>
         </div>
       </div>
 
-      <!-- RIGHT SIDE: 1st DTF Banner + 2nd Logistics Banner + 2 Offer Cards -->
-      <div class="hero-right-stack">
-        <div class="banners-pair">
-          <a href="#printing-quote-box" class="banner-tile">
-            <img src="dtf-banner.jpg" alt="BLUEIN BLACK Custom Apparel &amp; DTF Studio" />
-            <div class="banner-caption">
-              <strong>DTF &amp; APPAREL STUDIO</strong>
-              <span>PRINTING</span>
-            </div>
-          </a>
+      <!-- 2. Next Line: Full-Width Large Dual 10s Videos (Muted / Silent Auto-Play & Loop) -->
+      <div class="full-videos-row">
+        <div class="video-showcase-card">
+          <div class="video-title-strip">
+            <strong>BLUEIN BLACK LOGISTICS</strong>
+            <span>10s VIDEO &bull; SILENT LOOP</span>
+          </div>
+          <div class="video-frame-wide">
+            <video src="logistics-10s.mp4" autoplay loop muted playsinline preload="metadata"></video>
+          </div>
+        </div>
 
-          <a href="#logistics-quote-box" class="banner-tile">
-            <img src="logistics-banner.jpg" alt="BB HOLDING Logistics Hub" />
-            <div class="banner-caption">
-              <strong>MULTI-BRAND COURIER HUB</strong>
-              <span>LOGISTICS</span>
+        <div class="video-showcase-card">
+          <div class="video-title-strip">
+            <strong>BLUEIN BLACK PRINTING &mdash; DTF</strong>
+            <span>10s VIDEO &bull; SILENT LOOP</span>
+          </div>
+          <div class="video-frame-wide">
+            <video src="dtf-10s.mp4" autoplay loop muted playsinline preload="metadata"></video>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Bottom Row: Overview & Scanner + Today's Offer & Xmas Offer Cards -->
+      <div class="hero-bottom-grid">
+        <div class="hero-info-panel">
+          <div>
+            <h1>Commercial <span>DTF Printing</span> &amp; Multi-Brand <span>Courier Hub</span></h1>
+            <p style="margin-top: 6px;">Authorized pickup center for 11 domestic &amp; international courier networks alongside commercial DTF, sublimation &amp; mug printing, ID card printing, and corporate uniforms — operated by <strong>bluein black printing &amp; logistics</strong>.</p>
+          </div>
+
+          <div class="mini-divisions">
+            <div class="mini-div">
+              <strong>BLUEIN BLACK PRINTING</strong>
+              <span>DTF, Sublimation &amp; Mug Printing, ID Cards &amp; Uniforms</span>
             </div>
-          </a>
+            <div class="mini-div">
+              <strong>BLUEIN BLACK LOGISTICS</strong>
+              <span>11 Domestic &amp; International Courier Partners</span>
+            </div>
+          </div>
+
+          <div class="scanner-box">
+            <div class="scanner-line"></div>
+            <span>&#9679; LIVE DISPATCH &amp; DTF PRINT SCANNER ACTIVE</span>
+            <strong>19,000+ Pin Codes &bull; 220+ Countries</strong>
+          </div>
         </div>
 
         <div class="offers-pair">
@@ -1630,6 +1691,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </section>
 

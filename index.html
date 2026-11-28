@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BB HOLDING | PRINTING &amp; LOGISTICS — ISO 9001:2015 Certified</title>
-  <meta name="description" content="BB HOLDING in Pathanamthitta — PRINTING &amp; LOGISTICS. ISO 9001:2015 Certified (No: 25-07-2015606). Direct in-page parcel tracking for Sree Gokulam Speed &amp; Safe and Shree Maruti Courier, DTF, Sublimation &amp; Mug Printing, Corporate Uniforms @ 450/- INR, and XMAS Free Pickup Offer." />
+  <meta name="description" content="BB HOLDING in Pathanamthitta — PRINTING &amp; LOGISTICS. ISO 9001:2015 Certified (No: 25-07-2015606). Multi-brand parcel tracking for Sree Gokulam Speed &amp; Safe, Shree Maruti, Delhivery, India Post, Xpressbees, Amazon Shipping, Shadowfax, DHL, FedEx, Aramex &amp; UPS." />
   <style>
     :root {
       --navy: #0b1f44;
@@ -993,7 +993,7 @@
       color: var(--gold);
     }
 
-    /* Detailed + Clean Simple Logistics Cards (Inspired by Services Ecosystem Layout) */
+    /* Detailed + Clean Simple Logistics Cards */
     .log-showcase-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1625,7 +1625,7 @@
     </div>
   </div>
 
-  <!-- Projected Direct In-Page Courier Tracking Spotlight -->
+  <!-- Projected Direct In-Page Courier Tracking Spotlight (All 11 Partners) -->
   <section class="track-spotlight-section" id="track-parcel">
     <div class="track-box-projected">
       <div class="track-projected-header">
@@ -1633,7 +1633,7 @@
           <span class="track-live-pill">&#9679; LIVE PARCEL TRACKING</span>
           <h3>Track Your Shipment &mdash; BLUEIN BLACK LOGISTICS</h3>
         </div>
-        <span style="font-size: 12px; color: #334155; font-weight: 700;">Sree Gokulam Speed &amp; Safe &bull; Shree Maruti Courier</span>
+        <span style="font-size: 12px; color: #334155; font-weight: 700;">11 Domestic &amp; International Courier Networks</span>
       </div>
 
       <div class="track-grid">
@@ -1644,8 +1644,21 @@
         <div class="q-field">
           <label for="courierSelect">Select Courier Network</label>
           <select id="courierSelect">
-            <option value="speedandsafe">Sree Gokulam Speed &amp; Safe</option>
-            <option value="shreemaruti">Shree Maruti Courier</option>
+            <optgroup label="Domestic Courier Networks">
+              <option value="speedandsafe">Sree Gokulam Speed &amp; Safe</option>
+              <option value="shreemaruti">Shree Maruti Courier</option>
+              <option value="delhivery">Delhivery</option>
+              <option value="indiapost">India Post (Speed Post / Parcel)</option>
+              <option value="xpressbees">Xpressbees</option>
+              <option value="amazon">Amazon Shipping</option>
+              <option value="shadowfax">Shadowfax</option>
+            </optgroup>
+            <optgroup label="International Express Networks">
+              <option value="dhl">DHL Express</option>
+              <option value="fedex">FedEx Express</option>
+              <option value="aramex">Aramex</option>
+              <option value="ups">UPS</option>
+            </optgroup>
           </select>
         </div>
         <div>
@@ -2398,6 +2411,68 @@
   <script>
     const TRACK_WORKER_URL = "https://bib-trac.blueinblack2025.workers.dev";
 
+    const PARTNER_META = {
+      speedandsafe: { label: "Sree Gokulam Speed & Safe", mode: "inpage" },
+      shreemaruti: { label: "Shree Maruti Courier", mode: "inpage" },
+      delhivery: { label: "Delhivery", mode: "inpage" },
+      indiapost: {
+        label: "India Post",
+        mode: "redirect",
+        copyFirst: true,
+        note: "Consignment number copied to clipboard! Paste it on the India Post portal and complete CAPTCHA.",
+        getUrl: () => "https://www.indiapost.gov.in/_layouts/15/dop.portal.tracking/trackconsignment.aspx",
+      },
+      xpressbees: {
+        label: "Xpressbees",
+        mode: "redirect",
+        copyFirst: true,
+        note: "AWB number copied to clipboard! Paste it on the official Xpressbees tracking portal.",
+        getUrl: () => "https://www.xpressbees.com/shipment/tracking",
+      },
+      amazon: {
+        label: "Amazon Shipping",
+        mode: "redirect",
+        copyFirst: true,
+        note: "Tracking ID copied to clipboard! Paste it on the official Amazon Shipping portal.",
+        getUrl: () => "https://track.amazon.in/",
+      },
+      shadowfax: {
+        label: "Shadowfax",
+        mode: "redirect",
+        copyFirst: true,
+        note: "AWB number copied to clipboard! Paste it on the official Shadowfax tracking portal.",
+        getUrl: () => "https://tracker.shadowfax.in/#/",
+      },
+      dhl: {
+        label: "DHL Express",
+        mode: "redirect",
+        copyFirst: false,
+        note: "Opening official DHL Express live tracking page with your waybill number...",
+        getUrl: (awb) => `https://www.dhl.com/in-en/home/tracking.html?tracking-id=${encodeURIComponent(awb)}&submit=1`,
+      },
+      fedex: {
+        label: "FedEx Express",
+        mode: "redirect",
+        copyFirst: false,
+        note: "Opening official FedEx live tracking page with your tracking number...",
+        getUrl: (awb) => `https://www.fedex.com/fedextrack/?trknbr=${encodeURIComponent(awb)}`,
+      },
+      aramex: {
+        label: "Aramex",
+        mode: "redirect",
+        copyFirst: false,
+        note: "Opening official Aramex shipment tracking page with your shipment number...",
+        getUrl: (awb) => `https://www.aramex.com/us/en/track/results?mode=0&ShipmentNumber=${encodeURIComponent(awb)}`,
+      },
+      ups: {
+        label: "UPS",
+        mode: "redirect",
+        copyFirst: false,
+        note: "Opening official UPS tracking portal with your tracking number...",
+        getUrl: (awb) => `https://www.ups.com/track?tracknum=${encodeURIComponent(awb)}`,
+      },
+    };
+
     function escHtml(val) {
       return String(val ?? "")
         .replace(/&/g, "&amp;")
@@ -2567,12 +2642,122 @@
       `;
     }
 
+    function formatDelhiveryResponse(awb, payload) {
+      if (!payload || typeof payload !== "object") {
+        return `<div style="color:#b45309; font-weight:700;">No tracking data received for AWB: ${escHtml(awb)}</div>`;
+      }
+
+      const rawData = payload.data;
+      const pkg = Array.isArray(rawData)
+        ? rawData[0]
+        : rawData && typeof rawData === "object"
+        ? rawData.shipment || rawData.package || rawData
+        : null;
+
+      if (!pkg || (Array.isArray(rawData) && rawData.length === 0)) {
+        const msgText = payload.message
+          ? `${payload.message} (${awb})`
+          : `No tracking records found for AWB: ${awb}`;
+        return `
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px;">
+            <strong style="color:#b45309;">${escHtml(msgText)}</strong>
+            <a href="https://www.delhivery.com/track-v2/package/${encodeURIComponent(awb)}" target="_blank" rel="noopener" class="btn-top btn-top-navy">Check on Delhivery.com &rarr;</a>
+          </div>
+        `;
+      }
+
+      const scans =
+        (Array.isArray(pkg.scans) && pkg.scans) ||
+        (Array.isArray(pkg.ScanDetail) && pkg.ScanDetail) ||
+        (Array.isArray(pkg.events) && pkg.events) ||
+        (Array.isArray(pkg.statuses) && pkg.statuses) ||
+        [];
+
+      const waybill = pkg.waybill || pkg.awb || pkg.wbn || awb;
+      const currentStatus =
+        pkg.status?.status ||
+        pkg.current_status ||
+        pkg.status ||
+        scans[0]?.status ||
+        scans[0]?.scan ||
+        "Updated";
+      const origin = pkg.origin || pkg.origin_city || pkg.source || "-";
+      const destination = pkg.destination || pkg.destination_city || pkg.dest || "-";
+
+      const tableRows = scans.length
+        ? scans
+            .map((ev) => {
+              const detail = ev.ScanDetail || ev;
+              const dt = formatDisplayDate(
+                detail.ScanDateTime || detail.date || detail.timestamp || detail.createdAt,
+                detail.statusTimestamp
+              );
+              const st = escHtml(
+                (detail.Scan || detail.status || detail.event || "In Transit").toString().trim()
+              );
+              const loc = escHtml(
+                (detail.ScannedLocation || detail.location || detail.hub || "-").toString().trim()
+              );
+              const rem = escHtml(
+                (detail.Instructions || detail.remarks || detail.subcategory || "-").toString().trim()
+              );
+              return `
+                <tr>
+                  <td>${dt}</td>
+                  <td><span class="status-pill">${st}</span></td>
+                  <td>${loc}</td>
+                  <td>${rem}</td>
+                </tr>
+              `;
+            })
+            .join("")
+        : `
+          <tr>
+            <td>${formatDisplayDate(pkg.status?.statusDateTime || pkg.updated_at)}</td>
+            <td><span class="status-pill">${escHtml(String(currentStatus))}</span></td>
+            <td>${escHtml(`${origin} → ${destination}`)}</td>
+            <td>${escHtml(pkg.status?.instructions || "Shipment tracked via Delhivery")}</td>
+          </tr>
+        `;
+
+      return `
+        <div class="track-meta-grid">
+          <div class="track-meta-card">
+            <small>Waybill / AWB</small>
+            <strong>${escHtml(String(waybill))}</strong>
+          </div>
+          <div class="track-meta-card">
+            <small>Latest Status</small>
+            <strong>${escHtml(String(currentStatus))}</strong>
+          </div>
+          <div class="track-meta-card">
+            <small>Origin &rarr; Destination</small>
+            <strong>${escHtml(`${origin} → ${destination}`)}</strong>
+          </div>
+          <div class="track-meta-card">
+            <small>Courier Partner</small>
+            <strong>Delhivery</strong>
+          </div>
+        </div>
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th>Date &amp; Time</th>
+              <th>Status</th>
+              <th>Location / Hub</th>
+              <th>Remarks / Details</th>
+            </tr>
+          </thead>
+          <tbody>${tableRows}</tbody>
+        </table>
+      `;
+    }
+
     async function trackInPage() {
       const awb = document.getElementById("awbInput").value.trim();
       const partner = document.getElementById("courierSelect").value;
       const outBox = document.getElementById("inPageTrackResult");
-
-      const partnerLabel = partner === "shreemaruti" ? "Shree Maruti Courier" : "Sree Gokulam Speed & Safe";
+      const meta = PARTNER_META[partner] || { label: partner, mode: "inpage" };
 
       if (!awb) {
         outBox.style.display = "block";
@@ -2580,8 +2765,27 @@
         return;
       }
 
+      if (meta.mode === "redirect") {
+        const targetUrl = meta.getUrl(awb);
+        if (meta.copyFirst && navigator.clipboard) {
+          navigator.clipboard.writeText(awb).catch(() => {});
+        }
+        outBox.style.display = "block";
+        outBox.innerHTML = `
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px;">
+            <div>
+              <strong style="color:#0b1f44; font-size:14.5px;">${escHtml(meta.label)} &mdash; ${escHtml(awb)}</strong>
+              <p style="font-size:13px; color:#334155; margin-top:3px;">${escHtml(meta.note)}</p>
+            </div>
+            <a href="${escHtml(targetUrl)}" target="_blank" rel="noopener" class="btn-top btn-top-navy">Open ${escHtml(meta.label)} Portal &rarr;</a>
+          </div>
+        `;
+        window.open(targetUrl, "_blank", "noopener");
+        return;
+      }
+
       outBox.style.display = "block";
-      outBox.innerHTML = `<strong>Fetching live tracking history for ${escHtml(awb)} (${escHtml(partnerLabel)})...</strong>`;
+      outBox.innerHTML = `<strong>Fetching live tracking history for ${escHtml(awb)} (${escHtml(meta.label)})...</strong>`;
 
       try {
         const res = await fetch(`${TRACK_WORKER_URL}?partner=${encodeURIComponent(partner)}&awb=${encodeURIComponent(awb)}`);
@@ -2595,11 +2799,13 @@
         const content =
           partner === "shreemaruti"
             ? formatMarutiResponse(awb, json.data)
+            : partner === "delhivery"
+            ? formatDelhiveryResponse(awb, json.data)
             : formatGokulamResponse(awb, json.data);
 
         outBox.innerHTML = `
           <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px; margin-bottom:12px;">
-            <strong style="color:#0b1f44; font-size:14.5px;">${escHtml(partnerLabel)} &mdash; Tracking History (${escHtml(awb)})</strong>
+            <strong style="color:#0b1f44; font-size:14.5px;">${escHtml(meta.label)} &mdash; Tracking History (${escHtml(awb)})</strong>
             <span style="font-size:11.5px; font-weight:700; color:#15803d;">Live on blueinblack.in</span>
           </div>
           ${content}

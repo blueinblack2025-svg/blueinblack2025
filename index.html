@@ -275,7 +275,7 @@
       color: #cbd5e1;
     }
 
-    /* Next Line: Full-Width Large Dual 10s Videos (Muted / No Voice, Auto-Play & Loop) */
+    /* Next Line: Full-Width Large Dual 10s Videos (Muted / Silent Auto-Play & Loop) */
     .full-videos-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -817,19 +817,14 @@
       border-radius: 6px;
     }
 
-    /* Stacked Dual Quote Boxes: Logistics Top, Printing Below (Both Visible) */
-    .quotes-stack-wrap {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-bottom: 24px;
-    }
-
+    /* Individual Section Quote Cards */
     .quote-panel-card {
       background: var(--bg-white);
       border: 1px solid var(--border);
       border-radius: 9px;
       padding: 14px 18px;
+      margin-top: 14px;
+      margin-bottom: 22px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
     }
 
@@ -1218,7 +1213,7 @@
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       gap: 10px;
-      margin-bottom: 22px;
+      margin-bottom: 14px;
     }
 
     .net-box {
@@ -1331,6 +1326,55 @@
       font-size: 10px;
       font-weight: 600;
       color: var(--text-muted);
+    }
+
+    /* Animated Digital Running Counters Above Address / Office */
+    .digital-stats-banner {
+      background: linear-gradient(135deg, #0d1424 0%, #16233e 100%);
+      border: 1.5px solid rgba(245, 158, 11, 0.45);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-bottom: 14px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+    }
+
+    .digital-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .digital-stat-card {
+      background: rgba(7, 9, 13, 0.72);
+      border: 1px solid rgba(251, 191, 36, 0.28);
+      border-left: 4px solid var(--gold-bright);
+      border-radius: 8px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .digital-stat-num {
+      font-size: clamp(22px, 2.4vw, 30px);
+      font-weight: 900;
+      color: #fbbf24;
+      line-height: 1.1;
+      letter-spacing: 0.5px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .digital-stat-label {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-top: 3px;
+    }
+
+    .digital-stat-sub {
+      font-size: 11px;
+      color: #cbd5e1;
+      margin-top: 1px;
     }
 
     /* Headquarters & Live Interactive Map Card */
@@ -1493,7 +1537,8 @@
     @media (max-width: 980px) {
       .hero-bottom-grid,
       .office-map-card,
-      .div-grid {
+      .div-grid,
+      .digital-stats-grid {
         grid-template-columns: 1fr;
       }
       .bb-full-meta {
@@ -1561,8 +1606,8 @@
 
       <nav class="nav-links">
         <a href="#track-parcel" class="nav-track-pill">&#128269; Track Parcel</a>
-        <a href="#quick-quote">Quick Quotes</a>
-        <a href="#printing-services">Print Work</a>
+        <a href="#courier-network">11 Couriers &amp; Pickup</a>
+        <a href="#printing-services">Print Work &amp; Quote</a>
         <a href="#logistics-gallery">Logistics Work</a>
         <a href="#happy-clients">Happy Clients</a>
         <a href="#office">Location &amp; Map</a>
@@ -1602,7 +1647,7 @@
         <div class="video-showcase-card">
           <div class="video-title-strip">
             <strong>BLUEIN BLACK LOGISTICS</strong>
-            <span>10s VIDEO &bull; SILENT LOOP</span>
+            <span>LOGISTICS</span>
           </div>
           <div class="video-frame-wide">
             <video src="logistics-10s.mp4" autoplay loop muted playsinline preload="metadata"></video>
@@ -1612,7 +1657,7 @@
         <div class="video-showcase-card">
           <div class="video-title-strip">
             <strong>BLUEIN BLACK PRINTING &mdash; DTF</strong>
-            <span>10s VIDEO &bull; SILENT LOOP</span>
+            <span>DTF PRINTING</span>
           </div>
           <div class="video-frame-wide">
             <video src="dtf-10s.mp4" autoplay loop muted playsinline preload="metadata"></video>
@@ -1779,13 +1824,75 @@
   <div class="wrapper">
     <div class="container-wide">
 
-      <!-- Stacked Dual Quote Forms: Logistics Top, Printing Below (Both Visible) -->
-      <div class="quotes-stack-wrap" id="quick-quote">
+      <!-- 1. AUTHORIZED NETWORK (11 Courier Partners) + PICKUP / LOGISTICS QUOTE BELOW IT -->
+      <div id="courier-network">
+        <div class="sec-title">
+          <div>
+            <span>AUTHORIZED NETWORK</span>
+            <h2>11 Domestic &amp; International Courier Partners</h2>
+          </div>
+        </div>
 
-        <!-- 1. Logistics Quote Form (Top) -->
+        <div class="net-grid">
+          <div class="net-box">
+            <div class="net-head">
+              <h4>Sree Gokulam Speed &amp; Safe</h4>
+              <span class="net-tag">South India</span>
+            </div>
+            <p>Overnight &amp; next-day express parcel delivery across Kerala, Tamil Nadu &amp; Karnataka.</p>
+            <div class="net-sub">Kerala &amp; South India Priority</div>
+          </div>
+
+          <div class="net-box">
+            <div class="net-head">
+              <h4>Shree Maruti Courier</h4>
+              <span class="net-tag">Pan-India</span>
+            </div>
+            <p>Authorized franchise for nationwide express documents, parcels &amp; surface cargo.</p>
+            <div class="net-sub">19,000+ Indian Pin Codes</div>
+          </div>
+
+          <div class="net-box">
+            <div class="net-head">
+              <h4>Delhivery &amp; Amazon Shipping</h4>
+              <span class="net-tag">Nationwide</span>
+            </div>
+            <p>Tech-enabled pan-India parcel &amp; commercial shipping with live tracking updates.</p>
+            <div class="net-sub">Metros &amp; Tier-2/3 Cities</div>
+          </div>
+
+          <div class="net-box">
+            <div class="net-head">
+              <h4>India Post, Xpressbees &amp; Shadowfax</h4>
+              <span class="net-tag">All India</span>
+            </div>
+            <p>Speed Post &amp; rapid e-commerce delivery covering 100% urban and rural pin codes.</p>
+            <div class="net-sub">Complete Urban &amp; Rural Reach</div>
+          </div>
+
+          <div class="net-box">
+            <div class="net-head">
+              <h4>DHL &amp; FedEx Express</h4>
+              <span class="net-tag">Global Air</span>
+            </div>
+            <p>Priority worldwide air shipping for documents, university files, food &amp; parcels.</p>
+            <div class="net-sub">220+ Countries &bull; 2–5 Days</div>
+          </div>
+
+          <div class="net-box">
+            <div class="net-head">
+              <h4>Aramex &amp; UPS</h4>
+              <span class="net-tag">GCC &amp; Global</span>
+            </div>
+            <p>Dedicated Middle East (UAE, Saudi, Qatar, Kuwait, Oman), UK, USA &amp; Europe service.</p>
+            <div class="net-sub">GCC, UK, USA &amp; Europe Doorstep</div>
+          </div>
+        </div>
+
+        <!-- Logistics / Pickup Quote Directly Below Authorized Network -->
         <div class="quote-panel-card log-panel" id="logistics-quote-box">
           <div class="quote-panel-head">
-            <h3>BLUEIN BLACK LOGISTICS &mdash; Instant Shipping / Pickup Quote</h3>
+            <h3>BLUEIN BLACK LOGISTICS &mdash; Pickup &amp; Shipping Quote</h3>
             <span class="quote-panel-badge log-b">Logistics Dept: +91 7592 888 789</span>
           </div>
 
@@ -1833,86 +1940,13 @@
               <input type="text" id="logContents" placeholder="Size / Items" />
             </div>
             <div>
-              <button type="button" class="btn-wa-inline" onclick="sendLogisticsQuote()">Send Logistics &rarr;</button>
+              <button type="button" class="btn-wa-inline" onclick="sendLogisticsQuote()">Send Pickup Quote &rarr;</button>
             </div>
           </div>
         </div>
-
-        <!-- 2. Printing Quote Form (Below Logistics) -->
-        <div class="quote-panel-card prt-panel" id="printing-quote-box">
-          <div class="quote-panel-head">
-            <h3>BLUEIN BLACK PRINTING &mdash; Instant Custom Print &amp; Uniform Quote</h3>
-            <span class="quote-panel-badge prt-b">Printing Dept: +91 8891 888 040</span>
-          </div>
-
-          <div class="q-row-prt">
-            <div class="q-field">
-              <label for="prtCustomer">Customer / Company</label>
-              <input type="text" id="prtCustomer" placeholder="Name / Org" />
-            </div>
-            <div class="q-field">
-              <label for="prtProduct">Product Category</label>
-              <select id="prtProduct">
-                <option value="Special Offer: 25-50 Corporate Uniforms @ 450/- INR">Uniform Offer @ 450/-</option>
-                <option value="DTF &amp; Sublimation Print">DTF &amp; Sublimation</option>
-                <option value="ID Card Printing (School / Office / Event)">ID Card &amp; Lanyard</option>
-                <option value="Mug Printing (Photo / Magic / Corporate)">Mug Printing</option>
-                <option value="Custom Polo T-Shirts &amp; Uniforms">Polo / Uniforms</option>
-                <option value="Custom Sports Team Jerseys">Team Jersey</option>
-                <option value="Metal Photo Prints &amp; Custom Stickers">Metal / Stickers</option>
-              </select>
-            </div>
-            <div class="q-field">
-              <label for="prtQty">Quantity</label>
-              <input type="text" id="prtQty" placeholder="25 pcs / 5m" />
-            </div>
-            <div class="q-field">
-              <label for="prtColor">Color</label>
-              <input type="text" id="prtColor" placeholder="Black / Navy" />
-            </div>
-            <div class="q-field">
-              <label for="prtNeck">Neck Type</label>
-              <select id="prtNeck">
-                <option value="Polo Collar">Polo Collar</option>
-                <option value="Round Neck">Round Neck</option>
-                <option value="V-Neck">V-Neck</option>
-                <option value="Chinese / Mandarin Collar">Mandarin Collar</option>
-                <option value="N/A (DTF / ID Card / Mug)">N/A</option>
-              </select>
-            </div>
-            <div class="q-field">
-              <label for="prtSleeve">Sleeve</label>
-              <select id="prtSleeve">
-                <option value="Half Sleeve">Half Sleeve</option>
-                <option value="Full Sleeve">Full Sleeve</option>
-                <option value="Sleeveless">Sleeveless</option>
-                <option value="N/A (DTF / ID Card / Mug)">N/A</option>
-              </select>
-            </div>
-            <div class="q-field">
-              <label for="prtMaterial">Fabric / Type</label>
-              <select id="prtMaterial">
-                <option value="Matty Cotton (220-240 GSM)">Matty Cotton</option>
-                <option value="100% Super Combed Cotton">Combed Cotton</option>
-                <option value="Dot-Knit / Dry-Fit Polyester">Dry-Fit / Dot-Knit</option>
-                <option value="DTF Pet Film / Sublimation Paper">DTF / Sublimation</option>
-                <option value="PVC Card + Printed Lanyard">PVC + Lanyard</option>
-                <option value="Ceramic / Magic Mug">Mug</option>
-              </select>
-            </div>
-            <div class="q-field">
-              <label for="prtPlacement">Print &amp; Pocket</label>
-              <input type="text" id="prtPlacement" placeholder="Logo / Pocket" />
-            </div>
-            <div>
-              <button type="button" class="btn-wa-inline" onclick="sendPrintingQuote()">Send Printing &rarr;</button>
-            </div>
-          </div>
-        </div>
-
       </div>
 
-      <!-- Printing Services Showcase & Work Gallery -->
+      <!-- 2. PRINTING SERVICES & GALLERIES + CUSTOM PRINTING QUOTE BELOW IT -->
       <div id="printing-services">
         <div class="sec-title">
           <div>
@@ -2057,7 +2091,7 @@
         </div>
 
         <!-- 4. Jersey Work — Team Jersey (3 Slides) -->
-        <div class="category-gallery-block" style="margin-bottom: 22px;">
+        <div class="category-gallery-block">
           <div class="category-gallery-heading">4. Team Jersey</div>
           <div class="work-gallery-grid">
             <div class="work-photo-card" onclick="openLightbox('work-jersey.1.jpg.jpeg', 'Team Jersey — BLUEIN BLACK STUDIO')">
@@ -2088,6 +2122,78 @@
                 <strong>Team Jersey</strong>
                 <span>Tap to Zoom</span>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Custom Printing Quote Directly Below Sublimation / Team Jersey / Corporate Uniform -->
+        <div class="quote-panel-card prt-panel" id="printing-quote-box">
+          <div class="quote-panel-head">
+            <h3>BLUEIN BLACK PRINTING &mdash; Custom Print, Sublimation, Jersey &amp; Uniform Quote</h3>
+            <span class="quote-panel-badge prt-b">Printing Dept: +91 8891 888 040</span>
+          </div>
+
+          <div class="q-row-prt">
+            <div class="q-field">
+              <label for="prtCustomer">Customer / Company</label>
+              <input type="text" id="prtCustomer" placeholder="Name / Org" />
+            </div>
+            <div class="q-field">
+              <label for="prtProduct">Product Category</label>
+              <select id="prtProduct">
+                <option value="Special Offer: 25-50 Corporate Uniforms @ 450/- INR">Uniform Offer @ 450/-</option>
+                <option value="DTF &amp; Sublimation Print">DTF &amp; Sublimation</option>
+                <option value="Sublimation Gift Items &amp; Mugs">Sublimation Gifts &amp; Mugs</option>
+                <option value="Custom Sports Team Jerseys">Team Jersey</option>
+                <option value="Custom Polo T-Shirts &amp; Uniforms">Corporate Uniform</option>
+                <option value="ID Card Printing (School / Office / Event)">ID Card &amp; Lanyard</option>
+                <option value="Metal Photo Prints &amp; Custom Stickers">Metal / Stickers</option>
+              </select>
+            </div>
+            <div class="q-field">
+              <label for="prtQty">Quantity</label>
+              <input type="text" id="prtQty" placeholder="25 pcs / 5m" />
+            </div>
+            <div class="q-field">
+              <label for="prtColor">Color</label>
+              <input type="text" id="prtColor" placeholder="Black / Navy" />
+            </div>
+            <div class="q-field">
+              <label for="prtNeck">Neck Type</label>
+              <select id="prtNeck">
+                <option value="Polo Collar">Polo Collar</option>
+                <option value="Round Neck">Round Neck</option>
+                <option value="V-Neck">V-Neck</option>
+                <option value="Chinese / Mandarin Collar">Mandarin Collar</option>
+                <option value="N/A (DTF / ID Card / Mug)">N/A</option>
+              </select>
+            </div>
+            <div class="q-field">
+              <label for="prtSleeve">Sleeve</label>
+              <select id="prtSleeve">
+                <option value="Half Sleeve">Half Sleeve</option>
+                <option value="Full Sleeve">Full Sleeve</option>
+                <option value="Sleeveless">Sleeveless</option>
+                <option value="N/A (DTF / ID Card / Mug)">N/A</option>
+              </select>
+            </div>
+            <div class="q-field">
+              <label for="prtMaterial">Fabric / Type</label>
+              <select id="prtMaterial">
+                <option value="Matty Cotton (220-240 GSM)">Matty Cotton</option>
+                <option value="100% Super Combed Cotton">Combed Cotton</option>
+                <option value="Dot-Knit / Dry-Fit Polyester">Dry-Fit / Dot-Knit</option>
+                <option value="DTF Pet Film / Sublimation Paper">DTF / Sublimation</option>
+                <option value="PVC Card + Printed Lanyard">PVC + Lanyard</option>
+                <option value="Ceramic / Magic Mug">Mug</option>
+              </select>
+            </div>
+            <div class="q-field">
+              <label for="prtPlacement">Print &amp; Pocket</label>
+              <input type="text" id="prtPlacement" placeholder="Logo / Pocket" />
+            </div>
+            <div>
+              <button type="button" class="btn-wa-inline" onclick="sendPrintingQuote()">Send Print Quote &rarr;</button>
             </div>
           </div>
         </div>
@@ -2227,72 +2333,6 @@
               <a href="#logistics-quote-box" class="btn-sm-outline">Book Free Pickup / Rate</a>
               <a href="https://wa.me/917592888789?text=Hello%20BLUEIN%20BLACK%20LOGISTICS,%20I%20want%20to%20book%20a%20courier." target="_blank" rel="noopener" class="btn-sm-wa">Chat Logistics Dept.</a>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Courier Network -->
-      <div id="courier-network">
-        <div class="sec-title">
-          <div>
-            <span>AUTHORIZED NETWORK</span>
-            <h2>11 Domestic &amp; International Courier Partners</h2>
-          </div>
-        </div>
-
-        <div class="net-grid">
-          <div class="net-box">
-            <div class="net-head">
-              <h4>Sree Gokulam Speed &amp; Safe</h4>
-              <span class="net-tag">South India</span>
-            </div>
-            <p>Overnight &amp; next-day express parcel delivery across Kerala, Tamil Nadu &amp; Karnataka.</p>
-            <div class="net-sub">Kerala &amp; South India Priority</div>
-          </div>
-
-          <div class="net-box">
-            <div class="net-head">
-              <h4>Shree Maruti Courier</h4>
-              <span class="net-tag">Pan-India</span>
-            </div>
-            <p>Authorized franchise for nationwide express documents, parcels &amp; surface cargo.</p>
-            <div class="net-sub">19,000+ Indian Pin Codes</div>
-          </div>
-
-          <div class="net-box">
-            <div class="net-head">
-              <h4>Delhivery &amp; Amazon Shipping</h4>
-              <span class="net-tag">Nationwide</span>
-            </div>
-            <p>Tech-enabled pan-India parcel &amp; commercial shipping with live tracking updates.</p>
-            <div class="net-sub">Metros &amp; Tier-2/3 Cities</div>
-          </div>
-
-          <div class="net-box">
-            <div class="net-head">
-              <h4>India Post, Xpressbees &amp; Shadowfax</h4>
-              <span class="net-tag">All India</span>
-            </div>
-            <p>Speed Post &amp; rapid e-commerce delivery covering 100% urban and rural pin codes.</p>
-            <div class="net-sub">Complete Urban &amp; Rural Reach</div>
-          </div>
-
-          <div class="net-box">
-            <div class="net-head">
-              <h4>DHL &amp; FedEx Express</h4>
-              <span class="net-tag">Global Air</span>
-            </div>
-            <p>Priority worldwide air shipping for documents, university files, food &amp; parcels.</p>
-            <div class="net-sub">220+ Countries &bull; 2–5 Days</div>
-          </div>
-
-          <div class="net-box">
-            <div class="net-head">
-              <h4>Aramex &amp; UPS</h4>
-              <span class="net-tag">GCC &amp; Global</span>
-            </div>
-            <p>Dedicated Middle East (UAE, Saudi, Qatar, Kuwait, Oman), UK, USA &amp; Europe service.</p>
-            <div class="net-sub">GCC, UK, USA &amp; Europe Doorstep</div>
           </div>
         </div>
       </div>
@@ -2455,12 +2495,35 @@
         </div>
       </div>
 
-      <!-- Office Location + Live Embedded Google Map -->
+      <!-- Office Location + Animated Digital Counters Above Address + Live Embedded Google Map -->
       <div id="office">
         <div class="sec-title">
           <div>
             <span>HEADQUARTERS &amp; LOCATION MAP</span>
             <h2>Visit Us in Pathanamthitta</h2>
+          </div>
+        </div>
+
+        <!-- 3 Animated Digital Running Counters Directly Above Address -->
+        <div class="digital-stats-banner" id="digitalStatsBox">
+          <div class="digital-stats-grid">
+            <div class="digital-stat-card">
+              <div class="digital-stat-num" data-target="19000" data-prefix="" data-suffix="+">19,000+</div>
+              <div class="digital-stat-label">Serviceable Pin Codes</div>
+              <div class="digital-stat-sub">Pan-India Domestic Courier Network</div>
+            </div>
+
+            <div class="digital-stat-card">
+              <div class="digital-stat-num" data-target="24" data-prefix="" data-suffix=" HRS">24 HRS</div>
+              <div class="digital-stat-label">Delivery Within Kerala</div>
+              <div class="digital-stat-sub">Priority Express &amp; Feeder Dispatch</div>
+            </div>
+
+            <div class="digital-stat-card">
+              <div class="digital-stat-num" data-target="220" data-prefix="" data-suffix="+">220+</div>
+              <div class="digital-stat-label">Global Air Destinations</div>
+              <div class="digital-stat-sub">DHL &bull; FedEx &bull; Aramex &bull; UPS</div>
+            </div>
           </div>
         </div>
 
@@ -2976,6 +3039,59 @@
 
       window.open(`https://wa.me/917592888789?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
     }
+
+    /* Animated Digital Running Numbers Above Address Section */
+    (function initDigitalCounters() {
+      const box = document.getElementById("digitalStatsBox");
+      if (!box) return;
+      const nums = box.querySelectorAll(".digital-stat-num");
+      let played = false;
+
+      function runCounters() {
+        if (played) return;
+        played = true;
+
+        nums.forEach((el) => {
+          const target = Number(el.getAttribute("data-target") || 0);
+          const prefix = el.getAttribute("data-prefix") || "";
+          const suffix = el.getAttribute("data-suffix") || "";
+          const duration = 1350;
+          const startTime = performance.now();
+
+          function step(now) {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = Math.round(eased * target);
+            el.textContent = `${prefix}${current.toLocaleString("en-IN")}${suffix}`;
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            } else {
+              el.textContent = `${prefix}${target.toLocaleString("en-IN")}${suffix}`;
+            }
+          }
+
+          requestAnimationFrame(step);
+        });
+      }
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                runCounters();
+                observer.disconnect();
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
+        observer.observe(box);
+      } else {
+        runCounters();
+      }
+    })();
   </script>
 
 </body>
